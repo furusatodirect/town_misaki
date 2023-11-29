@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<meta charset="UTF-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="format-detection" content="telephone=no" />
+	<title>local</title>
+	<link rel="shortcut icon" href="./img/favicon.png">
+	<link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+	<link rel="stylesheet" property="stylesheet" href="./css/bootstrap.min.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/bootstrap-icons.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/themify-icons.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/destyle.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/base.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/slider-pro.min.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/all.min.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/swiper-bundle.min.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/slick.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/slick-theme.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/nouislider.min.css" media="all">
+	<link rel="stylesheet" property="stylesheet" href="./css/common.css" media="all">
+
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+	<style>
+		.ec-layoutRole__contents {
+			margin-right: auto;
+			margin-left: auto;
+			width: 100%;
+			max-width: 1150px;
+			display: flex;
+			flex-wrap: nowrap;
+		}
+	</style>
+</head>
+
+<body>
+
+	<header>
+
+
+		<div class="container">
+			<a class="logo" href="./"><img src="./img/logo.png"><span>紋別市<br class="sp">ふるさと納税<br class="sp">総合サイト</span></a>
+			<nav>
+				<ul>
+					<li><a href="./about/"><span class="fi ti-location-pin"></span>
+							<p>紋別市の紹介</p>
+						</a></li>
+					<li><a href=""><span class="fi ti-search"></span>
+							<p>見つける</p>
+						</a></li>
+					<li class="d-none d-md-block"><a href=""><span class="fi ti-shift-right"></span>
+							<p>ログイン</p>
+						</a></li>
+					<li class="d-none d-md-block"><a href=""><span class="fi ti-user"></span>
+							<p>マイページ</p>
+						</a></li>
+					<li><a href=""><span class="fi ti-shopping-cart"></span>
+							<p>カート<span class="cart_number">1</span></p>
+						</a></li>
+					<li class="burger-btn"><a>
+							<div><span></span><span></span><span></span></div>
+							<p>メニュー</p>
+						</a></li>
+				</ul>
+			</nav>
+		</div>
+
+
+		<div class="burger-menu">
+			<div class="inner">
+				<ul>
+					<li><a href="">マイページ</a></li>
+					<li><a href="">ログイン</a></li>
+				</ul>
+				<ul class="m-navi">
+					<li><a href="{{ url('product_list') }}?orderby={{eccube_config.eccube_product_order_newer}}">新着のお礼の品</a>
+					</li>
+					<li><a href="http://13.115.133.43/about">紋別巡り</a></li>
+					<li><a href="http://13.115.133.43/use">寄付の使い道</a></li>
+					<li><a href="http://13.115.133.43/jigyousha">事業者の紹介</a></li>
+					<li><a href="{{ url('news_index') }}">お知らせ</a></li>
+				</ul>
+				<ul class="s-navi">
+					<li><a href="/guide">ふるさと納税の仕組みと手続き</a></li>
+					<li><a href="/help/agreement">ご利用規約</a></li>
+					<li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+					<li><a href="/help/privacy">個人情報保護方針</a></li>
+					<li><a href="/help/about">よくある質問</a></li>
+					<li><a href="/contact">お問い合わせ</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</header>
+
+
+
+	<div class="ec-layoutRole__contents">
+
+
+		<main id="gift" class="detail">
+			<div class="container">
+
+
+				<div class="floating_cart">
+					<div class="addition">
+						<ul>
+							<li class="subtotal">小計<span>12,000</span>円</li>
+							<li class="btns"><button>カートを見る</button><button>手続きに進む</button></li>
+						</ul>
+					</div>
+					<div class="default">
+						<p class="price">寄付金額<span>12,000</span>円</p><button class="go-cart">カートに追加</button>
+					</div>
+				</div>
+
+			<!--
+				<div class="floating_cart">
+					<style>
+						.floating_cart .form-group {
+							display: none;
+						}
+					</style>
+
+					<div class="addition">
+						<button
+							onclick="location.href='https://mombetsu.furusato-direct.jp/products/list?orderby=1'"><span>お礼の品一覧へ戻る</span></button>
+						<button onclick="location.href='https://mombetsu.furusato-direct.jp/cart'">寄付カートへ進む</button>
+					</div>
+
+					<form action="https://mombetsu.furusato-direct.jp/products/add_cart/141" method="post" id="form1"
+						name="form1">
+						<div class="default">
+							<p class="price">
+								寄付金額<span>14,000</span>円</p>
+
+							<button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
+
+						</div>
+
+
+						<input type="hidden" id="product_id" name="product_id" value="141" /><input type="hidden" id="ProductClass"
+							name="ProductClass" value="141" />
+						<div class="form-group"><label for="quantity" class="required">Quantity</label><input type="number"
+								id="quantity" name="quantity" required="required" min="1" maxlength="9" class="form-control"
+								value="1" />
+						</div><input type="hidden" id="_token" name="_token" value="yTkmqrnoM0KOGQzZjqJkDUWU18DE2T_NeEHypgKDEG4" />
+
+					</form>
+
+				</div>
+-->
+
+				<section class="sec1">
+
+
+					<div class="Lside">
+						<div id="thum-slide" class="slider-pro">
+							<ul class="sp-thumbnails">
+								<li class="sp-thumbnail">
+									<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480741.jpg"
+										alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+									<div class="c-pic">
+										<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480741.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+											loading="lazy">
+									</div>
+								</li>
+								<li class="sp-thumbnail">
+									<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480742.jpg"
+										alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+									<div class="c-pic">
+										<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480742.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+											loading="lazy">
+									</div>
+								</li>
+								<li class="sp-thumbnail">
+									<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480743.jpg"
+										alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+									<div class="c-pic">
+										<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480743.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+											loading="lazy">
+									</div>
+								</li>
+								<li class="sp-thumbnail">
+									<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480744.jpg"
+										alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+									<div class="c-pic">
+										<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480744.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+											loading="lazy">
+									</div>
+								</li>
+								<li class="sp-thumbnail">
+									<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844341.jpg"
+										alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+									<div class="c-pic">
+										<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844341.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+											loading="lazy">
+									</div>
+								</li>
+								<li class="sp-thumbnail">
+									<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844342.jpg"
+										alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+									<div class="c-pic">
+										<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844342.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+											loading="lazy">
+									</div>
+								</li>
+								<li class="sp-thumbnail">
+									<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844343.jpg"
+										alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+									<div class="c-pic">
+										<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844343.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+											loading="lazy">
+									</div>
+								</li>
+								<li class="sp-thumbnail">
+									<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844344.jpg"
+										alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+									<div class="c-pic">
+										<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844344.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+											loading="lazy">
+									</div>
+								</li>
+							</ul>
+							<ul class="sp-slides">
+								<li class="sp-slide">
+									<div class="sp-image">
+										<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480741.jpg"
+											alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+										<div class="c-pic">
+											<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480741.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+												loading="lazy">
+										</div>
+									</div>
+								</li>
+								<li class="sp-slide">
+									<div class="sp-image">
+										<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480742.jpg"
+											alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+										<div class="c-pic">
+											<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480742.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+												loading="lazy">
+										</div>
+									</div>
+								</li>
+								<li class="sp-slide">
+									<div class="sp-image">
+										<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480743.jpg"
+											alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+										<div class="c-pic">
+											<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480743.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+												loading="lazy">
+										</div>
+									</div>
+								</li>
+								<li class="sp-slide">
+									<div class="sp-image">
+										<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480744.jpg"
+											alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+										<div class="c-pic">
+											<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480744.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+												loading="lazy">
+										</div>
+									</div>
+								</li>
+								<li class="sp-slide">
+									<div class="sp-image">
+										<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844341.jpg"
+											alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+										<div class="c-pic">
+											<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844341.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+												loading="lazy">
+										</div>
+									</div>
+								</li>
+								<li class="sp-slide">
+									<div class="sp-image">
+										<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844342.jpg"
+											alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+										<div class="c-pic">
+											<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844342.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+												loading="lazy">
+										</div>
+									</div>
+								</li>
+								<li class="sp-slide">
+									<div class="sp-image">
+										<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844343.jpg"
+											alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+										<div class="c-pic">
+											<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844343.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+												loading="lazy">
+										</div>
+									</div>
+								</li>
+								<li class="sp-slide">
+									<div class="sp-image">
+										<img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844344.jpg"
+											alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+										<div class="c-pic">
+											<img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/844344.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)"
+												loading="lazy">
+										</div>
+									</div>
+								</li>
+							</ul>
+							<ul class="marks">
+								<li class="icons">
+									<button class="share" onclick="showBalloon()">
+										<img src="./img/icon_share.png">
+									</button>
+
+									<button class="favorite" onclick="addFavoriteProduct(141)">
+										<i class="fa-sharp fa-solid fa-heart" style="color: gray;"></i>
+									</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+<!--{#author :MLJ Customize start#}-->
+<section class="sticky-bt d-md-none">
+	<div id="sec_bt_cart">
+		<form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
+			<div class="default">
+				<p class="price">
+					寄付金額<span><!--{{ Product.getPrice02IncTaxMin|number_format }}-->14,000</span>円</p>
+				<!--{#author :MT start#}
+														{% if  Product.applicable_on_from != null and Product.applicable_on_from > date() %}
+														<button type="submit" class="add-cart go-cart disabled" disabled>{{Product.applicable_on_from|date_format('', 'm月d日')}}より受付開始</button>
+														{% elseif Product.applicable_on_to != null and Product.applicable_on_to < date() %}
+														<button type="submit" class="add-cart go-cart disabled" disabled>受付終了</button>
+														{% elseif Product.stock_find == 0 or Product.out_of_stock == 1 %}
+														<button type="submit" class="add-cart go-cart disabled" disabled>品切れ中</button>
+														{% else %}
+														<button type="submit" class="add-cart go-cart">{{ 'front.product.add_cart'|trans }}</button>
+														{% endif %}
+														{#author :MT end#}-->
+				<button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
+			</div>
+			<!--{{ form_rest(form) }}-->
+		</form>
+	</div>
+</section>
+<!--{#author :MLJ Customize start#}-->
+
+					<div class="Rside">
+						<div class="part">
+							<h3 class="product">14-22 オホーツク産ホタテ玉冷大(1kg)</h3>
+							<p>お刺身・フライ・バター焼き・ホタテマリネ等さまざまな料理に使用出来ます。<br />
+								オホーツク産のホタテは、北海道内でも稚貝（一年貝）を放流してから4年間流氷や水温の低い荒波の中で逞しく育つ為、養殖とは、まったく違い旨味が凝縮されており食感も良いと言われております。<br />
+								大粒で食べ応え抜群！ドドーンとたっぷり1kg<br />
+								パッケージがチャック付きの袋に改良されたので、保存が便利になりました！<br />
+								<br />
+								【2022年10月1日より、寄附額を改定させていただきました。】<br />
+								　数年続いておりました原材料の高騰や諸経費の値上がりに対し、企業努力を重ねてまいりましたが、今後も皆さまに返礼品を提供させていただくために、誠に不本意ではございますが、寄附金額を改定させていただくことになりました。<br />
+								　寄附金額が上がってしまいますが、皆さまのご期待を裏切らないよう、精進いたします。何卒ご理解のほどお願い申し上げますとともに、変わらぬご愛顧をお願い申し上げます。
+							</p>
+
+
+
+							<style>
+								.sticky-bt {
+									position: -webkit-sticky;
+									position: sticky;
+									top: 68px;
+									z-index: 98;
+								}
+
+								#sec_bt_cart {
+									box-sizing: border-box;
+									z-index: 81;
+									right: 19%;
+									bottom: 25px;
+									height: auto;
+									background: #fff;
+									box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
+									padding: 15px;
+								}
+
+								#sec_bt_cart .default {
+									display: flex;
+									align-items: center;
+									justify-content: space-between;
+								}
+
+								#sec_bt_cart .default .price span {
+									font-weight: bold;
+									font-size: 1.4rem;
+									padding: 0 4px 0 8px;
+								}
+
+								#sec_bt_cart {
+									text-align: center;
+									margin-top: 2.5rem;
+									margin-bottom: -1rem;
+									border-radius: 8px;
+									border: 1px solid #C8C8C8;
+								}
+
+								#sec_bt_cart .default .go-cart {
+									background: #FF004E;
+									border: 1px solid #FF004E;
+									color: #fff;
+									width: 55%;
+									padding: 1rem;
+									font-weight: bold;
+									font-size: 1.5rem;
+								}
+
+								#sec_bt_cart .default .go-cart:hover {
+									background: #fff;
+									color: #FF004E;
+								}
+
+								#sec_bt_cart .default .go-cart.disabled,
+								#sec_bt_cart .default .go-cart.disabled:hover {
+									background: gray;
+									color: white;
+								}
+
+								#sec_bt_cart button {
+									border-radius: 8px;
+									font-size: 1.4rem;
+									text-align: center;
+									padding: 6px;
+								}
+
+								@media screen and (min-width: 769px) {
+
+									#sec_bt_cart .default .go-cart {
+										min-width: 60%;
+										padding: 1.5rem;
+										font-size: 2rem;
+									}
+
+									#sec_bt_cart .default .price span {
+										font-size: 2rem;
+									}
+
+									.sec_bt_cart_under {
+										width: 47%;
+										left: 26%;
+										top: 0;
+										position: relative;
+									}
+								}
+							</style>
+
+<!--{#author :MLJ Customize start#}-->
+<section class="sticky-bt d-none d-md-block">
+	<div id="sec_bt_cart">
+		<form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
+			<div class="default">
+				<p class="price">
+					寄付金額<span><!--{{ Product.getPrice02IncTaxMin|number_format }}-->14,000</span>円</p>
+				<!--{#author :MT start#}
+              {% if  Product.applicable_on_from != null and Product.applicable_on_from > date() %}
+              <button type="submit" class="add-cart go-cart disabled" disabled>{{Product.applicable_on_from|date_format('', 'm月d日')}}より受付開始</button>
+              {% elseif Product.applicable_on_to != null and Product.applicable_on_to < date() %}
+              <button type="submit" class="add-cart go-cart disabled" disabled>受付終了</button>
+              {% elseif Product.stock_find == 0 or Product.out_of_stock == 1 %}
+              <button type="submit" class="add-cart go-cart disabled" disabled>品切れ中</button>
+              {% else %}
+              <button type="submit" class="add-cart go-cart">{{ 'front.product.add_cart'|trans }}</button>
+              {% endif %}
+              {#author :MT end#}-->
+				<button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
+			</div>
+			<!--{{ form_rest(form) }}-->
+		</form>
+	</div>
+</section>
+<!--{#author :MLJ Customize start#}-->
+						</div>
+
+
+
+
+						<div class="part">
+							<h3>お礼の品詳細</h3>
+
+							<dl class="category">
+								<dt>カテゴリー</dt>
+								<dd>
+									<ul>
+										<li>
+											<a href="https://mombetsu.furusato-direct.jp/products/list?category_id=3">
+												<span>魚貝類</span>
+											</a> <span>＞</span>
+											<a href="https://mombetsu.furusato-direct.jp/products/list?category_id=62">
+												<span>アワビ・ホタテ・他</span>
+											</a>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+
+							<dl>
+								<dt>内容量</dt>
+								<dd>
+									<p>大玉サイズ 1kg<br />
+										【原産地】オホーツク産<br />
+										【加工・製造地】紋別市</p>
+								</dd>
+							</dl>
+
+							<dl>
+								<dt>アレルギー表示</dt>
+								<dd>なし </dd>
+							</dl>
+
+							<dl>
+								<dt>消費期限/賞味期限</dt>
+								<dd>発送日より1年</dd>
+							</dl>
+
+							<dl>
+								<dt>事業者名</dt>
+								<dd>
+									<p class="Fbold">(株)本間水産</p>
+									<a class="others" href="https://mombetsu.furusato-direct.jp/products/list?operator_name=(株)本間水産">
+										他のお礼の品を見る
+									</a>
+								</dd>
+							</dl>
+
+							<dl>
+								<dt>管理ID</dt>
+								<dd>14-22</dd>
+							</dl>
+						</div>
+
+						<div class="part">
+							<h3>お申し込みについて</h3>
+							<dl>
+								<dt>申込条件</dt>
+								<dd>何度も申し込み可</dd>
+							</dl>
+							<dl>
+								<dt>申込期日</dt>
+								<dd>通年</dd>
+							</dl>
+							<dl>
+								<dt>発送期日</dt>
+								<dd>入金確認後順次～最長1カ月半程度(着日・着曜日指定不可)
+									※お申込状況によっては発送までにお時間がかかる場合があります。</dd>
+							</dl>
+							<dl>
+								<dt>配送方法</dt>
+								<dd>冷凍配送</dd>
+							</dl>
+						</div>
+
+						<div class="part">
+							<h3>ふるさと納税の手続きについて</h3>
+							<p>ふるさと納税は、現在居住地の自治体に対して支払っている住民税を、自分が応援したい自治体に『寄付』という形で振替納税が出来る制度です。<br>
+								自治体への寄付金は、2,000円を超える額について、個人の年収に伴った控除額の上限内で納税が受けられます。</p>
+							<a class="btn-re" href="/guide">もっと詳しく</a>
+						</div>
+
+					</div>
+
+
+
+				</section>
+
+
+				<!--{#author :MLJ Customize start#}-->
+				<section class="sec_bt_cart_under d-none d-md-block mb-5">
+
+					<div id="sec_bt_cart">
+						<form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
+							<div class="default">
+								<p class="price">
+									寄付金額<span><!--{{ Product.getPrice02IncTaxMin|number_format }}-->14,000</span>円</p>
+
+
+								<!--{#author :MT start#}
+                            {% if  Product.applicable_on_from != null and Product.applicable_on_from > date() %}
+                            <button type="submit" class="add-cart go-cart disabled" disabled>{{Product.applicable_on_from|date_format('', 'm月d日')}}より受付開始</button>
+                            {% elseif Product.applicable_on_to != null and Product.applicable_on_to < date() %}
+                            <button type="submit" class="add-cart go-cart disabled" disabled>受付終了</button>
+                            {% elseif Product.stock_find == 0 or Product.out_of_stock == 1 %}
+                            <button type="submit" class="add-cart go-cart disabled" disabled>品切れ中</button>
+                            {% else %}
+                            <button type="submit" class="add-cart go-cart">{{ 'front.product.add_cart'|trans }}</button>
+                            {% endif %}
+                            {#author :MT end#}-->
+								<button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
+							</div>
+							<!--{{ form_rest(form) }}-->
+
+						</form>
+					</div>
+
+
+				</section>
+				<!--{#author :MLJ Customize start#}-->
+
+				<div id="kifu_bnrs">
+
+    
+					<!--{#author :MLJ Customize start#}-->
+					<section class="d-md-none mb-5">
+						<div id="sec_bt_cart">
+							<form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
+								<div class="default">
+									<p class="price">
+										寄付金額<span><!--{{ Product.getPrice02IncTaxMin|number_format }}-->14,000</span>円</p>
+	
+	
+									<!--{#author :MT start#}
+															{% if  Product.applicable_on_from != null and Product.applicable_on_from > date() %}
+															<button type="submit" class="add-cart go-cart disabled" disabled>{{Product.applicable_on_from|date_format('', 'm月d日')}}より受付開始</button>
+															{% elseif Product.applicable_on_to != null and Product.applicable_on_to < date() %}
+															<button type="submit" class="add-cart go-cart disabled" disabled>受付終了</button>
+															{% elseif Product.stock_find == 0 or Product.out_of_stock == 1 %}
+															<button type="submit" class="add-cart go-cart disabled" disabled>品切れ中</button>
+															{% else %}
+															<button type="submit" class="add-cart go-cart">{{ 'front.product.add_cart'|trans }}</button>
+															{% endif %}
+															{#author :MT end#}-->
+									<button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
+								</div>
+								<!--{{ form_rest(form) }}-->
+	
+							</form>
+						</div>
+					</section>
+					<!--{#author :MLJ Customize start#}-->
+
+					<div class="part">
+						<h3>ポータルサイトから寄付する</h3>
+
+						<ul class="kifu_bnrs">
+
+							<li>
+								<a id="bnr_choice" href="https://www.furusato-tax.jp/city/product/01219/0" target="_blank">
+									<img src="./img/bnr/kifu_choice.png" alt="ふるさとチョイス">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_ana" href="https://furusato.ana.co.jp/01219/" target="_blank">
+									<img src="./img/bnr/kifu_ana.png" alt="ANAのふるさと納税">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_satofull"
+									href="https://h.accesstrade.net/sp/cc?rk=0100kid000har3&amp;url=https%3A%2F%2Fwww.satofull.jp%2Fcity-mombetsu-hokkaido%2F"
+									target="_blank">
+									<img src="./img/bnr/kifu_satofull.png" alt="さとふる">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_rakuten"
+									href="https://hb.afl.rakuten.co.jp/hgc/2e287241.d9aa9d80.2e287242.8baf850c/?pc=http%3A%2F%2Fwww.rakuten.co.jp%2Ff012190-mombetsu%2F&amp;link_type=hybrid_url&amp;ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJoeWJyaWRfdXJsIiwiY29sIjoxLCJjYXQiOiIxIiwiYmFuIjoiMTYzOTY1MSIsImFtcCI6ZmFsc2V9"
+									target="_blank">
+									<img src="./img/bnr/kifu_rakuten.png" alt="楽天ふるさと納税">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_nippon" href="https://furusato-nippon.com/hokkaido/012190" target="_blank">
+									<img src="./img/bnr/kifu_nippon.png" alt="ふるさと納税ニッポン">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_furunavi" href="https://furunavi.jp/Municipal/Product/Search?municipalid=19" target="_blank">
+									<img src="./img/bnr/kifu_furunavi.png" alt="ふるなび">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_wowma" href="https://furusato.wowma.jp/012190/" target="_blank">
+									<img src="./img/bnr/kifu_wowma.png" alt="au PAYふるさと納税">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_saisoncard" href="https://furusato.saisoncard.co.jp/city.php?n=012190" target="_blank">
+									<img src="./img/bnr/kifu_saisoncard.png" alt="セゾンのふるさと納税">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_fururi" href="https://fururi.jp/city/01_hokkaido/2190_mombetsu/" target="_blank">
+									<img src="./img/bnr/kifu_fururi.png" alt="ふるり">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_honpo"
+									href="https://furusatohonpo.jp/donate/municipality/?localGovernmentId=81459d3a-00e0-494d-9977-72dc5031de60"
+									target="_blank">
+									<img src="./img/bnr/kifu_honpo.png" alt="ふるさと本舗">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_palette" href="https://tokyu-furusato.jp/city/detail/012190" target="_blank">
+									<img src="./img/bnr/kifu_palette.png" alt="ふるさとパレット">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_gcall" href="https://www.g-call.com/furusato/city/?ygo_no=29244&amp;pg=1#pgtop"
+									target="_blank">
+									<img src="./img/bnr/kifu_gcall.png" alt="G-Callふるさと納税">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_plus" href="https://furusatoplus.com/local/012190/" target="_blank">
+									<img src="./img/bnr/kifu_plus.png" alt="ふるさとぷらす">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_premium" href="https://26p.jp/areas/monbetsu-city" target="_blank">
+									<img src="./img/bnr/kifu_premium.png" alt="ふるさとプレミアム">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_jre" href="https://www.jreastmall.com/shop/c/cf081/" target="_blank">
+									<img src="./img/bnr/kifu_jre.png" alt="JRE MALL ふるさと納税">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_jal" href="https://furusato.jal.co.jp/municipality/012190" target="_blank">
+									<img src="./img/bnr/kifu_jal.png" alt="JALふるさと納税">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_furulabo" href="https://furusato.asahi.co.jp/city/detail/012190" target="_blank">
+									<img src="./img/bnr/kifu_furulabo.png" alt="ふるラボ">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_mitsukoshi" href="https://mifurusato.jp/j/012190.html" target="_blank">
+									<img src="./img/bnr/kifu_mitsukoshi.png" alt="三越伊勢丹ふるさと納税">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_gurusuguri"
+									href="https://gurusuguri.com/shop/city_mombetsu/?push_page_id=0_1__&amp;push_slot_id=CL-05&amp;push_campaign_id=8&amp;moduleclick=t"
+									target="_blank">
+									<img src="./img/bnr/kifu_gurusuguri.png" alt="ぐるすぐり">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_hyakusen" href="https://dshopping-furusato.docomo.ne.jp/jichitai/012190" target="_blank">
+									<img src="./img/bnr/kifu_hyakusen.png" alt="ふるさと納税百選">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_mynavi"
+									href="https://h.accesstrade.net/sp/cc?rk=0100p8z500har3&amp;url=https%3A%2F%2Ffurusato.mynavi.jp%2Fmunicipal%2Fdetail%2F012190%2F"
+									target="_blank">
+									<img src="./img/bnr/kifu_mynavi.png" alt="マイナビふるさと納税">
+								</a>
+							</li>
+							<li>
+								<a id="bnr_furusatomarket" href="https://furusatomarkets.jp/area/city/19" target="_blank">
+									<img src="./img/bnr/kifu_furusatomarket.png" alt="ふるさとマーケット">
+								</a>
+							</li>
+
+						</ul>
+
+					</div>
+				</div>
+
+
+
+			</div>
+		</main>
+
+	</div>
+
+	<a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png"></a>
+	<footer>
+		<div class="container inner">
+			<a href="{{ url('homepage') }}">
+				<p class="logo"><img src="./img/logo.png"><span>紋別市ふるさと納税総合サイト</span></p>
+			</a>
+			<p>紋別市ふるさと納税担当<br>〒094-8707 北海道紋別市幸町2丁目1番18号</p>
+			<ul class="snslinks">
+				<li><a href="https://www.facebook.com/mombetsucity" target="_blank"><span class="fi ti-facebook"></span></a>
+				</li>
+				<li><a href="https://www.instagram.com/mom_furufuru" target="_blank"><span class="fi ti-instagram"></span></a>
+				</li>
+			</ul>
+			<ul class="subnav pc">
+				<li><a href="/guide">ふるさと納税の仕組みと手続き</a></li>
+				<li><a href="/help/agreement">ご利用規約</a></li>
+				<li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+				<li><a href="/help/privacy">個人情報保護方針</a></li>
+				<li><a href="/help/about">よくある質問</a></li>
+				<li><a href="/contact">お問い合わせ</a></li>
+			</ul>
+		</div>
+		<div class="copyright">
+			<p class="container">Copyright &copy; 紋別市 CITY.</p>
+		</div>
+	</footer>
+
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+	<script type="text/javascript" src="./js/chart.min.js"></script>
+	<script type="text/javascript" src="./js/nouislider.min.js"></script>
+	<script type="text/javascript" src="./js/wNumb.js"></script>
+	<script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+	<script type="text/javascript" src="./js/slick.min.js"></script>
+	<script type="text/javascript" src="./js/common.js"></script>
+
+</body>
+
+</html>
