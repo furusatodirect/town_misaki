@@ -860,13 +860,3 @@ body {font-size:1.4rem;}
 #greeting .greeting .contents img {border-radius: 12px;}
 #greeting .greeting .row {background-color: rgba(255,255,255,0.7);border-radius: 12px;align-items: center;line-height: 3rem;}
 #greeting .greeting .row p.signe-mayor {text-align: right;font-weight: bold;padding: 0rem 2rem 0;}
-
-/*top medal*/
-.topinaera{position:absolute;right:0;display:flex;justify-content:flex-end;align-items:center;margin-top:-210px;}
-.topin1,.topin2{margin-right:10px;}
-.topin1pic,.topin2pic{width:200px;height:auto;}
-@media screen and (max-width:990px){
-.topinaera{display:flex;justify-content:center;align-items:center;transform:none;margin-top:-66px;}
-.topin1,.topin2{margin:0 2px;}
-.topin1pic,.topin2pic{width:60px;}
-}

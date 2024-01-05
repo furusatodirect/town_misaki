@@ -21,30 +21,15 @@
   <link rel="stylesheet" property="stylesheet" href="./css/slick.css" media="all" />
   <link rel="stylesheet" property="stylesheet" href="./css/slick-theme.css" media="all" />
   <link rel="stylesheet" property="stylesheet" href="./css/nouislider.min.css" media="all" />
-  <link rel="stylesheet" property="stylesheet" href="./css/common.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/common-misaki.css" media="all" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
   <header>
-    <div class="container"> <a class="logo" href="./"><img src="./img/logo.png" /><span>XXX<br class="sp" />ふるさと納税<br class="sp" />総合サイト</span></a>
+    <div class="container">
       <nav>
         <ul>
-          <li> <a href="./about/"><span class="fi ti-location-pin"></span>
-              <p>XXXの紹介</p>
-            </a> </li>
-          <li> <a href=""><span class="fi ti-search"></span>
-              <p>見つける</p>
-            </a> </li>
-          <li class="d-none d-md-block"> <a href=""><span class="fi ti-shift-right"></span>
-              <p>ログイン</p>
-            </a> </li>
-          <li class="d-none d-md-block"> <a href=""><span class="fi ti-user"></span>
-              <p>マイページ</p>
-            </a> </li>
-          <li> <a href=""><span class="fi ti-shopping-cart"></span>
-              <p>カート<span class="cart_number">1</span></p>
-            </a> </li>
           <li class="burger-btn">
             <a>
               <div><span></span><span></span><span></span></div>
@@ -53,7 +38,32 @@
           </li>
         </ul>
       </nav>
+
+      <a class="logo" href="./"><img src="./img/logo-misaki.png" /></a>
+      <nav>
+        <ul>
+          <li style="margin-right: 1rem;">
+            <a href=""><span class="fi ti-search"></span>
+              <p>見つける</p>
+            </a>
+          </li>
+          <li>
+            <a href=""><span class="fi ti-shopping-cart"></span>
+              <p>カート<span class="cart_number">1</span></p>
+            </a>
+          </li>
+          <!--
+          <li class="burger-btn">
+            <a>
+              <div><span></span><span></span><span></span></div>
+              <p>メニュー</p>
+            </a>
+          </li>-->
+        </ul>
+      </nav>
     </div>
+
+
     <div class="burger-menu">
       <div class="inner">
         <ul>
@@ -78,6 +88,7 @@
       </div>
     </div>
   </header>
+
   <header-cate>
     <div class="categorynav"> <button class="cate-prev"></button>
       <ul class="scrollmenu">
@@ -158,70 +169,52 @@
       </ul> <button class="cate-next"></button>
     </div>
   </header-cate>
-  <div class="mv">
-    <div class="topani">
-      <div class="t-inner">
-        <ul class="t-slide">
-          <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider1.jpg" loading="lazy" alt="" /> </li>
-          <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider2.jpg" loading="lazy" alt="" /> </li>
-          <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider3.jpg" loading="lazy" alt="" /> </li>
-          <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider4.jpg" loading="lazy" alt="" /> </li>
-          <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider5.jpg" loading="lazy" alt="" /> </li>
-          <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider6.jpg" loading="lazy" alt="" /> </li>
-        </ul>
-        <div class="topa_heading">
-          <p class="topani_title">北海道XXX</p>
-          <p class="topani_titles">オホーツクの自然とともに歩むまち</p>
+
+
+
+  <div class="container-fuild">
+    <div class="top-view-area">
+      <div class="top-view">
+        <div class="top-img-bg" style="background-image:url(/img/topbackimg.png);"></div>
+        <div class="top-img-bg-blur" style="background-image:url(/img/topbackimg.png);"></div>
+      </div>
+      <div class="top-img-bgw"></div>
+    </div>
+  </div>
+
+  <!--
+
+    <div class="mv">
+      <div class="topani">
+        <div class="t-inner">
+          <ul class="t-slide">
+            <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider1.jpg" loading="lazy" alt="" /> </li>
+            <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider2.jpg" loading="lazy" alt="" /> </li>
+            <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider3.jpg" loading="lazy" alt="" /> </li>
+            <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider4.jpg" loading="lazy" alt="" /> </li>
+            <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider5.jpg" loading="lazy" alt="" /> </li>
+            <li class="t-slide_item"> <img class="t-slide_img" src="./img/animeslider6.jpg" loading="lazy" alt="" /> </li>
+          </ul>
+          <div class="topa_heading">
+            <p class="topani_title">北海道XXX</p>
+            <p class="topani_titles">オホーツクの自然とともに歩むまち</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="topinaera col-lg-3 d-lg-flex">
-        <div class="topin1"><img class="topin1pic" src="./img/topin1.png" loading="lazy" alt="" /></div>
-        <div class="topin2"><img class="topin2pic" src="./img/topin2.png" loading="lazy" alt="" /></div>
+    <div class="container">
+      <div class="row">
+        <div class="topinaera col-lg-3 d-lg-flex">
+          <div class="topin1"><img class="topin1pic" src="./img/topin1.png" loading="lazy" alt="" /></div>
+          <div class="topin2"><img class="topin2pic" src="./img/topin2.png" loading="lazy" alt="" /></div>
+        </div>
       </div>
     </div>
-  </div>
+    -->
+
+
   <main id="top">
-    <div class="pt_plus"></div>
-    <div class="container">
-      <section class="intro">
-        <div class="pickup">
-          <a href="./news/detail.html">
-            <p class="date">2022.06.10</p>
-            <p class="text">本日、人気の返礼品が再入荷いたしました。柔らかな国産牛を使った数量100個の限定品となりますので、この機会にぜひご覧ください。</p>
-          </a>
-        </div>
-      </section>
-    </div>
-    <div class="container">
-      <div class="col-12 d-lg-flex justify-content-center">
-        <div class="top-bnr col-lg-6 mb-4 px-lg-2 position-relative"><img src="./img/bnr_sp_kani.png" /><a href="sp_kani.html" class="stretched-link"></a></div>
-      </div>
-      <div class="col-12 d-lg-flex justify-content-center d-none d-md-block">
-        <div class="top-bnr col-lg-6 mb-4 px-lg-2 position-relative"><img src="./img/bnr_sp_kani.png" /><a href="sp_kani.html" class="stretched-link"></a></div>
-        <div class="top-bnr col-lg-6 mb-4 px-lg-2 position-relative"><img src="./img/bnr_sp_kani.png" /><a href="sp_kani.html" class="stretched-link"></a></div>
-      </div>
-      <div class="col-12 d-lg-flex justify-content-center d-none d-md-block">
-        <div class="top-bnr col-lg-4 mb-4 px-lg-2 position-relative"><img src="./img/bnr_sp_kani.png" /><a href="sp_kani.html" class="stretched-link"></a></div>
-        <div class="top-bnr col-lg-4 mb-4 px-lg-2 position-relative"><img src="./img/bnr_sp_kani.png" /><a href="sp_kani.html" class="stretched-link"></a></div>
-        <div class="top-bnr col-lg-4 mb-4 px-lg-2 position-relative"><img src="./img/bnr_sp_kani.png" /><a href="sp_kani.html" class="stretched-link"></a></div>
-      </div>
-    </div>
-    <div class="container d-md-none">
-      <div class="swiper sw_topbnr">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"> <a href="sp_kani.html"><img src="./img/bnr_sp_kani.png" /></a> </div>
-          <div class="swiper-slide"> <a href="sp_kani.html"><img src="./img/bnr_sp_kani.png" /></a> </div>
-          <div class="swiper-slide"> <a href="sp_kani.html"><img src="./img/bnr_sp_kani.png" /></a> </div>
-        </div>
-        <div class="bnr_pn mt-5">
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </div>
+
     <div class="container">
       <section class="recomm">
         <p class="toptitle">お礼の品セレクト</p>
@@ -689,7 +682,7 @@
   <script type="text/javascript" src="./js/wNumb.js"></script>
   <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="./js/slick.min.js"></script>
-  <script type="text/javascript" src="./js/common.js"></script>
+  <script type="text/javascript" src="./js/common-misaki.js"></script>
 </body>
 
 </html>
