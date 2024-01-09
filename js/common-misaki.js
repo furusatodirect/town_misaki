@@ -278,96 +278,39 @@ $(function () {
 /*
  ** Swiper top
  */
-new Swiper(".XX_gallery", {
-  centeredSlides: true,
-  loop: true,
-  speed: 1000,
-  slidesPerView: 3,
-  spaceBetween: 20,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  //    pagination: {
-  //          el: '.swiper-pagination',
-  //    },
-  scrollbar: {
-    el: ".swiper-scrollbar",
-    //          hide: true,
-  },
-  autoplay: {
-    delay: 6000,
-    disableOnInteraction: false,
-    stopOnLastSlide: false,
-  },
-  breakpoints: {
-    320: {
-      slidesPerView: 1, //1.15
-    },
-    640: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 1,
-    },
-    820: {
-      slidesPerView: 1,
-    },
-    1024: {
-      slidesPerView: 1,
-      //        slidesPerView: 1.4,
-    },
-    1440: {
-      slidesPerView: 1, //2.5
-      //        slidesPerView: 2.90,
-    },
-    1920: {
-      slidesPerView: 1, //2.5
-      //      },
-      //      2560: {
-      //        slidesPerView: 3.35,
-      //      },
-      //      2880: {
-      //        slidesPerView: 3.75,
-    },
-  },
-});
 
 /**
  * Swiper catelist
  */
 new Swiper(".sw_catelist", {
   allowTouchMove: true,
-  // freeMode: true,
   initialSlide: 0,
   touchRatio: 1,
-  //spaceBetween: 30,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+  scrollbar: {
+    el: ".swiper-scrollbar",
   },
   breakpoints: {
     320: {
-      slidesPerView: 5.7,
+      slidesPerView: 2.5,
     },
     640: {
-      slidesPerView: 8.7,
+      slidesPerView: 2.5,
     },
     768: {
-      slidesPerView: 8.7,
+      slidesPerView: 3.5,
     },
     820: {
-      slidesPerView: 10.5,
+      slidesPerView: 4.5,
     },
     1020: {
-      slidesPerView: 12.5,
+      slidesPerView: 4.5,
     },
     1440: {
-      slidesPerView: 13.3,
+      slidesPerView: 6.5,
     },
   },
 });
