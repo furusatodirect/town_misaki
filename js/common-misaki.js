@@ -292,6 +292,8 @@ new Swiper(".sw_catelist", {
   },
   scrollbar: {
     el: ".swiper-scrollbar",
+    draggable: true,
+    hide: true,
   },
   breakpoints: {
     320: {
