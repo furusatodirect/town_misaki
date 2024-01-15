@@ -281,9 +281,9 @@ header .container {
 }
 
 header .logo img {
-  max-width: calc(:280px - 100px);
-  max-width: -webkit-calc(280px - 100px);
-  max-width: -moz-calc(280px - 100px);
+  max-width: calc(:240px - 72px);
+  max-width: -webkit-calc(240px - 72px);
+  max-width: -moz-calc(240px - 72px);
   height: auto;
   display: inline-block;
   vertical-align: middle;
@@ -486,7 +486,7 @@ header nav ul li a .cart_number {
 /*.top-view-area-----------------*/
 .top-view-area {
   position: relative;
-  padding-top: 60px;
+  padding-top: 56px;
   overflow: hidden;
 }
 
