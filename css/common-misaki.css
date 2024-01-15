@@ -281,7 +281,7 @@ header .container {
 }
 
 header .logo img {
-  max-width: calc(:240px - 72px);
+  max-width: calc(240px - 72px);
   max-width: -webkit-calc(240px - 72px);
   max-width: -moz-calc(240px - 72px);
   height: auto;
