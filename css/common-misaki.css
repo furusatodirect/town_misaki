@@ -1030,7 +1030,7 @@ footer .subnav {
 }
 
 footer .subnav li a {
-  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(12px + 0 * ((100vw - 320px) / 670));
   display: inline-block;
 }
 
@@ -1069,7 +1069,7 @@ footer .copyright a {
 
 
 footer .cr-txt {
-  font-size: calc(8px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(10px + 0 * ((100vw - 320px) / 670));
 }
 
 footer .copyright img {
