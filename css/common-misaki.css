@@ -632,7 +632,7 @@ header nav ul li a .cart_number {
 
 .catebar .swiper-slide {
   text-align: center;
-  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -732,7 +732,7 @@ header nav ul li a .cart_number {
 
 .card-pro .card-body .detail-product-name {
   padding: .5rem;
-  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
 .card-pro .detail-product-img {
@@ -794,7 +794,7 @@ header nav ul li a .cart_number {
 
 .card-use .card-body .detail-use-read {
   padding: .5rem;
-  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
 
@@ -849,7 +849,7 @@ header nav ul li a .cart_number {
 }
 
 .mayor-detail .mayor-name {
-  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
   text-align: center;
   padding: 1rem;
 }
@@ -861,7 +861,7 @@ header nav ul li a .cart_number {
   border: 3px solid rgb(0, 184, 76, .6);
   border-radius: 1rem;
   padding: 2rem 1.5rem;
-  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
 
@@ -874,7 +874,7 @@ header nav ul li a .cart_number {
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 
 .misaki-news-header .ttl {
@@ -948,7 +948,7 @@ header nav ul li a .cart_number {
   text-overflow: ellipsis;
   white-space: nowrap;
   padding-right: 40px;
-  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
 .misaki-news li a:hover .text {
@@ -1030,7 +1030,7 @@ footer .subnav {
 }
 
 footer .subnav li a {
-  font-size: calc(8px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
   display: inline-block;
 }
 
