@@ -1007,12 +1007,12 @@ header nav ul li a .cart_number {
 /*************************************************************/
 
 footer {
-  border-top: 1px solid #c8c8c8;
-
+  border-top: 1px solid #fbfbfb;
+  background-color: #fafffc;
 }
 
 footer .inner {
-  padding: 40px 0;
+  padding: 3rem 0;
 }
 
 footer ul {
@@ -1035,8 +1035,26 @@ footer .subnav li a {
 }
 
 @media (max-width: 767px) {
+  footer .subnav {
+    border: #fbfbfb 1px solid;
+    margin: 0 1rem;
+    border-radius: 1.5rem;
+    background-color: #fff;
+  }
+
   footer .subnav li {
     border-left: none !important;
+    text-align: left !important;
+    padding: .5rem 1.5rem;
+    border-bottom: #fbfbfb 1px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  footer .subnav li:last-child {
+    border-bottom: none;
   }
 
   footer .subnav li+li {
@@ -1046,6 +1064,16 @@ footer .subnav li a {
 
   footer .subnav li a {
     padding: 10px 0;
+    flex: 1;
+  }
+
+  footer .subnav li a::after {
+    content: "\e649";
+    font-family: 'themify';
+    margin-left: 5px;
+    position: absolute;
+    right: 1.5rem;
+    color: #c8c8c8;
   }
 }
 
