@@ -258,6 +258,37 @@ h5 {
   font-size: calc(10px + 2 * ((100vw - 320px) / 670));
 }
 
+.title-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.title-header .ttl {
+  margin-bottom: 0;
+}
+
+.title-header .btn-all {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  text-align: right;
+  font-size: calc(8px + 2 * ((100vw - 320px) / 670));
+  /*border: 1px solid #777;*/
+  border-radius: 2.5rem;
+  padding: .5rem 1rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  background-color: #0dab65;
+  color: #fff;
+}
+
+.title-header .btn-all:hover {
+  background-color: rgb(0, 184, 76, .6);
+  color: #333 !important;
+}
+
 
 
 /*************************************************************/
@@ -691,6 +722,7 @@ header nav ul li a .cart_number {
   }
 }
 
+
 /*************************************************************/
 /*.card-pro----------------*/
 .card-pro .card {
@@ -869,37 +901,6 @@ header nav ul li a .cart_number {
 /*************************************************************/
 /*.misaki-news----------------*/
 
-.misaki-news-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  padding-bottom: 4rem;
-}
-
-.misaki-news-header .ttl {
-  position: absolute;
-  margin-bottom: 0;
-}
-
-.misaki-news-header .news-all {
-  position: absolute;
-  right: 0;
-  z-index: 2;
-  text-align: right;
-  font-size: calc(8px + 2 * ((100vw - 320px) / 670));
-  /*border: 1px solid #777;*/
-  border-radius: 2.5rem;
-  padding: .5rem 1rem;
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-  background-color: #0dab65;
-  color: #fff;
-}
-
-.misaki-news-header .news-all:hover {
-  background-color: rgb(0, 184, 76, .6);
-  color: #333 !important;
-}
 
 .misaki-news li {
   border-top: 1px solid #C8C8C8;
