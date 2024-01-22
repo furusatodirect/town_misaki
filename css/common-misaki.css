@@ -289,7 +289,37 @@ h5 {
   color: #333 !important;
 }
 
+.txt-diagonal {
+  position: relative;
+  display: inline-block;
+  margin: .5em 0;
+  padding: .5rem 1rem;
+  color: #555;
+  font-size: 16px;
+  background: #9efcc5;
+  left: 52%;
+  text-align: center;
+  border-radius: 1.5rem;
+  transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+}
 
+.txt-diagonal:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+  border: 6px solid transparent;
+  border-top: 10px solid #9efcc5;
+}
+
+.txt-diagonal span {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
 
 /*************************************************************/
 /*header-----------------*/
