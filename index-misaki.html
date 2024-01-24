@@ -304,19 +304,176 @@
     <section class="sec-my">
       <div class="container">
 
-
-
         <div class="txt-diagonal">
           <span>カンタン！</span>
         </div>
         <div class="ttl">寄付手続き解説</div>
       </div>
-      <div class="row container-in">
 
-        <div class="col-12 col-xl-10">
+      <div class="row container-in howto">
+        <div class="col-12 col-xl-6">
+
+          <div class="row g-2 g-md-3 card-howto-step">
+            <div class="col-4 col-xl-4">
+              <div class="card">
+                <div class="card-header">
+                  STEP 1
+                </div>
+                <div class="detail-howto-img"><img src="../img/guide/howto1.png"></div>
+                <div class="card-title">控除上限額を確認する</div>
+              </div>
+            </div>
+
+            <div class="col-4 col-xl-4">
+              <div class="card">
+                <div class="card-header">
+                  STEP 2
+                </div>
+                <div class="detail-howto-img"><img src="../img/guide/howto2.png"></div>
+                <div class="card-title">返礼品を選んで申し込む</div>
+              </div>
+            </div>
+
+            <div class="col-4 col-xl-4">
+              <div class="card">
+                <div class="card-header">
+                  STEP 3
+                </div>
+                <div class="detail-howto-img"><img src="../img/guide/howto3.png"></div>
+                <div class="card-title">控除手続きをする</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-2 g-md-3 card-howto-detail">
+            <!--simulator-->
+            <div class="col-12">
+
+              <div id="sec-simulator">
+                <div class="bg-simulator">
+                  <p class="bg-simulator-header">
+                    STEP 1
+                  </p>
+                  <div class="bg-simulator-readaera">
+                    <p class="readttl">控除上限額シュミレーション</p>
+                    「あなたの年収」と「あなたの家族構成」から、実質負担2,000円でできる寄付金額上限の目安を表示します。
+                  </div>
+
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          more
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <p class="bg-simulator-read">
+                            ※本シミュレーション結果はあくまで目安となります。正確な金額を確認したい場合は、お住まいの市区町村や最寄りの税務署、税理士等にお問い合わせください。<br>
+                            ※中学生以下の子供は控除額に影響がないため、計算に入れる必要はありません。例えば、「夫婦子１人（小学生）」は、「夫婦」と同額になります。また、「夫婦子２人（高校生と中学生）」は、「夫婦子１人（高校生）」と同額になります。<br>
+                            ※本シミュレーションは給与所得者をケースとして計算しています。（控除は社会保険料、配偶者、扶養親族のみ考慮しています）<br>
+                            ※年金収入のみの方や個人事業主の方、住宅ローン控除や医療費控除等の控除を受けている給与所得者の方は寄付上限額が異なりますのでご注意ください。<br>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="bg-simulator-body">
+                    <div class="bg-simulator-row">
+                      <span class="bg-simulator-req">
+                        必須
+                      </span>
+                      <div class="bg-simulator-tq">
+                        あなたの年収
+                      </div>
+                      <div class="bg-simulator-select">
+                        <select id="select_income">
+                          <option selected="">選択してください</option>
+                          <option>300万円</option>
+                          <option>325万円</option>
+                          <option>350万円</option>
+                          <option>375万円</option>
+                          <option>400万円</option>
+                          <option>425万円</option>
+                          <option>450万円</option>
+                          <option>475万円</option>
+                          <option>500万円</option>
+                          <option>525万円</option>
+                          <option>550万円</option>
+                          <option>575万円</option>
+                          <option>600万円</option>
+                          <option>625万円</option>
+                          <option>650万円</option>
+                          <option>675万円</option>
+                          <option>700万円</option>
+                          <option>725万円</option>
+                          <option>750万円</option>
+                          <option>775万円</option>
+                          <option>800万円</option>
+                          <option>825万円</option>
+                          <option>850万円</option>
+                          <option>875万円</option>
+                          <option>900万円</option>
+                          <option>925万円</option>
+                          <option>950万円</option>
+                          <option>975万円</option>
+                          <option>1000万円</option>
+                          <option>1100万円</option>
+                          <option>1200万円</option>
+                          <option>1300万円</option>
+                          <option>1400万円</option>
+                          <option>1500万円</option>
+                          <option>1600万円</option>
+                          <option>1700万円</option>
+                          <option>1800万円</option>
+                          <option>1900万円</option>
+                          <option>2000万円</option>
+                          <option>2100万円</option>
+                          <option>2200万円</option>
+                          <option>2300万円</option>
+                          <option>2400万円</option>
+                          <option>2500万円</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="bg-simulator-row">
+                      <span class="bg-simulator-req">
+                        必須
+                      </span>
+                      <div class="bg-simulator-tq">
+                        あなたの家族構成
+                      </div>
+                      <div class="bg-simulator-select">
+                        <select id="select_family">
+                          <option selected="">選択してください</option>
+                          <option>独身又は共働き</option>
+                          <option>夫婦</option>
+                          <option>共働き＋子１人（高校生）</option>
+                          <option>共働き＋子１人（大学生）</option>
+                          <option>夫婦＋子１人（高校生）</option>
+                          <option>共働き＋子２人（大学生と高校生）</option>
+                          <option>夫婦＋子２人（大学生と高校生）</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div id="bg-result" class="bg-simulator-result">
+                      <p>納税額上限の目安</p>
+                      <input id="result_value" type="text" value="" readonly="" class="bg-simulator-ta">
+                    </div>
+
+                  </div>
+                </div>
+
+
+                <!--/simulator-->
+              </div>
+
+            </div>
+
+          </div>
         </div>
-
-      </div>
 
       </div>
     </section>
