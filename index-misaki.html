@@ -310,7 +310,7 @@
         <div class="ttl">寄付手続き解説</div>
       </div>
 
-      <div class="row container-in howto">
+      <div class="container-in howto">
         <div class="col-12 col-xl-6">
 
           <div class="row g-2 g-md-3 card-howto-step">
@@ -358,27 +358,6 @@
                     <p class="readttl">控除上限額シュミレーション</p>
                     「あなたの年収」と「あなたの家族構成」から、実質負担2,000円でできる寄付金額上限の目安を表示します。
                   </div>
-
-                  <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          more
-                        </button>
-                      </h2>
-                      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          <p class="bg-simulator-read">
-                            ※本シミュレーション結果はあくまで目安となります。正確な金額を確認したい場合は、お住まいの市区町村や最寄りの税務署、税理士等にお問い合わせください。<br>
-                            ※中学生以下の子供は控除額に影響がないため、計算に入れる必要はありません。例えば、「夫婦子１人（小学生）」は、「夫婦」と同額になります。また、「夫婦子２人（高校生と中学生）」は、「夫婦子１人（高校生）」と同額になります。<br>
-                            ※本シミュレーションは給与所得者をケースとして計算しています。（控除は社会保険料、配偶者、扶養親族のみ考慮しています）<br>
-                            ※年金収入のみの方や個人事業主の方、住宅ローン控除や医療費控除等の控除を受けている給与所得者の方は寄付上限額が異なりますのでご注意ください。<br>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
 
                   <div class="bg-simulator-body">
                     <div class="bg-simulator-row">
@@ -461,6 +440,27 @@
                     <div id="bg-result" class="bg-simulator-result">
                       <p>納税額上限の目安</p>
                       <input id="result_value" type="text" value="" readonly="" class="bg-simulator-ta">
+                      <div class="caution-txt">限度度額を超えた場合は、超過分について自己負担することになります。</div>
+                    </div>
+
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span>more</span>
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <p class="">
+                              ※本シミュレーション結果はあくまで目安となります。正確な金額を確認したい場合は、お住まいの市区町村や最寄りの税務署、税理士等にお問い合わせください。<br>
+                              ※中学生以下の子供は控除額に影響がないため、計算に入れる必要はありません。例えば、「夫婦子１人（小学生）」は、「夫婦」と同額になります。また、「夫婦子２人（高校生と中学生）」は、「夫婦子１人（高校生）」と同額になります。<br>
+                              ※本シミュレーションは給与所得者をケースとして計算しています。（控除は社会保険料、配偶者、扶養親族のみ考慮しています）<br>
+                              ※年金収入のみの方や個人事業主の方、住宅ローン控除や医療費控除等の控除を受けている給与所得者の方は寄付上限額が異なりますのでご注意ください。<br>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
                   </div>
