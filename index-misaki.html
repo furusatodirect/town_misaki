@@ -302,8 +302,8 @@
     </section>
 
     <section class="sec-my">
-      <div class="container">
 
+      <div class="container">
         <div class="txt-diagonal">
           <span>カンタン！</span>
         </div>
@@ -330,7 +330,7 @@
                   STEP 2
                 </div>
                 <div class="detail-howto-img"><img src="./img/guide/howto2.png"></div>
-                <div class="card-title">返礼品を選んで申し込む</div>
+                <div class="card-title">返礼品を選んで申込む</div>
               </div>
             </div>
 
@@ -345,18 +345,16 @@
             </div>
           </div>
 
-          <div class="row g-2 g-md-3 card-howto-detail">
-            <!--simulator-->
+          <div class="row g-2 g-md-3 card-howto-simulator">
             <div class="col-12">
 
               <div id="sec-simulator">
                 <div class="bg-simulator">
                   <p class="bg-simulator-header">
-                    STEP 1
+                    STEP 1<br>控除上限額を確認する
                   </p>
                   <div class="bg-simulator-readaera">
-                    <p class="readttl">控除上限額シュミレーション</p>
-                    「あなたの年収」と「あなたの家族構成」から、実質負担2,000円でできる寄付金額上限の目安を表示します。
+                    「年収」と「家族構成」から、<br class="sp" />実質負担2,000円でできる控除上限額の目安を表示します。
                   </div>
 
                   <div class="bg-simulator-body">
@@ -437,45 +435,83 @@
                         </select>
                       </div>
                     </div>
-                    <div id="bg-result" class="bg-simulator-result">
+                    <div id="bg-result" class="bg-simulator-result col-12 col-xl-7 mx-auto">
                       <p>納税額上限の目安</p>
                       <input id="result_value" type="text" value="" readonly="" class="bg-simulator-ta">
                       <div class="caution-txt">限度度額を超えた場合は、超過分について自己負担することになります。</div>
                     </div>
 
-                    <div class="accordion" id="accordionExample">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <span>more</span>
-                          </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                          <div class="accordion-body">
-                            <p class="">
-                              ※本シミュレーション結果はあくまで目安となります。正確な金額を確認したい場合は、お住まいの市区町村や最寄りの税務署、税理士等にお問い合わせください。<br>
-                              ※中学生以下の子供は控除額に影響がないため、計算に入れる必要はありません。例えば、「夫婦子１人（小学生）」は、「夫婦」と同額になります。また、「夫婦子２人（高校生と中学生）」は、「夫婦子１人（高校生）」と同額になります。<br>
-                              ※本シミュレーションは給与所得者をケースとして計算しています。（控除は社会保険料、配偶者、扶養親族のみ考慮しています）<br>
-                              ※年金収入のみの方や個人事業主の方、住宅ローン控除や医療費控除等の控除を受けている給与所得者の方は寄付上限額が異なりますのでご注意ください。<br>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
                   </div>
                 </div>
 
-
-                <!--/simulator-->
+                <div class="simulator-exc mx-auto">
+                  <p>
+                    ※本シミュレーション結果は参考目安です。正確な金額を確認するには、居住地の税務署や税理士にお問い合わせください。<br>
+                    ※「夫婦子１人（小学生）」は「夫婦」と同額です。「夫婦子２人（高校生と中学生）」は「夫婦子１人（高校生）」と同額です。<br>
+                    ※本シミュレーションは給与所得者を対象に計算しており、控除には社会保険料、配偶者、扶養親族が考慮されています。<br>
+                    ※年金収入のみの場合や個人事業主、住宅ローン控除や医療費控除を受けている場合は、寄付上限額が異なりますのでご注意ください。<br>
+                  </p>
+                </div>
               </div>
 
             </div>
-
           </div>
-        </div>
 
-      </div>
+          <div id="sec-howto-product">
+            <div class="col-12">
+
+              <div class="howto-product-header">
+                STEP 2<br>返礼品を選んで申込む
+              </div>
+
+              <div class="howto-product-body">
+                <div class="card-pro">
+
+                  <div class="d-demo">
+                    <div class="d-demo__wrap">
+                      <ul class="d-demo__list d-demo__list--left">
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-01.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-02.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-03.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-04.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-05.jpg" alt></li>
+                      </ul>
+                      <ul class="d-demo__list d-demo__list--left">
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-01.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-02.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-03.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-04.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-05.jpg" alt></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="d-demo">
+                    <div class="d-demo__wrap">
+                      <ul class="d-demo__list d-demo__list--right">
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-01.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-02.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-03.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-04.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-05.jpg" alt></li>
+                      </ul>
+                      <ul class="d-demo__list d-demo__list--right">
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-01.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-02.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-03.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-04.jpg" alt></li>
+                        <li class="d-demo__item"><img src="./img/gift/misaki-product-05.jpg" alt></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
     </section>
 
 
