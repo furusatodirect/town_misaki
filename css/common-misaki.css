@@ -242,6 +242,14 @@ h5 {
   margin-bottom: 2rem;
 }
 
+.ttls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+}
+
 .ttl:before {
   content: "";
   background: url(../img/misaki.png) no-repeat;
@@ -250,6 +258,18 @@ h5 {
   background-size: cover;
   margin-right: 1rem;
 }
+
+.ttls:before {
+  content: "";
+  background: url(../img/misaki.png) no-repeat;
+  width: 26px;
+  height: 20px;
+  background-size: cover;
+  margin-right: .5rem;
+}
+
+
+
 
 .img-r {
   border-radius: 1rem;
@@ -343,6 +363,7 @@ header {
   width: 100%;
   z-index: 99;
   border-bottom: 1px solid #c8c8c8;
+  height: 57px;
 }
 
 header .container {
@@ -443,7 +464,7 @@ header nav ul li a .cart_number {
   height: 2px;
   width: 100%;
   background: #333;
-  left: 50%;
+
   transform: translateX(-50%);
   z-index: 101;
   transition: transform .3s;
@@ -489,21 +510,32 @@ header nav ul li a .cart_number {
 /*.burger-menu-----------------*/
 .burger-menu {
   visibility: hidden;
-  /*right: calc((100% - 1920px) / 2);*/
-  left: calc((100% - 1920px) / 2);
-  top: 6px;
+  /*left: calc((100% - 1920px) / 2);*/
+  /*top: 6px;*/
   position: absolute;
-  width: 375px;
-  height: auto
-    /*625px*/
-  ;
+  /*width: 375px;*/
+  /*height: auto;*/
   background: #fff;
-  border-radius: 12px;
+  border-radius: 0 0 2rem 0;
   border: 1px solid #C8C8C8;
   opacity: 0;
   transition: opacity .5s;
   z-index: 98;
 }
+
+.burger-btn.close {
+  transition: opacity .5s;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@media screen and (max-width: 979px) {
+  .burger-menu {
+    width: 100%;
+  }
+}
+
 
 .burger-menu.fade {
   opacity: 1;
@@ -536,7 +568,24 @@ header nav ul li a .cart_number {
   font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
+.btn-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, .03);
+}
 
+.btn-commons {
+  border: #c8c8c8 2px solid;
+  border-radius: 2.5rem;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+}
 
 .navi-1st {
   border: #c8c8c8 1px solid;
@@ -607,13 +656,13 @@ header nav ul li a .cart_number {
 
 
 
-
+/*
 @media screen and (max-width:1920px) {
   .burger-menu {
     left: 2%;
   }
 }
-
+*/
 /*
 .burger-menu .inner ul {
   border-top: 1px solid #C8C8C8;
@@ -835,7 +884,7 @@ header nav ul li a .cart_number {
   height: 50px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 2rem;
   border-radius: 1rem;
 }
@@ -850,15 +899,16 @@ header nav ul li a .cart_number {
 }
 
 .catesearch {
-  width: 10%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: .5rem;
 }
 
 .searchbox {
   display: flex;
   align-items: center;
+  gap: .5rem;
 }
 
 .iconline {
@@ -873,18 +923,12 @@ header nav ul li a .cart_number {
 }
 
 .catealltxt {
-  padding-left: .5rem;
   font-size: calc(10px + 2 * ((100vw - 320px) / 670));
-}
-
-.catebar .swiper {
-  width: 90%;
-  height: 100%;
+  white-space: nowrap;
 }
 
 .catebar .sw_catelist {
   background: #eeeeee 0% 0% no-repeat padding-box;
-  width: 90%;
   height: 100%;
   border-radius: 0 1rem 1rem 0;
 }
@@ -1063,8 +1107,7 @@ header nav ul li a .cart_number {
   gap: 1rem;
 }
 
-#sec-simulator .bg-simulator,
-#sec-howto-product {
+#sec-simulator .bg-simulator {
   margin-top: 3rem;
   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
   background: #fff;
@@ -1072,8 +1115,7 @@ header nav ul li a .cart_number {
   position: relative;
 }
 
-#sec-simulator .bg-simulator-header,
-#sec-howto-product .howto-product-header {
+#sec-simulator .bg-simulator-header {
   padding: 0.5rem 1rem;
   text-align: center;
   font-size: calc(12px + 2 * ((100vw - 320px) / 670));
@@ -1098,8 +1140,7 @@ header nav ul li a .cart_number {
   font-size: calc(10px + 2 * ((100vw - 320px) / 670));
 }
 
-#sec-simulator .bg-simulator-body,
-.howto-product-body {
+#sec-simulator .bg-simulator-body {
   padding: 2rem;
   border-radius: 0 0 12px 12px;
   display: flex;
@@ -1273,10 +1314,40 @@ textarea {
   filter: blur(4px);
 }
 
+/*************************************************************/
+/*.sec-howto-product----------------*/
+
+#sec-howto-product {
+  margin-top: 3rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  background: #fff;
+  border-radius: 1rem;
+  position: relative;
+}
+
+#sec-howto-product .howto-product-header {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+  font-weight: bold;
+  border-radius: 1rem 1rem 0 0;
+  background: #00B84C;
+  color: #fff;
+}
+
+.howto-product-body {
+  padding: .5rem;
+  border-radius: 0 0 12px 12px;
+}
+
+.howto-product-body .card-pro {
+  display: flex;
+  flex-flow: column;
+}
+
 
 
 /* https://yumegori.com/infinity-scroll-making-method
-右から左へ
 ----------------------------*/
 @keyframes infinity-scroll-left {
   from {
@@ -1288,9 +1359,6 @@ textarea {
   }
 }
 
-/*
-左から右へ
-----------------------------*/
 @keyframes infinity-scroll-right {
   from {
     transform: translateX(-100%);
@@ -1301,51 +1369,78 @@ textarea {
   }
 }
 
-/*
-IE11対策
-----------------------------*/
-_:-ms-lang(x)::-ms-backdrop,
-.d-demo {
+----------------------------*/ _:-ms-lang(x)::-ms-backdrop,
+.ani-pro {
   display: -ms-grid;
   overflow: hidden;
 }
 
-/*----------------------------*/
-.d-demo__wrap {
+.ani-pro-wrap {
   display: flex;
   overflow: hidden;
 }
 
-.d-demo__list {
+.ani-pro-list {
   display: flex;
   list-style: none;
 }
 
-.d-demo__list--left {
+.ani-pro-list_left {
   animation: infinity-scroll-left 60s infinite linear 0.5s both;
 }
 
-.d-demo__list--right {
+.ani-pro-list_right {
   animation: infinity-scroll-right 60s infinite linear 0.5s both;
 }
 
-.d-demo__item {
+.ani-pro-item {
   /*width: calc(100vw / 10);*/
   width: calc(8vw + 60px);
 }
 
-.d-demo__item>img {
+.ani-pro-item>img {
   width: 100%;
 }
 
-/*
-マウスオーバーで一時停止させたい場合は以下
-----------------------------*/
-
-.d-demo__wrap:hover .d-demo__list--left,
-.d-demo__wrap:hover .d-demo__list--right {
+.ani-pro-wrap:hover .ani-pro-list_left,
+.ani-pro-wrap:hover .ani-pro-list_right {
   animation-play-state: paused;
 }
+
+/*************************************************************/
+/*.sec-howto-app----------------*/
+
+
+#sec-howto-app {
+  margin-top: 3rem;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  background: #fff;
+  border-radius: 1rem;
+  position: relative;
+}
+
+#sec-howto-app .sec-howto-app-header {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+  font-weight: bold;
+  border-radius: 1rem 1rem 0 0;
+  background: #00B84C;
+  color: #fff;
+}
+
+.sec-howto-app-body {
+  padding: .5rem;
+  border-radius: 0 0 12px 12px;
+}
+
+.sec-howto-app-body .card-pro {
+  display: flex;
+  flex-flow: column;
+}
+
+
+
 
 
 /*************************************************************/
@@ -1604,26 +1699,26 @@ _:-ms-lang(x)::-ms-backdrop,
 
 
 /*************************************************************/
-/*.bnr-misaki----------------*/
-.bnr-misaki {
+/*.link-misaki----------------*/
+.link-misaki {
   margin-bottom: 2rem;
 }
 
-.bnr-misaki .bnrnav {
+.link-misaki .bnrnav {
   display: flex;
   justify-content: space-between;
 }
 
-.bnr-misaki .bnrnav li {
+.link-misaki .bnrnav li {
   padding: .5rem;
 }
 
 @media (max-width: 767px) {
-  .bnr-misaki .bnrnav {
+  .link-misaki .bnrnav {
     flex-direction: column;
   }
 
-  .bnr-misaki .bnrnav li {
+  .link-misaki .bnrnav li {
     padding: .5rem 0;
   }
 

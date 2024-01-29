@@ -286,6 +286,7 @@ new Swiper(".sw_catelist", {
   allowTouchMove: true,
   initialSlide: 0,
   touchRatio: 1,
+  freeMode: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,

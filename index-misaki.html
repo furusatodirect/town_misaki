@@ -69,7 +69,6 @@
           <li><a href="http://13.115.133.43/use">寄付の使い道</a></li>
           <li><a href="http://13.115.133.43/jigyousha">事業者の紹介</a></li>
           <li><a href="{{ url('news_index') }}">お知らせ</a></li>
-          <li><a href="/guide">ふるさと納税の仕組みと手続き</a></li>
         </ul>
 
         <ul class="navi-2nd">
@@ -111,14 +110,14 @@
   <main id="top">
 
     <div class="catebar">
-      <a class="catesearch" href="">
-        <div class="searchbox">
+
+      <div class="catesearch">
+        <a href="" class="searchbox">
           <div class="iconline"><span class="fi ti-search"></span></div>
-        </div>
-        <div class="searchbox">
           <div class="catealltxt d-none d-md-block">カテゴリ</div>
-        </div>
-      </a>
+        </a>
+      </div>
+
       <div class="swiper sw_catelist">
         <div class="swiper-wrapper">
           <div class="swiper-slide"><a class="stretched-link" href="#1">果物類</a></div>
@@ -464,50 +463,86 @@
                 STEP 2<br>返礼品を選んで申込む
               </div>
 
-              <div class="howto-product-body">
+              <div class="howto-product-body position-relative">
                 <div class="card-pro">
 
-                  <div class="d-demo">
-                    <div class="d-demo__wrap">
-                      <ul class="d-demo__list d-demo__list--left">
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-01.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-02.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-03.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-04.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-05.jpg" alt></li>
+                  <div class="ani-pro">
+                    <div class="ani-pro-wrap">
+                      <ul class="ani-pro-list ani-pro-list_left">
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-01.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-02.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-03.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-04.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-05.jpg" alt></li>
                       </ul>
-                      <ul class="d-demo__list d-demo__list--left">
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-01.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-02.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-03.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-04.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-05.jpg" alt></li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="d-demo">
-                    <div class="d-demo__wrap">
-                      <ul class="d-demo__list d-demo__list--right">
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-01.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-02.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-03.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-04.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-05.jpg" alt></li>
-                      </ul>
-                      <ul class="d-demo__list d-demo__list--right">
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-01.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-02.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-03.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-04.jpg" alt></li>
-                        <li class="d-demo__item"><img src="./img/gift/misaki-product-05.jpg" alt></li>
+                      <ul class="ani-pro-list ani-pro-list_left">
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-01.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-02.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-03.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-04.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-05.jpg" alt></li>
                       </ul>
                     </div>
                   </div>
 
-                </div>
+                  <div class="ani-pro position-relative">
+                    <div class="ani-pro-wrap">
+                      <ul class="ani-pro-list ani-pro-list_right">
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-06.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-07.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-08.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-09.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-10.jpg" alt></li>
+                      </ul>
+                      <ul class="ani-pro-list ani-pro-list_right">
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-06.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-07.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-08.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-09.jpg" alt></li>
+                        <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-10.jpg" alt></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div><a href="#1" class="stretched-link position-relative"></a>
               </div>
 
+              <div class="btn-area">
+                <a class="btn-commons" href="">
+                  <div class="ttls">美咲町の返礼品一覧</div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="sec-howto-app">
+            <div class="col-12">
+
+              <div class="sec-howto-app-header">
+                STEP 3<br>控除手続きをする
+              </div>
+
+              <div class="row g-2 g-md-3">
+
+                <div class="col-12 col-md-6">
+                  <div class="card">
+                    <div class="card-body">
+                      私たちの自治体は教育の分野で未来を築きます。<br>
+                      寄付は、教育環境の向上や学習プログラムの拡充に活用され、地域の子供たちが知識と夢を育む手助けとなります。
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <div class="card">
+                    <div class="card-body">
+                      寄付金は、地域の子どもたちに質の高い教育、子育て支援プログラムの拡充や、教育環境の向上に活用され、未来の担い手たちを支え、共に歩む地域社会を築きます。
+                    </div>
+                  </div>
+                </div>
+
+              </div>
 
             </div>
           </div>
@@ -693,16 +728,16 @@
 
         <div class="ttl">美咲町リンク</div>
 
-        <div class="col-12 col-xl-6 mx-auto bnr-misaki">
+        <div class="col-11 col-xl-10 mx-auto link-misaki">
+          <iframe class="w-100 mx-auto map-misaki" src="https://platinumaps.jp/d/okayama-misaki/@35.000824,133.901181,12-13z" allow="geolocation"></iframe>
+        </div>
+
+        <div class="col-12 col-xl-6 mx-auto link-misaki">
           <ul class="bnrnav">
             <li><a target="_blank" href="https://www.town.misaki.okayama.jp/contents/tamagokakegohan/"><img src="./img/bnr-misaki-01.jpg"></a></li>
             <li><a target="_blank" href="https://www.camera-girls.net/featured/misaki-cho/"><img src="./img/bnr-misaki-02.jpg"></a></li>
             <li><a target="_blank" href="https://www.town.misaki.okayama.jp/contents/cycling/"><img src="./img/bnr-misaki-03.jpg"></a></li>
           </ul>
-        </div>
-
-        <div class="col-11 col-xl-10 mx-auto">
-          <iframe class="w-100 mx-auto map-misaki" src="https://platinumaps.jp/d/okayama-misaki/@35.000824,133.901181,12-13z" allow="geolocation"></iframe>
         </div>
 
       </div>
@@ -721,7 +756,6 @@
   <footer>
     <div class="col-12 col-xl-6 mx-auto inner">
       <ul class="subnav">
-        <li><a href="/guide">ふるさと納税の仕組みと手続き</a></li>
         <li><a href="/help/agreement">ご利用規約</a></li>
         <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
         <li><a href="/help/privacy">個人情報保護方針</a></li>
