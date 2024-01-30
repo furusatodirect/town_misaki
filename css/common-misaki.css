@@ -1319,10 +1319,9 @@ textarea {
 
 #sec-howto-product {
   margin-top: 3rem;
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-  background: #fff;
-  border-radius: 1rem;
   position: relative;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  border-radius: 1rem;
 }
 
 #sec-howto-product .howto-product-header {
@@ -1335,14 +1334,15 @@ textarea {
   color: #fff;
 }
 
-.howto-product-body {
-  padding: .5rem;
+#sec-howto-product .howto-product-body {
+  padding: 1rem;
   border-radius: 0 0 12px 12px;
+  background: #fff;
+
 }
 
-.howto-product-body .card-pro {
-  display: flex;
-  flex-flow: column;
+#sec-howto-product .btn-area {
+  border-radius: 0 0 12px 12px;
 }
 
 
@@ -1413,10 +1413,9 @@ textarea {
 
 #sec-howto-app {
   margin-top: 3rem;
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-  background: #fff;
-  border-radius: 1rem;
   position: relative;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  border-radius: 1rem;
 }
 
 #sec-howto-app .sec-howto-app-header {
@@ -1429,15 +1428,76 @@ textarea {
   color: #fff;
 }
 
-.sec-howto-app-body {
-  padding: .5rem;
+#sec-howto-app .sec-howto-app-body {
+  padding: 1rem;
+  background: #fff;
+  position: relative;
   border-radius: 0 0 12px 12px;
 }
 
-.sec-howto-app-body .card-pro {
-  display: flex;
-  flex-flow: column;
+#sec-howto-app table {
+  margin: 0;
 }
+
+#sec-howto-app .table-radius {
+  border: 1px solid #dee2e6;
+  border-radius: 1rem;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+#sec-howto-app .table-radius tr th,
+#sec-howto-app .table-radius tr td {
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+}
+
+#sec-howto-app .table-radius thead tr:first-child th {
+  border-bottom: 1px solid #dee2e6;
+}
+
+#sec-howto-app .table-radius tr:first-child td {
+  border-top: none;
+}
+
+#sec-howto-app .table-radius tr th:last-child,
+#sec-howto-app .table-radius tr td:last-child {
+  border-right: none;
+}
+
+#sec-howto-app .table-radius tr th:first-child,
+#sec-howto-app .table-radius tr td:first-child {
+  border-left: none;
+}
+
+#sec-howto-app .table-radius tr:last-child th,
+#sec-howto-app .table-radius tr:last-child td {
+  border-bottom: none;
+}
+
+#sec-howto-app .sec-howto-app-body table th,
+#sec-howto-app .sec-howto-app-body table td {
+  padding: 1rem;
+}
+
+#sec-howto-app .sec-howto-app-body table th:first-child,
+#sec-howto-app .sec-howto-app-body table thead th {
+  text-align: center;
+  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+  font-weight: bold;
+}
+
+#sec-howto-app .sec-howto-app-body table td {
+  font-size: calc(8px + 2 * ((100vw - 320px) / 670));
+}
+
+#sec-howto-app .sec-howto-app-body table th:nth-child(2),
+#sec-howto-app .sec-howto-app-body table th:nth-child(3) {
+  width: 40%;
+}
+
+
 
 
 
