@@ -280,6 +280,37 @@ $(function () {
  */
 
 /**
+ * Swiper toppicswiper
+ */
+
+new Swiper(".toppicswiper", {
+  loop: true,
+  effect: "fade",
+  autoplay: {
+    delay: 6000,
+    disableOnInteraction: false,
+  },
+  speed: 2000,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+/*
+new Swiper(".toppicswiper", {
+  centeredSlides: true,
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+*/
+/**
  * Swiper catelist
  */
 new Swiper(".sw_catelist", {
@@ -287,10 +318,6 @@ new Swiper(".sw_catelist", {
   initialSlide: 0,
   touchRatio: 1,
   freeMode: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
   scrollbar: {
     el: ".swiper-scrollbar",
     draggable: true,

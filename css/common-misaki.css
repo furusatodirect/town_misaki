@@ -737,10 +737,11 @@ header nav ul li a .cart_number {
 
 /*************************************************************/
 /*.top-view-area-----------------*/
+
 .top-view-area {
   position: relative;
   padding-top: 56px;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 .top-view {
@@ -766,6 +767,7 @@ header nav ul li a .cart_number {
   box-shadow: 0 2px 6px 0px rgba(0, 0, 0, .2), 0 3px 7px 1px rgba(0, 0, 0, .1);
 }
 
+
 .top-img-bg-blur {
   margin: 0;
   padding: 0;
@@ -773,17 +775,30 @@ header nav ul li a .cart_number {
   z-index: 0;
   top: 0;
   left: 0;
-  /*top: -28px;
-  left: -30px;*/
   width: calc(100% + 100px);
   height: calc(100% + 100px);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(10px);
   opacity: 1;
   background-blend-mode: lighten;
   background-attachment: fixed;
+}
+
+.top-img-bg-blur:before {
+  content: '';
+  background: inherit;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
 }
 
 .top-img-bgw {
@@ -792,7 +807,6 @@ header nav ul li a .cart_number {
   position: relative;
   padding: 32px;
 }
-
 
 .top-img-on {
   display: flex;
@@ -836,7 +850,6 @@ header nav ul li a .cart_number {
   line-height: 3rem;
 }
 
-
 @media screen and (max-width: 979px) {
   .top-view {
     min-height: auto;
@@ -872,6 +885,49 @@ header nav ul li a .cart_number {
   }
 
 }
+
+
+
+/*
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.swiper-slide-active .top-img-tarea {
+  animation-name: fade-in-up;
+  animation-duration: 1s;
+  animation-delay: .5s;
+  animation-fill-mode: both;
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+.swiper-slide-active .top-img-bg {
+  animation-name: fade-in-down;
+  animation-duration: 1s;
+  animation-delay: .5s;
+  animation-fill-mode: both;
+}
+*/
 
 /*************************************************************/
 /*.catebar-----------------*/
