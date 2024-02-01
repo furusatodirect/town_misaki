@@ -364,6 +364,27 @@ new Swiper(".sw_topbnr", {
   },
 });
 
+/**
+ * Swiper sw_pro_dpic
+ */
+
+var swiper = new Swiper(".pd_Swiper", {
+  spaceBetween: 6,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+var swiper2 = new Swiper(".pd_Swiper2", {
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: swiper,
+  },
+});
+
 /*
  ** desvg
  */
