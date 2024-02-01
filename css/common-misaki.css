@@ -12,10 +12,7 @@ body {
   overflow: auto;
   background: #fff;
   box-sizing: border-box;
-  /*line-height: 1.5em;
-  font-size: 1.6em;*/
-  font-family: 'Noto Sans JP', serif;
-  font-weight: 400;
+  font-family: 'Klee One', serif;
   color: #333;
 }
 
@@ -46,7 +43,7 @@ main {
 }
 
 input {
-  font-family: 'Noto Sans JP', 'sans-serif';
+  font-family: 'Klee One', serif;
   color: #333;
   cursor: text;
   width: 100%;
@@ -371,6 +368,7 @@ header .container {
   align-items: center;
   justify-content: space-between;
   padding: 8px 0;
+  width: 98%;
 }
 
 header .logo img {
@@ -510,17 +508,19 @@ header nav ul li a .cart_number {
 /*.burger-menu-----------------*/
 .burger-menu {
   visibility: hidden;
-  /*left: calc((100% - 1920px) / 2);*/
-  /*top: 6px;*/
+  left: max(0px, calc((100% - 1920px) / 2));
+  top: 0;
   position: absolute;
-  /*width: 375px;*/
-  /*height: auto;*/
-  background: #fff;
-  border-radius: 0 0 2rem 0;
+  width: 390px;
+  height: auto;
+  background-color: #fbfbfb;
+  border-radius: 0 0 1.5rem 1.5rem;
   border: 1px solid #C8C8C8;
+  border-top: none;
   opacity: 0;
   transition: opacity .5s;
   z-index: 98;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15) !important;
 }
 
 .burger-btn.close {
@@ -529,10 +529,14 @@ header nav ul li a .cart_number {
   visibility: visible;
 }
 
+.burger-btn.close~body {
+  filter: blur(3px) !important;
+}
 
 @media screen and (max-width: 979px) {
   .burger-menu {
     width: 100%;
+    left: 0;
   }
 }
 
@@ -559,13 +563,14 @@ header nav ul li a .cart_number {
 }
 
 .btn-common {
-  border: #c8c8c8 3px solid;
+  /*border: #c8c8c8 3px solid;*/
   border-radius: 2.5rem;
-  background: #fff;
+  background: #0dab65;
   width: 90%;
   text-align: center;
   padding: 1rem 0;
   font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+  color: #fff;
 }
 
 .btn-area {
@@ -634,7 +639,7 @@ header nav ul li a .cart_number {
 }
 
 .navi-2nd li {
-  padding: 1rem;
+  padding: .5rem;
   align-items: center;
   width: 50%;
 }
@@ -749,22 +754,27 @@ header nav ul li a .cart_number {
   min-height: 320px;
 }
 
-.top-img-bg {
+.top-img-wrapper {
   position: absolute;
   z-index: 2;
   height: 100%;
   border-radius: 0 0 16px 16px/0 0 16px 16px;
-  top: 0;
+  top: 1rem;
   left: 50%;
   margin-left: -480px;
   width: 960px;
+  overflow: hidden;
+  transform: scale(1.1);
+  box-shadow: 0 2px 6px 0px rgba(0, 0, 0, .2), 0 3px 7px 1px rgba(0, 0, 0, .1);
+}
+
+.top-img-bg {
+  height: 100%;
+  width: 100%;
   background-position: top;
   background-repeat: no-repeat;
   background-size: auto 100%;
-  background-color: var(--bg-color);
   transform-origin: top center;
-  transform: scale(1.1);
-  box-shadow: 0 2px 6px 0px rgba(0, 0, 0, .2), 0 3px 7px 1px rgba(0, 0, 0, .1);
 }
 
 
@@ -816,7 +826,7 @@ header nav ul li a .cart_number {
   justify-content: center;
   z-index: 3;
   position: absolute;
-  bottom: -32px;
+  bottom: -2rem;
   left: 50%;
   margin-left: -480px;
 }
@@ -836,32 +846,28 @@ header nav ul li a .cart_number {
   font-size: calc(14px + 8 * ((100vw - 320px) / 670));
   font-weight: 700;
   text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  line-height: 3.5rem;
 }
 
 .top-img-read {
   color: #fafafa;
   font-size: calc(12px + 2 * ((100vw - 320px) / 670));
   text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  line-height: 3rem;
+  overflow-wrap: break-word;
+  line-height: 2rem;
 }
 
 @media screen and (max-width: 979px) {
   .top-view {
     min-height: auto;
-    margin-bottom: 2rem;
+    /*margin-bottom: 2rem;*/
   }
 
-  .top-img-bg {
+  .top-img-wrapper {
     left: 0;
     margin: 0;
     width: 100%;
     height: 33.33333vw;
-    transform: scale(1);
+    transform: scale(1.1);
     box-shadow: none;
     border-radius: 0;
     position: relative;
@@ -871,7 +877,7 @@ header nav ul li a .cart_number {
     bottom: 0;
     left: 0;
     margin-left: 0;
-    padding-left: 2.2rem;
+    padding-left: 1rem;
   }
 
   .top-img-title,
@@ -886,48 +892,48 @@ header nav ul li a .cart_number {
 
 }
 
-
-
-/*
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
+@keyframes zoomUp {
+  0% {
+    transform: scale(1);
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  100% {
+    transform: scale(1.1);
   }
 }
 
-.swiper-slide-active .top-img-tarea {
-  animation-name: fade-in-up;
-  animation-duration: 1s;
-  animation-delay: .5s;
-  animation-fill-mode: both;
+.swiper-slide-active .top-img-bg,
+.swiper-slide-duplicate-active .top-img-bg,
+.swiper-slide-prev .top-img-bg {
+  animation: zoomUp 10s linear 0s 1 normal both;
 }
 
-@keyframes fade-in-down {
-  from {
-    opacity: 0;
-    transform: translateY(0px);
+.top-img-bg img {
+  display: block;
+}
+
+
+@keyframes moveLeft {
+  0% {
+    transform: scale(1);
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0px);
+  100% {
+    transform: scale(1.15);
   }
 }
 
-
-.swiper-slide-active .top-img-bg {
-  animation-name: fade-in-down;
-  animation-duration: 1s;
-  animation-delay: .5s;
-  animation-fill-mode: both;
+.swiper-slide-active .top-img-bg-blur,
+.swiper-slide-duplicate-active .top-img-bg-blur,
+.swiper-slide-prev .top-img-bg-blur {
+  animation: moveLeft 10s linear 0s 1 normal both;
 }
-*/
+
+.top-img-bg-blur img {
+  display: block;
+}
+
+
 
 /*************************************************************/
 /*.catebar-----------------*/
@@ -1486,17 +1492,18 @@ textarea {
 
 #sec-howto-app .sec-howto-app-body {
   padding: 1rem;
-  background: #fff;
+  background-color: rgba(0, 0, 0, .03);
   position: relative;
   border-radius: 0 0 12px 12px;
 }
 
 #sec-howto-app table {
   margin: 0;
+  background: #fff;
 }
 
 #sec-howto-app .table-radius {
-  border: 1px solid #dee2e6;
+  border: 2px solid #c8c8c8;
   border-radius: 1rem;
   border-spacing: 0;
   border-collapse: separate;
@@ -1505,12 +1512,12 @@ textarea {
 #sec-howto-app .table-radius tr th,
 #sec-howto-app .table-radius tr td {
   border: none;
-  border-bottom: 1px solid #dee2e6;
-  border-right: 1px solid #dee2e6;
+  border-bottom: 2px solid #c8c8c8;
+  border-right: 2px solid #c8c8c8;
 }
 
 #sec-howto-app .table-radius thead tr:first-child th {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 2px solid #c8c8c8;
 }
 
 #sec-howto-app .table-radius tr:first-child td {

@@ -111,6 +111,15 @@ $(function () {
   $(".burger-btn").on("click", function () {
     $(".burger-btn").toggleClass("close");
     $(".burger-menu").toggleClass("fade");
+    if ($(".burger-btn").hasClass("close")) {
+      $("main, .toppicswiper, footer").css({
+        filter: "blur(3px)",
+      });
+    } else {
+      $("main, .toppicswiper, footer").css({
+        filter: "none",
+      });
+    }
   });
 
   /*TOPへ戻るボタン*/
