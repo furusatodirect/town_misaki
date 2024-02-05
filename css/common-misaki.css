@@ -172,6 +172,75 @@ button.favorite.red i {
   margin-top: -2.5px;
 }
 
+.slidein {
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: all 1s;
+
+  &.slidein-left {
+    transform: translate(-100%, 0);
+  }
+
+  &.slidein-right {
+    transform: translate(100%, 0);
+  }
+
+  &.slidein-up {
+    transform: translate(0, -100%);
+  }
+
+  &.slidein-bottom {
+    transform: translate(0, 100%);
+  }
+
+  &.scrollin {
+    transform: translate(0, 0) !important;
+    opacity: 1 !important;
+  }
+}
+
+/*
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(100px);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.fadeInDown {
+  opacity: 0;
+  transform: translateY(-100px);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.fadeInLeft {
+  opacity: 0;
+  transform: translateX(-100px);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.fadeInRight {
+  opacity: 0;
+  transform: translateX(100px);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {}
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+*/
 /*************************************************************/
 /*parts-----------------*/
 
