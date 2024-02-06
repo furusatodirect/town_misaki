@@ -351,7 +351,7 @@
 
     <section class="sec-my">
 
-      <div class="container slidein slidein-bottom">
+      <div class="container">
         <div class="txt-diagonal">
           <span>カンタン！</span>
         </div>
@@ -361,7 +361,7 @@
       <div class="container-in howto">
         <div class="col-12 col-xl-6">
 
-          <div class="row g-2 g-md-3 card-howto-step slidein slidein-bottom">
+          <div class="row g-2 g-md-3 card-howto-step">
             <div class="col-4 col-xl-4">
               <div class="card">
                 <div class="card-header">
@@ -393,7 +393,7 @@
             </div>
           </div>
 
-          <div class="row g-2 g-md-3 card-howto-simulator slidein slidein-bottom">
+          <div class="row g-2 g-md-3 card-howto-simulator">
             <div class="col-12">
 
               <div id="sec-simulator">
@@ -867,19 +867,6 @@
   <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
   <script type="text/javascript" src="./js/slick.min.js"></script>
   <script type="text/javascript" src="./js/common-misaki.js"></script>
-  <script>
-    $(window).scroll(function () {
-      $('.slidein').each(function () {
-        var elemPos = $(this).offset().top,
-          scroll = $(window).scrollTop(),
-          windowHeight = $(window).height();
-
-        if (scroll > elemPos - windowHeight + 0) {
-          $(this).addClass('scrollin');
-        }
-      });
-    });
-  </script>
 
 </body>
 

@@ -365,9 +365,32 @@ new Swiper(".sw_topbnr", {
 });
 
 /**
- * Swiper sw_pro_dpic
+ * swiper product detail
  */
+const mySwiper_pd_thumb = new Swiper(".pd_thumb", {
+  /*slidesPerView: 5,*/
+  slidesPerView:
+    document.querySelectorAll(".pd_thumb .swiper-slide").length > 5 ? 5.5 : 5, //5枚以上の場合は初期値5→5.5枚表示
+  spaceBetween: 6,
+  grabCursor: true,
+});
 
+const mySwiper_pd_main = new Swiper(".pd_main", {
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
+  speed: 600,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: mySwiper_pd_thumb,
+  },
+});
+
+/*
 var swiper = new Swiper(".pd_Swiper", {
   spaceBetween: 6,
   slidesPerView: 4,
@@ -384,7 +407,7 @@ var swiper2 = new Swiper(".pd_Swiper2", {
     swiper: swiper,
   },
 });
-
+*/
 /*
  ** desvg
  */

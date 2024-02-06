@@ -29,6 +29,206 @@
 </head>
 
 <body>
+
+  <style>
+    .ec-layoutRole .ec-layoutRole__contents {
+      margin-right: auto !important;
+      margin-left: auto !important;
+      width: 100% !important;
+      max-width: 1150px !important;
+      display: flex !important;
+      flex-wrap: nowrap !important;
+    }
+
+    .ec-layoutRole .ec-layoutRole__main {
+      width: 100% !important;
+    }
+
+    #gift.detail .floating_cart .default .go-cart.disabled,
+    #gift.detail .floating_cart .default .go-cart.disabled:hover {
+      background: gray;
+      color: white;
+    }
+
+    .icons {
+      position: relative;
+    }
+
+    .balloon1 {
+      display: none;
+    }
+
+    .balloon {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      display: block;
+      width: 185px;
+      border-radius: 10px;
+      background: white;
+    }
+
+    #share-list a {
+      display: block;
+      border-bottom: solid 1px #777;
+      padding: 1rem;
+    }
+
+    #share-list a:last-child {
+      border-bottom: none;
+    }
+
+    #share-list a span {
+      vertical-align: super;
+    }
+
+    .balloon i,
+    .balloon button {
+      font-size: 2.85rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      transition: 0.3s;
+      display: inline;
+    }
+
+    .balloon a:hover {
+      opacity: 0.6;
+    }
+
+    .detail button.favorite {
+      padding: 0 2px;
+      margin-left: -2px;
+    }
+
+
+
+    #df_cart {
+      display: none
+    }
+
+    .sticky-bt {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 68px;
+      z-index: 98;
+    }
+
+    #sec_bt_cart {
+      box-sizing: border-box;
+      z-index: 81;
+      right: 19%;
+      bottom: 25px;
+      height: auto;
+      background: #fff;
+      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
+      padding: 15px;
+    }
+
+    #sec_bt_cart .default {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #sec_bt_cart .default .price span {
+      font-weight: bold;
+      font-size: 1.4rem;
+      padding: 0 4px 0 8px;
+    }
+
+    #sec_bt_cart {
+      text-align: center;
+      margin-top: 2.5rem;
+      margin-bottom: -1rem;
+      border-radius: 8px;
+      border: 1px solid #C8C8C8;
+    }
+
+    #sec_bt_cart .default .go-cart {
+      background: #FF004E;
+      color: #fff;
+      width: 55%;
+      border: 1px solid #FF004E;
+      padding: 1rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      #sec_bt_cart .btns button.gocart {
+        width: 55% !important;
+        padding: 1rem !important;
+        font-size: 1.5rem !important;
+      }
+    }
+
+    #sec_bt_cart .default .go-cart:hover {
+      background: #fff;
+      color: #FF004E;
+      border: 1px solid #FF004E;
+    }
+
+    #sec_bt_cart .default .go-cart.disabled,
+    #sec_bt_cart .default .go-cart.disabled:hover {
+      background: gray;
+      color: white;
+      border: 1px solid gray;
+    }
+
+    #sec_bt_cart button {
+      border-radius: 8px;
+      font-size: 1.4rem;
+      text-align: center;
+      padding: 6px;
+    }
+
+    #sec_bt_cart .btns {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    #sec_bt_cart .btns button.gocart {
+      display: block;
+      width: 60%;
+      border: 1px solid #F6F6F6;
+      background: #F6F6F6;
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    #sec_bt_cart .btns button.gocart:hover {
+      background: #fff;
+      border-color: #c8c8c8;
+    }
+
+    @media screen and (min-width: 769px) {
+      #sec_bt_cart .default .go-cart {
+        min-width: 60%;
+        padding: 1.5rem;
+        font-size: 2rem;
+      }
+
+      #sec_bt_cart .default .price span {
+        font-size: 2rem;
+      }
+
+      .sec_bt_cart_under {
+        width: 47%;
+        left: 26%;
+        top: 0;
+        position: relative;
+      }
+    }
+
+    .addition {
+      display: none;
+    }
+  </style>
+
+
   <header>
     <div class="container">
       <nav>
@@ -91,508 +291,222 @@
   </header>
 
 
+  <main id="gift" class="">
 
-  <div class="ec-layoutRole__contents">
 
+    <section class="bg-light-gradient border-bottom border-white border-5 detail-pro">
 
-    <main id="gift" class="detail">
       <div class="container">
 
+        <div class="row mt-3 g-1 g-md-2 col-md-7 mx-auto">
 
-        <div class="floating_cart">
-          <div class="addition">
-            <ul>
-              <li class="subtotal">小計<span>12,000</span>円</li>
-              <li class="btns"><button>カートを見る</button><button>手続きに進む</button></li>
-            </ul>
+          <div class="col-md-6 d-flex flex-column h-100">
+
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper pd_main pic-m">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img class="" src="./img/gift/misaki-product-01.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/gift/misaki-product-02.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/gift/misaki-product-03.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/gift/misaki-product-04.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/gift/misaki-product-05.jpg" />
+                </div>
+              </div>
+            </div>
+
+            <div thumbsSlider="" class="swiper pd_thumb pic-t">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="./img/gift/misaki-product-01.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/gift/misaki-product-02.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/gift/misaki-product-03.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/gift/misaki-product-04.jpg" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="./img/gift/misaki-product-05.jpg" />
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div class="default">
-            <p class="price">寄付金額<span>12,000</span>円</p><button class="go-cart">カートに追加</button>
-          </div>
-        </div>
-
-        <!--
-                <div class="floating_cart">
-                    <style>
-                        .floating_cart .form-group {
-                            display: none;
-                        }
-                    </style>
-
-                    <div class="addition">
-                        <button
-                            onclick="location.href='https://mombetsu.furusato-direct.jp/products/list?orderby=1'"><span>お礼の品一覧へ戻る</span></button>
-                        <button onclick="location.href='https://mombetsu.furusato-direct.jp/cart'">寄付カートへ進む</button>
-                    </div>
-
-                    <form action="https://mombetsu.furusato-direct.jp/products/add_cart/141" method="post" id="form1"
-                        name="form1">
-                        <div class="default">
-                            <p class="price">
-                                寄付金額<span>14,000</span>円</p>
-
-                            <button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
-
-                        </div>
 
 
-                        <input type="hidden" id="product_id" name="product_id" value="141" /><input type="hidden" id="ProductClass"
-                            name="ProductClass" value="141" />
-                        <div class="form-group"><label for="quantity" class="required">Quantity</label><input type="number"
-                                id="quantity" name="quantity" required="required" min="1" maxlength="9" class="form-control"
-                                value="1" />
-                        </div><input type="hidden" id="_token" name="_token" value="yTkmqrnoM0KOGQzZjqJkDUWU18DE2T_NeEHypgKDEG4" />
+          <div class="col-md-6 d-flex flex-column h-100">
+            <div class="card h-100 shadow border-top d-flex flex-column" style="padding:0;border-radius: .5rem .5rem;">
 
-                    </form>
-
+              <div class="bg-primary" style="border-radius: .5rem .5rem 1.5rem 1.5rem;">
+                <div class="py-2 px-3 h-100">
+                  <span class="badge rounded-pill bg-white mb-2"><span class="txtsm text-primary">お礼の品</span></span>
+                  <p class="txtmd fw-bold text-white">A5等級神戸牛（神戸ビーフ）おまかせ焼肉セット　500ｇ　［神戸牛専門店 神戸ぐりる工房］</p>
                 </div>
--->
-
-
-
-
-        <div class="product_detail">
-
-          <div class="container">
-            <div class="row mt-3 g-1 g-md-2 col-md-10 mx-auto align-items-stretch">
-
-              <div class="col-md-6 d-flex flex-column h-100">
-
-                <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper pd_Swiper2">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_01.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_02.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_03.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_04.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_05.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_06.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_07.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_08.jpg" />
-                    </div>
-                  </div>
-                  <div class="swiper-button-next"></div>
-                  <div class="swiper-button-prev"></div>
-
-                </div>
-                <div thumbsSlider="" class="swiper pd_Swiper">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_01.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_02.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_03.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_04.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_05.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_06.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_07.jpg" />
-                    </div>
-                    <div class="swiper-slide">
-                      <img src="assets/img/gallery/pd_08.jpg" />
-                    </div>
-                  </div>
-                  <div class="swiper-button-next text-primary txtmd"><i class="bi bi-arrow-right-circle-fill"></i></div>
-                  <div class="swiper-button-prev text-primary txtmd"><i class="bi bi-arrow-left-circle-fill"></i></div>
-                </div>
-
               </div>
 
+              <div class="d-flex justify-content-around align-content-center py-3">
+                <p class="txtbase text-dark text-end mb-2">寄付金額 <span class="txtlg fw-bold">19,000</span> 円</p>
+                <a class="btn btn-md btn-danger d-flex align-items-center justify-content-center" tabindex="-1" style="pointer-events: none;">
+                  <span class="txtbase">寄付カートに入れる</span>
+                </a>
+              </div>
 
-              <div class="col-md-6 d-flex flex-column h-100">
-                <div class="card h-100 shadow border-top d-flex flex-column" style="padding:0;border-radius: .5rem .5rem;">
-
-                  <div class="bg-primary" style="border-radius: .5rem .5rem 1.5rem 1.5rem;">
-                    <div class="py-2 px-3 h-100">
-                      <span class="badge rounded-pill bg-white mb-2"><span class="txtsm text-primary">お礼の品</span></span>
-                      <p class="txtmd fw-bold text-white">A5等級神戸牛（神戸ビーフ）おまかせ焼肉セット　500ｇ　［神戸牛専門店 神戸ぐりる工房］</p>
-                    </div>
-                  </div>
-
-                  <div class="d-flex justify-content-around align-content-center py-3">
-                    <p class="txtbase text-dark text-end mb-2">寄付金額 <span class="txtlg fw-bold">19,000</span> 円</p>
-                    <a class="btn btn-md btn-danger d-flex align-items-center justify-content-center" tabindex="-1" style="pointer-events: none;">
-                      <span class="txtbase">寄付カートに入れる</span>
-                    </a>
-                  </div>
-
-                  <div class="mt-auto p-2">
-                    <div class="dl"></div>
-                    <p class="w-100 p-2 txtbase fw-bold text-dark">お礼の品詳細</p>
-                    <div class="part txtbase">
-                      <dl>
-                        <dt>内容量</dt>
-                        <dd>500g、神戸肉之証（コピー）、牛脂、サンゴ塩</dd>
-                      </dl>
-                      <dl>
-                        <dt>消費/賞味期限</dt>
-                        <dd>発送日より30日間</dd>
-                      </dl>
-                      <dl>
-                        <dt>アレルギー</dt>
-                        <dd>牛肉</dd>
-                      </dl>
-                      <dl>
-                        <dt>事業者</dt>
-                        <dd>神戸牛専門店　神戸ぐりる工房</dd>
-                      </dl>
-                      <dl>
-                        <dt>お礼の品ID</dt>
-                        <dd>123456</dd>
-                      </dl>
-                    </div>
-                  </div>
-
+              <div class="mt-auto p-2">
+                <div class="dl"></div>
+                <p class="w-100 p-2 txtbase fw-bold text-dark">お礼の品詳細</p>
+                <div class="part txtbase">
+                  <dl>
+                    <dt>内容量</dt>
+                    <dd>500g、神戸肉之証（コピー）、牛脂、サンゴ塩</dd>
+                  </dl>
+                  <dl>
+                    <dt>消費/賞味期限</dt>
+                    <dd>発送日より30日間</dd>
+                  </dl>
+                  <dl>
+                    <dt>アレルギー</dt>
+                    <dd>牛肉</dd>
+                  </dl>
+                  <dl>
+                    <dt>事業者</dt>
+                    <dd>神戸牛専門店　神戸ぐりる工房</dd>
+                  </dl>
+                  <dl>
+                    <dt>お礼の品ID</dt>
+                    <dd>123456</dd>
+                  </dl>
                 </div>
               </div>
 
             </div>
           </div>
 
-
         </div>
 
-        <section class="sec1">
+      </div>
 
-          <!--{#author :MLJ Customize start#}-->
-          <section class="sticky-bt d-md-none">
-            <div id="sec_bt_cart">
-              <form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
-                <div class="default">
-                  <p class="price">
-                    寄付金額<span>
-                      <!--{{ Product.getPrice02IncTaxMin|number_format }}-->14,000</span>円</p>
-                  <!--{#author :MT start#}
-                                                        {% if  Product.applicable_on_from != null and Product.applicable_on_from > date() %}
-                                                        <button type="submit" class="add-cart go-cart disabled" disabled>{{Product.applicable_on_from|date_format('', 'm月d日')}}より受付開始</button>
-                                                        {% elseif Product.applicable_on_to != null and Product.applicable_on_to < date() %}
-                                                        <button type="submit" class="add-cart go-cart disabled" disabled>受付終了</button>
-                                                        {% elseif Product.stock_find == 0 or Product.out_of_stock == 1 %}
-                                                        <button type="submit" class="add-cart go-cart disabled" disabled>品切れ中</button>
-                                                        {% else %}
-                                                        <button type="submit" class="add-cart go-cart">{{ 'front.product.add_cart'|trans }}</button>
-                                                        {% endif %}
-                                                        {#author :MT end#}-->
-                  <button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
-                </div>
-                <!--{{ form_rest(form) }}-->
-              </form>
-            </div>
-          </section>
-          <!--{#author :MLJ Customize start#}-->
+      <div class="container">
+        <div class="row mt-3 g-1 g-md-2 col-md-7 mx-auto align-items-stretch">
 
-          <div class="Rside">
-            <div class="part">
-              <h3 class="product">14-22 オホーツク産ホタテ玉冷大(1kg)</h3>
-              <p>お刺身・フライ・バター焼き・ホタテマリネ等さまざまな料理に使用出来ます。<br />
-                オホーツク産のホタテは、北海道内でも稚貝（一年貝）を放流してから4年間流氷や水温の低い荒波の中で逞しく育つ為、養殖とは、まったく違い旨味が凝縮されており食感も良いと言われております。<br />
-                大粒で食べ応え抜群！ドドーンとたっぷり1kg<br />
-                パッケージがチャック付きの袋に改良されたので、保存が便利になりました！<br />
-                <br />
-                【2022年10月1日より、寄附額を改定させていただきました。】<br />
-                　数年続いておりました原材料の高騰や諸経費の値上がりに対し、企業努力を重ねてまいりましたが、今後も皆さまに返礼品を提供させていただくために、誠に不本意ではございますが、寄附金額を改定させていただくことになりました。<br />
-                　寄附金額が上がってしまいますが、皆さまのご期待を裏切らないよう、精進いたします。何卒ご理解のほどお願い申し上げますとともに、変わらぬご愛顧をお願い申し上げます。
+          <div class="col-md-6 d-flex flex-column h-100">
+            <div class="d-flex flex-column">
+              <p class="w-100 p-2 txtbase"><br>
+                但馬牛とは、明治36年の牛籍台帳以来、兵庫県内で厳正な個体管理や育種改良を進めてきた牛です。<br>
+                そのうち一定の枝肉格付けのものが神戸ビーフと呼ばれます。<br>
+                ※このお礼の品は兵庫県地域資源認定品です。神戸市産ではありません。<br>
+                A5等級神戸牛の霜降り、赤身、カルビをバランス良く混ぜた焼肉セット。<br>
+                世界に誇る神戸牛の美味しさを是非ご家庭で。高級感のある黒トレーでのお届けで、ギフトにもお勧めです。<br>
               </p>
+              <p class="w-100 p-2 txtbase">
+                【神戸牛（神戸ビーフ）とは】<br>
+                <br>
+                昭和58年、神戸牛流通推進協議会が設立され「神戸ビーフ」を世界一にする為、以下の厳しい牛肉の規格が定められました。<br>
+                <br>
+                「兵庫県産（但馬牛）」の未経産牛・去勢牛<br>
+                霜降りの度合いを表す「BMS」がNo.6以上<br>
+                可食部分の割合（歩留等級）がA・B等級<br>
+                枝肉重量が499.9kg以下<br>
+                肉質のきめ細かさ、しまり具合が優れている<br>
+                <br>
+                神戸ビーフに認定された牛肉には「のじぎく」の紋章が捺され<br>
+                神戸肉之証が発行されます。<br>
+                <br>
+                牛をかたどったブロンズ像が、神戸ビーフを取り扱う指定登録店の目印。<br>
+              </p>
+              <p class="w-100 p-2 txtbase">
+                【当店の神戸ビーフ】<br>
+                <br>
+                長年神戸牛を育ててきた、最優秀賞受賞歴のあるトップ生産者さんを中心に、優れたものだけを一頭買いしています。<br>
+                <br>
+                定期的に牧場に見学に行き、生産者さんと情報交換をしています。<br>
+                与える飼料や水への拘り、騒音の少ない環境等、農家さんは惜しみない愛情を注ぎ大切に牛を育てられています。<br>
+                <br>
+                これからもこのような素晴らしい生産者の方とよりよい関係を築いていき、<br>
+                お客様に最高の神戸牛をお届していきたいと考えております。<br>
+                <br>
+                <br>
+                熨斗（のし）ご希望の方には無地熨斗をお付けいたします。<br>
+                別途ご希望の際は直接ご連絡ください。<br>
+                <br>
+              </p>
+              <p class="w-100 p-2 txtbase">
+                【神戸牛専門店　神戸ぐりる工房／0120-078-199】
+              </p>
+            </div>
+          </div>
 
-
-
-              <style>
-                .sticky-bt {
-                  position: -webkit-sticky;
-                  position: sticky;
-                  top: 68px;
-                  z-index: 98;
-                }
-
-                #sec_bt_cart {
-                  box-sizing: border-box;
-                  z-index: 81;
-                  right: 19%;
-                  bottom: 25px;
-                  height: auto;
-                  background: #fff;
-                  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
-                  padding: 15px;
-                }
-
-                #sec_bt_cart .default {
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                }
-
-                #sec_bt_cart .default .price span {
-                  font-weight: bold;
-                  font-size: 1.4rem;
-                  padding: 0 4px 0 8px;
-                }
-
-                #sec_bt_cart {
-                  text-align: center;
-                  margin-top: 2.5rem;
-                  margin-bottom: -1rem;
-                  border-radius: 8px;
-                  border: 1px solid #C8C8C8;
-                }
-
-                #sec_bt_cart .default .go-cart {
-                  background: #FF004E;
-                  border: 1px solid #FF004E;
-                  color: #fff;
-                  width: 55%;
-                  padding: 1rem;
-                  font-weight: bold;
-                  font-size: 1.5rem;
-                }
-
-                #sec_bt_cart .default .go-cart:hover {
-                  background: #fff;
-                  color: #FF004E;
-                }
-
-                #sec_bt_cart .default .go-cart.disabled,
-                #sec_bt_cart .default .go-cart.disabled:hover {
-                  background: gray;
-                  color: white;
-                }
-
-                #sec_bt_cart button {
-                  border-radius: 8px;
-                  font-size: 1.4rem;
-                  text-align: center;
-                  padding: 6px;
-                }
-
-                @media screen and (min-width: 769px) {
-
-                  #sec_bt_cart .default .go-cart {
-                    min-width: 60%;
-                    padding: 1.5rem;
-                    font-size: 2rem;
-                  }
-
-                  #sec_bt_cart .default .price span {
-                    font-size: 2rem;
-                  }
-
-                  .sec_bt_cart_under {
-                    width: 47%;
-                    left: 26%;
-                    top: 0;
-                    position: relative;
-                  }
-                }
-              </style>
-
-              <!--{#author :MLJ Customize start#}-->
-              <section class="sticky-bt d-none d-md-block">
-                <div id="sec_bt_cart">
-                  <form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
-                    <div class="default">
-                      <p class="price">
-                        寄付金額<span>
-                          <!--{{ Product.getPrice02IncTaxMin|number_format }}-->14,000</span>円</p>
-                      <!--{#author :MT start#}
-              {% if  Product.applicable_on_from != null and Product.applicable_on_from > date() %}
-              <button type="submit" class="add-cart go-cart disabled" disabled>{{Product.applicable_on_from|date_format('', 'm月d日')}}より受付開始</button>
-              {% elseif Product.applicable_on_to != null and Product.applicable_on_to < date() %}
-              <button type="submit" class="add-cart go-cart disabled" disabled>受付終了</button>
-              {% elseif Product.stock_find == 0 or Product.out_of_stock == 1 %}
-              <button type="submit" class="add-cart go-cart disabled" disabled>品切れ中</button>
-              {% else %}
-              <button type="submit" class="add-cart go-cart">{{ 'front.product.add_cart'|trans }}</button>
-              {% endif %}
-              {#author :MT end#}-->
-                      <button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
-                    </div>
-                    <!--{{ form_rest(form) }}-->
-                  </form>
+          <div class="col-md-6 d-flex flex-column h-100">
+            <div class="d-flex flex-column">
+              <div class="mt-auto p-2">
+                <div class="dl"></div>
+                <p class="w-100 p-2 txtbase fw-bold text-dark">お申し込みについて</p>
+                <div class="part txtbase">
+                  <dl>
+                    <dt>申込条件</dt>
+                    <dd>何度も申し込み可</dd>
+                  </dl>
+                  <dl>
+                    <dt>申込期日</dt>
+                    <dd>通年</dd>
+                  </dl>
+                  <dl>
+                    <dt>発送期日</dt>
+                    <dd>寄附のご入金後、２週間以内を目途に発送いたします。</dd>
+                  </dl>
+                  <dl>
+                    <dt>配送方法</dt>
+                    <dd>冷凍配送</dd>
+                  </dl>
                 </div>
-              </section>
-              <!--{#author :MLJ Customize start#}-->
-            </div>
-
-
-
-
-            <div class="part">
-              <h3>お礼の品詳細</h3>
-
-              <dl class="category">
-                <dt>カテゴリー</dt>
-                <dd>
-                  <ul>
-                    <li>
-                      <a href="https://mombetsu.furusato-direct.jp/products/list?category_id=3">
-                        <span>魚貝類</span>
-                      </a> <span>＞</span>
-                      <a href="https://mombetsu.furusato-direct.jp/products/list?category_id=62">
-                        <span>アワビ・ホタテ・他</span>
-                      </a>
-                    </li>
-                  </ul>
-                </dd>
-              </dl>
-
-              <dl>
-                <dt>内容量</dt>
-                <dd>
-                  <p>大玉サイズ 1kg<br />
-                    【原産地】オホーツク産<br />
-                    【加工・製造地】XXX</p>
-                </dd>
-              </dl>
-
-              <dl>
-                <dt>アレルギー表示</dt>
-                <dd>なし </dd>
-              </dl>
-
-              <dl>
-                <dt>消費期限/賞味期限</dt>
-                <dd>発送日より1年</dd>
-              </dl>
-
-              <dl>
-                <dt>事業者名</dt>
-                <dd>
-                  <p class="Fbold">(株)本間水産</p>
-                  <a class="others" href="https://mombetsu.furusato-direct.jp/products/list?operator_name=(株)本間水産">
-                    他のお礼の品を見る
-                  </a>
-                </dd>
-              </dl>
-
-              <dl>
-                <dt>管理ID</dt>
-                <dd>14-22</dd>
-              </dl>
-            </div>
-
-            <div class="part">
-              <h3>お申し込みについて</h3>
-              <dl>
-                <dt>申込条件</dt>
-                <dd>何度も申し込み可</dd>
-              </dl>
-              <dl>
-                <dt>申込期日</dt>
-                <dd>通年</dd>
-              </dl>
-              <dl>
-                <dt>発送期日</dt>
-                <dd>入金確認後順次～最長1カ月半程度(着日・着曜日指定不可)
-                  ※お申込状況によっては発送までにお時間がかかる場合があります。</dd>
-              </dl>
-              <dl>
-                <dt>配送方法</dt>
-                <dd>冷凍配送</dd>
-              </dl>
-            </div>
-
-            <div class="part">
-              <h3>ふるさと納税の手続きについて</h3>
-              <p>ふるさと納税は、現在居住地の自治体に対して支払っている住民税を、自分が応援したい自治体に『寄付』という形で振替納税が出来る制度です。<br>
-                自治体への寄付金は、2,000円を超える額について、個人の年収に伴った控除額の上限内で納税が受けられます。</p>
-              <a class="btn-re" href="/guide">もっと詳しく</a>
-            </div>
-
-          </div>
-
-
-
-        </section>
-
-
-        <!--{#author :MLJ Customize start#}-->
-        <section class="sec_bt_cart_under d-none d-md-block mb-5">
-
-          <div id="sec_bt_cart">
-            <form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
-              <div class="default">
-                <p class="price">
-                  寄付金額<span>
-                    <!--{{ Product.getPrice02IncTaxMin|number_format }}-->14,000</span>円</p>
-
-
-                <!--{#author :MT start#}
-                            {% if  Product.applicable_on_from != null and Product.applicable_on_from > date() %}
-                            <button type="submit" class="add-cart go-cart disabled" disabled>{{Product.applicable_on_from|date_format('', 'm月d日')}}より受付開始</button>
-                            {% elseif Product.applicable_on_to != null and Product.applicable_on_to < date() %}
-                            <button type="submit" class="add-cart go-cart disabled" disabled>受付終了</button>
-                            {% elseif Product.stock_find == 0 or Product.out_of_stock == 1 %}
-                            <button type="submit" class="add-cart go-cart disabled" disabled>品切れ中</button>
-                            {% else %}
-                            <button type="submit" class="add-cart go-cart">{{ 'front.product.add_cart'|trans }}</button>
-                            {% endif %}
-                            {#author :MT end#}-->
-                <button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
               </div>
-              <!--{{ form_rest(form) }}-->
-
-            </form>
+            </div>
           </div>
 
+        </div>
+      </div>
 
-        </section>
-        <!--{#author :MLJ Customize start#}-->
+
+
+
+
+
+
+
+      <div class="container">
 
         <div id="kifu_bnrs">
 
-
-          <!--{#author :MLJ Customize start#}-->
           <section class="d-md-none mb-5">
             <div id="sec_bt_cart">
-              <form action="{{ url('product_add_cart', {id:Product.id}) }}" method="post" id="form1" name="form1">
+              <form action="https://mombetsu.furusato-direct.jp/products/add_cart/141" method="post" id="form1" name="form1">
                 <div class="default">
                   <p class="price">
-                    寄付金額<span>
-                      <!--{{ Product.getPrice02IncTaxMin|number_format }}-->14,000</span>円</p>
-
-
-                  <!--{#author :MT start#}
-                                                            {% if  Product.applicable_on_from != null and Product.applicable_on_from > date() %}
-                                                            <button type="submit" class="add-cart go-cart disabled" disabled>{{Product.applicable_on_from|date_format('', 'm月d日')}}より受付開始</button>
-                                                            {% elseif Product.applicable_on_to != null and Product.applicable_on_to < date() %}
-                                                            <button type="submit" class="add-cart go-cart disabled" disabled>受付終了</button>
-                                                            {% elseif Product.stock_find == 0 or Product.out_of_stock == 1 %}
-                                                            <button type="submit" class="add-cart go-cart disabled" disabled>品切れ中</button>
-                                                            {% else %}
-                                                            <button type="submit" class="add-cart go-cart">{{ 'front.product.add_cart'|trans }}</button>
-                                                            {% endif %}
-                                                            {#author :MT end#}-->
+                    寄付金額<span>14,000</span>円</p>
                   <button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
                 </div>
-                <!--{{ form_rest(form) }}-->
 
               </form>
+
+              <div class="addition">
+                <div class="btns">
+                  <button onclick="additionclose"><span class="fi ti-close"></span></button>
+                  <button onclick="location.href='https://mombetsu.furusato-direct.jp/cart'" class="gocart">寄付カートへ進む</button>
+                </div>
+              </div>
+
             </div>
           </section>
-          <!--{#author :MLJ Customize start#}-->
 
           <div class="part">
             <h3>ポータルサイトから寄付する</h3>
@@ -600,33 +514,48 @@
             <ul class="kifu_bnrs">
 
               <li>
-                <a id="bnr_choice" href="https://www.furusato-tax.jp/city/product/01219/0" target="_blank">
-                  <img src="./img/bnr/kifu_choice.png" alt="ふるさとチョイス">
+                <a id="bnr_rakuten" href="https://hb.afl.rakuten.co.jp/hgc/2e287241.d9aa9d80.2e287242.8baf850c/?pc=http%3A%2F%2Fwww.rakuten.co.jp%2Ff012190-mombetsu%2F&link_type=hybrid_url&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJoeWJyaWRfdXJsIiwiY29sIjoxLCJjYXQiOjEsImJhbiI6MTYzOTY1MSwiYW1wIjpmYWxzZX0%3D" target="_blank">
+                  <img src="./img/bnr/kifu_rakuten.png" alt="楽天ふるさと納税">
                 </a>
               </li>
               <li>
-                <a id="bnr_ana" href="https://furusato.ana.co.jp/01219/" target="_blank">
-                  <img src="./img/bnr/kifu_ana.png" alt="ANAのふるさと納税">
+                <a id="bnr_furunavi" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=885918552&vc_url=https%3A%2F%2Ffurunavi.jp%2FMunicipal%2FProduct%2FSearch%3Fmunicipalid%3D19%26utm_source%3Dvc%26utm_medium%3Daffiliate%26utm_campaign%3Dproduct_detail" target="_blank">
+                  <img src="./img/bnr/kifu_furunavi.png" alt="ふるなび">
                 </a>
               </li>
               <li>
-                <a id="bnr_satofull" href="https://h.accesstrade.net/sp/cc?rk=0100kid000har3&amp;url=https%3A%2F%2Fwww.satofull.jp%2Fcity-mombetsu-hokkaido%2F" target="_blank">
+                <a id="bnr_satofull" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=885918470&vc_url=https%3A%2F%2Fwww.satofull.jp%2Fproducts%2Flist.php%3Fs4%3D%25E5%258C%2597%25E6%25B5%25B7%25E9%2581%2593%26s3%3D%25E7%25B4%258B%25E5%2588%25A5%25E5%25B8%2582%26utm_source%3Dvaluecomme%26utm_medium%3Daffiliate" target="_blank">
                   <img src="./img/bnr/kifu_satofull.png" alt="さとふる">
                 </a>
               </li>
               <li>
-                <a id="bnr_rakuten" href="https://hb.afl.rakuten.co.jp/hgc/2e287241.d9aa9d80.2e287242.8baf850c/?pc=http%3A%2F%2Fwww.rakuten.co.jp%2Ff012190-mombetsu%2F&amp;link_type=hybrid_url&amp;ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJoeWJyaWRfdXJsIiwiY29sIjoxLCJjYXQiOiIxIiwiYmFuIjoiMTYzOTY1MSIsImFtcCI6ZmFsc2V9" target="_blank">
-                  <img src="./img/bnr/kifu_rakuten.png" alt="楽天ふるさと納税">
+                <a id="bnr_choice" href="https://www.furusato-tax.jp/city/product/01219?utm_source=hokkaido_mombetsushi&utm_medium=referral&utm_campaign=lgmk_01219" target="_blank">
+                  <img src="./img/bnr/kifu_choice.png" alt="ふるさとチョイス">
+                </a>
+              </li>
+              <li>
+                <a id="bnr_furulabo" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531503&vc_url=https%3A%2F%2Ffurusato.asahi.co.jp%2Fgoods%2F%3Fcm%3D21%26cs%3D1" target="_blank">
+                  <img src="./img/bnr/kifu_furulabo.png" alt="ふるラボ">
+                </a>
+              </li>
+              <li>
+                <a id="bnr_mynavi" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531781&vc_url=https%3A%2F%2Ffurusato.mynavi.jp%2Fproducts%2Fcm%3A30%2F" target="_blank">
+                  <img src="./img/bnr/kifu_mynavi.png" alt="マイナビふるさと納税">
+                </a>
+              </li>
+              <li>
+                <a id="bnr_ana" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531784&vc_url=https%3A%2F%2Ffurusato.ana.co.jp%2Fproducts%2Flist.php%3Fs3%3D%25E5%258C%2597%25E6%25B5%25B7%25E9%2581%2593_%25E5%258C%2597%25E6%25B5%25B7%25E9%2581%2593_%25E7%25B4%258B%25E5%2588%25A5%25E5%25B8%2582%26sort%3Dnumber5%2CScore%2CNumber1" target="_blank">
+                  <img src="./img/bnr/kifu_ana.png" alt="ANAのふるさと納税">
+                </a>
+              </li>
+              <li>
+                <a id="bnr_honpo" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531493&vc_url=https%3A%2F%2Ffurusatohonpo.jp%2Fdonate%2Fmunicipality%2F%3FlocalGovernmentId%3D81459d3a-00e0-494d-9977-72dc5031de60" target="_blank">
+                  <img src="./img/bnr/kifu_honpo.png" alt="ふるさと本舗">
                 </a>
               </li>
               <li>
                 <a id="bnr_nippon" href="https://furusato-nippon.com/hokkaido/012190" target="_blank">
                   <img src="./img/bnr/kifu_nippon.png" alt="ふるさと納税ニッポン">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_furunavi" href="https://furunavi.jp/Municipal/Product/Search?municipalid=19" target="_blank">
-                  <img src="./img/bnr/kifu_furunavi.png" alt="ふるなび">
                 </a>
               </li>
               <li>
@@ -642,11 +571,6 @@
               <li>
                 <a id="bnr_fururi" href="https://fururi.jp/city/01_hokkaido/2190_mombetsu/" target="_blank">
                   <img src="./img/bnr/kifu_fururi.png" alt="ふるり">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_honpo" href="https://furusatohonpo.jp/donate/municipality/?localGovernmentId=81459d3a-00e0-494d-9977-72dc5031de60" target="_blank">
-                  <img src="./img/bnr/kifu_honpo.png" alt="ふるさと本舗">
                 </a>
               </li>
               <li>
@@ -680,11 +604,6 @@
                 </a>
               </li>
               <li>
-                <a id="bnr_furulabo" href="https://furusato.asahi.co.jp/city/detail/012190" target="_blank">
-                  <img src="./img/bnr/kifu_furulabo.png" alt="ふるラボ">
-                </a>
-              </li>
-              <li>
                 <a id="bnr_mitsukoshi" href="https://mifurusato.jp/j/012190.html" target="_blank">
                   <img src="./img/bnr/kifu_mitsukoshi.png" alt="三越伊勢丹ふるさと納税">
                 </a>
@@ -700,11 +619,6 @@
                 </a>
               </li>
               <li>
-                <a id="bnr_mynavi" href="https://h.accesstrade.net/sp/cc?rk=0100p8z500har3&amp;url=https%3A%2F%2Ffurusato.mynavi.jp%2Fmunicipal%2Fdetail%2F012190%2F" target="_blank">
-                  <img src="./img/bnr/kifu_mynavi.png" alt="マイナビふるさと納税">
-                </a>
-              </li>
-              <li>
                 <a id="bnr_furusatomarket" href="https://furusatomarkets.jp/area/city/19" target="_blank">
                   <img src="./img/bnr/kifu_furusatomarket.png" alt="ふるさとマーケット">
                 </a>
@@ -714,45 +628,45 @@
 
           </div>
         </div>
-
-
-
-      </div>
-    </main>
-    <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
-
-
-
-
-    <footer>
-      <div class="col-12 col-xl-6 mx-auto inner">
-        <ul class="subnav">
-          <li><a href="/help/agreement">ご利用規約</a></li>
-          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
-          <li><a href="/help/privacy">個人情報保護方針</a></li>
-          <li><a href="/help/about">よくある質問</a></li>
-          <li><a href="/contact">お問い合わせ</a></li>
-        </ul>
       </div>
 
-      <div class="copyright">
-        <a href="{{ url('homepage') }}">
-          <img src="./img/misaki.png" />
-          <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
-        </a>
-      </div>
+  </main>
 
-    </footer>
 
-    <script type="text/javascript" src="./js/jquery.js"></script>
-    <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
-    <script type="text/javascript" src="./js/chart.min.js"></script>
-    <script type="text/javascript" src="./js/nouislider.min.js"></script>
-    <script type="text/javascript" src="./js/wNumb.js"></script>
-    <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="./js/slick.min.js"></script>
-    <script type="text/javascript" src="./js/common-misaki.js"></script>
+  <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+  <footer>
+    <div class="col-12 col-xl-6 mx-auto inner">
+      <ul class="subnav">
+        <li><a href="/help/agreement">ご利用規約</a></li>
+        <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+        <li><a href="/help/privacy">個人情報保護方針</a></li>
+        <li><a href="/help/about">よくある質問</a></li>
+        <li><a href="/contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+
+    <div class="copyright">
+      <a href="{{ url('homepage') }}">
+        <img src="./img/misaki.png" />
+        <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+      </a>
+    </div>
+
+  </footer>
+
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+  <script type="text/javascript" src="./js/chart.min.js"></script>
+  <script type="text/javascript" src="./js/nouislider.min.js"></script>
+  <script type="text/javascript" src="./js/wNumb.js"></script>
+  <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript" src="./js/common-misaki.js"></script>
 </body>
 
 </html>
