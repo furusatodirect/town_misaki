@@ -291,18 +291,17 @@
   </header>
 
 
-  <main id="gift" class="">
+  <main id="" class="">
 
 
-    <section class="bg-light-gradient border-bottom border-white border-5 detail-pro">
+    <section class="detail-pro">
 
       <div class="container">
+        <div class="row col-md-7 mx-auto">
 
-        <div class="row mt-3 g-1 g-md-2 col-md-7 mx-auto">
+          <div class="col-md-6 area-pro">
 
-          <div class="col-md-6 d-flex flex-column h-100">
-
-            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper pd_main pic-m">
+            <div class="swiper pd_main pic-m">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img class="" src="./img/gift/misaki-product-01.jpg" />
@@ -322,7 +321,7 @@
               </div>
             </div>
 
-            <div thumbsSlider="" class="swiper pd_thumb pic-t">
+            <div class="swiper pd_thumb pic-t">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <img src="./img/gift/misaki-product-01.jpg" />
@@ -345,55 +344,32 @@
           </div>
 
 
-          <div class="col-md-6 d-flex flex-column h-100">
-            <div class="card h-100 shadow border-top d-flex flex-column" style="padding:0;border-radius: .5rem .5rem;">
-
-              <div class="bg-primary" style="border-radius: .5rem .5rem 1.5rem 1.5rem;">
-                <div class="py-2 px-3 h-100">
-                  <span class="badge rounded-pill bg-white mb-2"><span class="txtsm text-primary">お礼の品</span></span>
-                  <p class="txtmd fw-bold text-white">A5等級神戸牛（神戸ビーフ）おまかせ焼肉セット　500ｇ　［神戸牛専門店 神戸ぐりる工房］</p>
-                </div>
-              </div>
-
-              <div class="d-flex justify-content-around align-content-center py-3">
-                <p class="txtbase text-dark text-end mb-2">寄付金額 <span class="txtlg fw-bold">19,000</span> 円</p>
-                <a class="btn btn-md btn-danger d-flex align-items-center justify-content-center" tabindex="-1" style="pointer-events: none;">
-                  <span class="txtbase">寄付カートに入れる</span>
-                </a>
-              </div>
-
-              <div class="mt-auto p-2">
-                <div class="dl"></div>
-                <p class="w-100 p-2 txtbase fw-bold text-dark">お礼の品詳細</p>
-                <div class="part txtbase">
-                  <dl>
-                    <dt>内容量</dt>
-                    <dd>500g、神戸肉之証（コピー）、牛脂、サンゴ塩</dd>
-                  </dl>
-                  <dl>
-                    <dt>消費/賞味期限</dt>
-                    <dd>発送日より30日間</dd>
-                  </dl>
-                  <dl>
-                    <dt>アレルギー</dt>
-                    <dd>牛肉</dd>
-                  </dl>
-                  <dl>
-                    <dt>事業者</dt>
-                    <dd>神戸牛専門店　神戸ぐりる工房</dd>
-                  </dl>
-                  <dl>
-                    <dt>お礼の品ID</dt>
-                    <dd>123456</dd>
-                  </dl>
-                </div>
-              </div>
-
+          <div class="col-md-6 area-pro">
+            <div class="area-pro-txt">
+              <p class="pro-ttl">A5等級神戸牛（神戸ビーフ）おまかせ焼肉セット　500ｇ　［神戸牛専門店 神戸ぐりる工房］</p>
             </div>
+
+            <section class="sticky-bt d-none d-md-block">
+              <div id="sec_bt_cart">
+                <form action="https://misaki.furusato-direct.jp/products/add_cart/1719" method="post" id="form1" name="form1">
+                  <div class="default">
+                    <p class="price">
+                      寄付金額<span>29,000</span>円</p>
+                    <button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
+                  </div>
+                </form>
+                <div class="addition" style="display: none;">
+                  <div class="btns">
+                    <button onclick="additionclose"><span class="fi ti-close"></span></button>
+                    <button onclick="location.href='https://misaki.furusato-direct.jp/cart'" class="gocart">寄付カートへ進む</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
           </div>
 
         </div>
-
       </div>
 
       <div class="container">

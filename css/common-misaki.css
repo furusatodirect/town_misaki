@@ -1880,6 +1880,23 @@ end top
 
 /*************************************************************/
 /*.detail-pro-----------------*/
+.detail-pro {
+  margin-top: 7.5rem;
+}
+
+.detail-pro .area-pro {
+  flex-direction: column !important;
+  height: 100% !important;
+  display: flex !important;
+  row-gap: 2rem;
+  padding: 1.5rem;
+}
+
+.detail-pro .area-pro:first-child {
+  row-gap: 0rem !important;
+  padding: 0;
+}
+
 .detail-pro .swiper {
   width: 100%;
   height: 100%;
@@ -1952,6 +1969,16 @@ end top
   box-sizing: border-box;
 }
 
+/*area-pro-txt*/
+.detail-pro .area-pro .area-pro-txt .pro-ttl {
+  font-size: calc(20px + 2 * ((100vw - 320px) / 670));
+  font-weight: bold;
+}
+
+.detail-pro .area-pro .area-pro-txt .pro-sub {
+  font-size: calc(14px + 2 * ((100vw - 320px) / 670));
+  gap
+}
 
 
 
