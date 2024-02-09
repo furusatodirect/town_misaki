@@ -206,7 +206,16 @@ button.favorite.red i {
   font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
-.ttl:before {
+.ttll {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  font-size: calc(14px + 4 * ((100vw - 320px) / 670));
+  margin-bottom: 2rem;
+}
+
+.ttl:before,
+.ttll:before {
   content: "";
   background: url(../img/misaki.png) no-repeat;
   width: 34px;
@@ -1970,14 +1979,26 @@ end top
 }
 
 /*area-pro-txt*/
-.detail-pro .area-pro .area-pro-txt .pro-ttl {
+.detail-pro .pro-ttl {
   font-size: calc(20px + 2 * ((100vw - 320px) / 670));
   font-weight: bold;
 }
 
-.detail-pro .area-pro .area-pro-txt .pro-sub {
-  font-size: calc(14px + 2 * ((100vw - 320px) / 670));
-  gap
+.detail-pro .pro-sub {
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+}
+
+
+/*area-pro-features  area-pro-tbl*/
+.area-pro-features {
+  margin-top: calc(10px + 10 * ((100vw - 320px) / 670));
+  margin-bottom: calc(40px + 10 * ((100vw - 320px) / 670));
+  padding: 0;
+}
+
+/*area-pro-tbl*/
+.area-pro-tbl {
+  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
 }
 
 
@@ -2019,7 +2040,7 @@ end top
   padding-left: .5rem;
   align-items: center;
   height: 100%;
-  line-height: 1rem;
+  line-height: 1.5rem;
 }
 
 
