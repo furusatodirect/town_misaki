@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>local</title>
+  <link rel="shortcut icon" href="./img/favicon.png" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/themify-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/destyle.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/base.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slider-pro.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/all.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/swiper-bundle.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick-theme.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/nouislider.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/style.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/common-misaki.css" media="all" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <style type="text/css">
+    .cart_page .ec-pageHeader {
+      text-align: center
+    }
+
+    .cart_page .ec-pageHeader h1 {
+      border-top: none;
+      display: inline-block;
+      font-size: 2.8rem;
+      border: none;
+    }
+
+    .ec-progress .ec-progress__number {
+      color: #090000;
+      background: white;
+      border: solid 0.75px #706F6F;
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+      line-height: 2.5;
+      font-weight: bold;
+    }
+
+    .ec-progress .is-complete .ec-progress__number {
+      background: #00B84C;
+      color: white;
+    }
+
+    .ec-progress .ec-progress__label,
+    .ec-progress .is-complete .ec-progress__label {
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .ec-progress .ec-progress__item:after {
+      height: 1px;
+      top: 25px;
+    }
+
+    .ec-cartRow__contentColumn {
+      border: solid 1px #ACBEAE;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .ec-cartTable {
+      border: none;
+    }
+
+    .ec-cartRow .ec-cartRow__contentColumn,
+    .ec-cartRow .ec-cartRow__img,
+    ec-cartRow__summary {
+      display: block;
+      width: 100%;
+    }
+
+    .ec-cartRow .ec-cartRow__contentColumn {
+      padding: 20px 10px;
+      box-shadow: 0px 0px 15px -7px rgb(0 0 0 / 60%);
+      border: none;
+      border-radius: 12px;
+    }
+
+    #form_cart .p-box li .mask {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+
+    .ec-cartRow .ec-cartRow__img {
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    .b-pic {
+      left: 0;
+    }
+
+    .ec-cartRole {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .ec-cartRow__amountsettings,
+    .ec-cartRow__amountUpDown {
+      display: flex;
+    }
+
+    .ec-cartRow__amountsettings {
+      align-items: center;
+    }
+
+    .ec-cartRow__amountUpDown {
+      width: 20%;
+    }
+
+    .ec-cartRow__amountsettings .ec-icon {
+      width: 20px;
+    }
+
+    .ec-cartRow__amountsettings .ec-icon.delete-icon {
+      width: auto;
+      margin-left: 40px;
+    }
+
+    .delete-icon img {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 7px;
+    }
+
+    .delete-icon .delete-text {
+      font-size: 14px;
+      vertical-align: bottom;
+      text-decoration: underline;
+    }
+
+    .ec-cartRow .ec-cartRow__summary {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+    }
+
+    .ec-cartRow .ec-cartRow__summary .ec-cartRow__name {
+      font-size: 2rem;
+    }
+
+    .ec-cartRow .ec-cartRow__summary .ec-cartRow__name,
+    .ec-cartRow__unitPrice,
+    .ec-cartRow__amountsettings {
+      margin-bottom: 10px;
+    }
+
+    .ec-cartRow__sutbtotal {
+      font-weight: bold;
+    }
+
+    .ec-cartRow__sutbtotalSP span {
+      font-size: 2.2rem;
+    }
+
+    .arrow_next {
+      width: 100%;
+    }
+
+    .arrow_next img {
+      display: block;
+      max-width: 100px;
+      width: 38%;
+      margin: 12px auto;
+    }
+
+    .ec-cartRole .ec-cartRole__actions {
+      /*background:#F6F6F6;
+        padding:14px;*/
+    }
+
+    .ec-cartRole .ec-cartRole__actions .ec-cartRole__total {
+      text-align: center;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    .ec-cartRole .ec-cartRole__actions .ec-cartRole__total span {
+      color: #497E42;
+      font-size: 2.4rem;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .ec-blockBtn--action {
+      border-radius: 5px;
+      color: white;
+      font-weight: normal;
+      position: relative;
+      background: #FF004E;
+      border: 1px solid #FF004E;
+    }
+
+    .ec-blockBtn--action:hover {
+      background-color: white;
+      color: #FF004E;
+      border-color: #cb3526;
+    }
+
+    .ec-blockBtn--action:active {
+      color: #fff;
+      background-color: #d33828;
+      border-color: #cb3526;
+    }
+
+    .ec-blockBtn--action:active:hover {
+      color: #fff;
+      background-color: #b53022;
+      border-color: #93271c;
+    }
+
+    .ec-blockBtn--action:after {
+      content: "＞";
+      /*background-image:url(/html/user_data/assets/img/action_btn.svg);*/
+      /*background-repeat: no-repeat;*/
+      /*background-size: contain;*/
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      /*top:35.5%;*/
+      right: 15px;
+    }
+
+    .ec-blockBtn--cancel {
+      background-color: white;
+      color: #090000;
+      /*border:solid 1px #497E42;*/
+      border-radius: 5px;
+      font-weight: normal;
+      position: relative;
+      border: 1px solid #F6F6F6;
+      background: #F6F6F6;
+      margin-top: 1.5rem;
+      /*height: 40px;
+        line-height: 2.5;*/
+    }
+
+    .ec-blockBtn--cancel:hover {
+      background-color: white;
+      border: solid 1px #c8c8c8;
+      color: #090000;
+    }
+
+    .ec-blockBtn--cancel:before {
+      position: absolute;
+      left: 15%;
+      content: "＜";
+      margin-right: 10px;
+      font-weight: 200;
+    }
+
+    .ec-cartRole .attention {
+      margin: 20px 5px;
+      background: rgba(239, 228, 67, 0.18);
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    .ec-cartRole .attention p:first-child {
+      color: #FF0000;
+      font-weight: bold;
+    }
+
+    .ec-cartRole .attention p i:before {
+      content: "\f071";
+      color: #FF0000;
+    }
+
+    .ec-cartRole .attention p:last-child {
+      color: #FF0000;
+      margin-top: 10px;
+    }
+
+    .ec-cartRow__amountDownButtonDisabled,
+    .ec-cartRow__amountDownButton {
+      order: 2;
+    }
+
+    .ec-cartRow__amountDownButton__icon,
+    .ec-cartRow__amountUpButton__icon {
+      width: 20px;
+      margin-left: 10px;
+      display: block;
+    }
+
+    .ec-cartRow__amountDownButton__icon img,
+    .ec-cartRow__amountUpButton img {
+      border: solid 1px black;
+      border-radius: 50%;
+      padding: 3px;
+    }
+
+    .delete-icon {
+      margin-left: 40px;
+    }
+
+    .cart_blank {
+      font-size: 2rem;
+      text-align: center;
+      width: 100%;
+      margin: 7rem;
+    }
+
+    .login_link {
+      font-size: 1.8rem;
+      text-align: center;
+      margin: 3rem auto;
+      color: #0092C4;
+      text-decoration: underline;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .disp-sp {
+        display: none;
+      }
+
+      .ec-cartRole {
+        max-width: 750px;
+      }
+
+      .ec-cartHeader {
+        display: none;
+      }
+
+      .ec-progress .ec-progress__label,
+      .ec-progress .is-complete .ec-progress__label {
+        font-size: 1.4rem;
+      }
+
+      .ec-cartRow .ec-cartRow__img,
+      .ec-cartRow .ec-cartRow__subtotalColumn,
+      .ec-cartRow .ec-cartRow__summary {
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+      }
+
+      .ec-cartRow,
+      .ec-cartRow__subtotalColumn {
+        display: block !important;
+        border: none !important;
+      }
+
+      .ec-cartRow__sutbtotal {
+        text-align: left;
+      }
+
+      .ec-cartRow .ec-cartRow__contentColumn {
+        /*width: 46%;*/
+        /*  float: left;*/
+        /*  margin:5px;*/
+        padding: 4rem 3rem;
+      }
+
+      .ec-cartRole .ec-cartRole__actions,
+      .ec-cartRole .attention {
+        max-width: 600px;
+        margin: 20px auto;
+        width: 100%;
+      }
+
+      .ec-cartRole .ec-cartRole__cart {
+        margin: 8% 20% 0;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .ec-cartRole .ec-cartRole__actions .ec-cartRole__total {
+        font-size: 1.6rem;
+      }
+
+      .ec-cartRole .ec-cartRole__actions .ec-cartRole__total span {
+        font-size: 2rem;
+      }
+    }
+
+    .p-box li {
+      margin-bottom: 10px;
+    }
+
+    .ec-cartRole .ec-cartRole__total {
+      padding: 10px 0 20px;
+    }
+
+    .ec-pageHeader h1 {
+      padding: 12px 0 12px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .ec-pageHeader h1 {
+        margin: 10px 16px 0px;
+      }
+    }
+  </style>
+
+
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li class="burger-btn">
+            <a>
+              <div><span></span><span></span><span></span></div>
+              <p>メニュー</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="logo" href="./"><img src="./img/logo-misaki.png" loading="lazy" /></a>
+      <nav>
+        <ul>
+          <li style="margin-right: 1rem;">
+            <a href=""><span class="fi ti-search"></span>
+              <p>見つける</p>
+            </a>
+          </li>
+          <li>
+            <a href=""><span class="fi ti-shopping-cart"></span>
+              <p>カート<span class="cart_number">1</span></p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+
+    <div class="burger-menu">
+      <div class="inner">
+
+        <div class="burger-menu-btn">
+          <div class="btn-common"><a href="">会員登録 / ログイン</a></div>
+        </div>
+
+        <ul class="navi-1st">
+          <li><a href="{{ url('product_list') }}?orderby={{eccube_config.eccube_product_order_newer}}">美咲町の返礼品</a></li>
+          <li><a href="http://13.115.133.43/use">寄付の使い道</a></li>
+          <li><a href="http://13.115.133.43/jigyousha">事業者の紹介</a></li>
+          <li><a href="{{ url('news_index') }}">お知らせ</a></li>
+        </ul>
+
+        <ul class="navi-2nd">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/help/about">お問い合わせ</a></li>
+        </ul>
+        <!--
+        <div class="burger-menu-btn">
+          <div class="btn-common"><a href="">お問い合わせ</a></div>
+        </div>
+-->
+      </div>
+    </div>
+  </header>
+
+
+  <main id="about">
+    <div class="container">
+
+      <div class="ec-role">
+        <div class="ec-pageHeader">
+          <h1>寄付カートの中身</h1>
+        </div>
+
+      </div>
+
+      <div class="ec-cartRole">
+
+
+
+      </div>
+
+
+      <form name="form" id="form_cart" class="ec-cartRole" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
+
+
+
+
+
+        <div class="ec-cartRole__cart">
+          <div class="ec-cartTable">
+            <ol class="ec-cartHeader">
+              <li class="ec-cartHeader__label">削除</li>
+              <li class="ec-cartHeader__label">返礼品内容</li>
+              <li class="ec-cartHeader__label">数量</li>
+              <li class="ec-cartHeader__label">小計</li>
+            </ol>
+
+            <a class="ec-blockBtn--action" href="/cart/buystep/8_1">次へ</a>
+
+
+            <div class="ec-cartRole__progress">
+              <ul class="ec-progress">
+                <li class="ec-progress__item is-complete">
+                  <div class="ec-progress__number">1 </div>
+                  <div class="ec-progress__label">選択したお礼の品
+                  </div>
+                </li>
+                <li class="ec-progress__item">
+                  <div class="ec-progress__number">2 </div>
+                  <div class="ec-progress__label">申込手続き
+                  </div>
+                </li>
+                <li class="ec-progress__item">
+                  <div class="ec-progress__number">3 </div>
+                  <div class="ec-progress__label">入力確認
+                  </div>
+                </li>
+                <li class="ec-progress__item">
+                  <div class="ec-progress__number">4 </div>
+                  <div class="ec-progress__label">完了
+                  </div>
+                </li>
+              </ul>
+
+              <ul class="ec-cartRow p-box">
+                <li class="ec-cartRow__contentColumn">
+                  <a target="_blank" href="https://mombetsu-stv.furusato-direct.jp/products/detail/141">
+                    <div class="mask">
+                      <img class="b-pic" src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480741.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy">
+                      <div class="c-pic"><img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480741.jpg" alt="14-22 オホーツク産ホタテ玉冷大(1kg)" loading="lazy"></div>
+                    </div>
+                  </a>
+                  <div class="ec-cartRow__summary">
+                    <div class="ec-cartRow__name">
+                      <a target="_blank" href="https://mombetsu-stv.furusato-direct.jp/products/detail/141">14-22 オホーツク産ホタテ玉冷大(1kg)</a>
+                    </div>
+                    <div class="ec-cartRow__unitPrice">
+                    </div>
+                    <div class="ec-cartRow__amountsettings">
+                      <div class="ec-cartRow__amountSP">数量：2</div>
+                      <div class="ec-cartRow__amountUpDown">
+                        <a href="https://mombetsu-stv.furusato-direct.jp/cart/down/141" token-for-anchor='sEHFd4mn5ROKKFOD5Pz4fb7LGYZtHTzVsXnvdhRAjXs' class="ec-cartRow__amountDownButton load-overlay" data-method="put" data-confirm="false">
+                          <span class="ec-cartRow__amountDownButton__icon"><img src="/html/template/default/assets/icon/minus-dark.svg" alt="reduce"></span>
+                        </a>
+                        <a href="https://mombetsu-stv.furusato-direct.jp/cart/up/141" token-for-anchor='sEHFd4mn5ROKKFOD5Pz4fb7LGYZtHTzVsXnvdhRAjXs' class="ec-cartRow__amountUpButton load-overlay" data-method="put" data-confirm="false">
+                          <span class="ec-cartRow__amountUpButton__icon"><img src="/html/template/default/assets/icon/plus-dark.svg" alt="increase"></span>
+                        </a>
+                      </div>
+                      <a href="https://mombetsu-stv.furusato-direct.jp/cart/remove/141" token-for-anchor='sEHFd4mn5ROKKFOD5Pz4fb7LGYZtHTzVsXnvdhRAjXs' class="ec-icon delete-icon" data-method="put" data-message="カートから商品を削除してもよろしいですか?">
+                        <img src="/html/template/default/assets/icon/cross.svg" alt="delete"><span class="delete-text">削除</span>
+                      </a>
+                    </div>
+                    <div class="ec-cartRow__sutbtotalSP">小計：<span>28,000円</span></div>
+                  </div>
+                  <div class="ec-cartRow__subtotalColumn">
+                    <div class="ec-cartRow__sutbtotal">小計：28,000円</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="ec-cartRole__progress">
+          </div>
+          <div class="ec-cartRole__actions">
+            <div class="ec-cartRole__total">
+              合計金額 <span>28,000</span> 円
+            </div>
+            <a class="ec-blockBtn--action" href="/cart/buystep/8_1">次へ</a>
+            <a class="ec-blockBtn--cancel" href="/">前の画面に戻る</a>
+          </div>
+      </form>
+      <div class="attention">
+        <p><i class="fa fa-exclamation-triangle fa-fw"></i>注意事項</p>
+        <p>美咲町民の方へはお礼の品のお贈りはしておりませんのでご注意ください。</p>
+      </div>
+
+    </div>
+
+    </div>
+  </main>
+
+  <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+  <footer>
+    <div class="col-12 col-xl-6 mx-auto inner">
+      <ul class="subnav">
+        <li><a href="/help/agreement">ご利用規約</a></li>
+        <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+        <li><a href="/help/privacy">個人情報保護方針</a></li>
+        <li><a href="/help/about">よくある質問</a></li>
+        <li><a href="/contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+
+    <div class="copyright">
+      <a href="{{ url('homepage') }}">
+        <img src="./img/misaki.png" />
+        <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+      </a>
+    </div>
+
+  </footer>
+
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+  <script type="text/javascript" src="./js/chart.min.js"></script>
+  <script type="text/javascript" src="./js/nouislider.min.js"></script>
+  <script type="text/javascript" src="./js/wNumb.js"></script>
+  <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript" src="./js/common-misaki.js"></script>
+</body>
+
+</html>
