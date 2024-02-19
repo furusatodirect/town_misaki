@@ -31,201 +31,9 @@
 <body>
 
   <style>
-    .ec-layoutRole .ec-layoutRole__contents {
-      margin-right: auto !important;
-      margin-left: auto !important;
-      width: 100% !important;
-      max-width: 1150px !important;
-      display: flex !important;
-      flex-wrap: nowrap !important;
-    }
-
-    .ec-layoutRole .ec-layoutRole__main {
-      width: 100% !important;
-    }
-
-    #gift.detail .floating_cart .default .go-cart.disabled,
-    #gift.detail .floating_cart .default .go-cart.disabled:hover {
-      background: gray;
-      color: white;
-    }
-
-    .icons {
-      position: relative;
-    }
-
-    .balloon1 {
-      display: none;
-    }
-
-    .balloon {
-      position: absolute;
-      right: 30px;
-      top: 30px;
-      display: block;
-      width: 185px;
-      border-radius: 10px;
-      background: white;
-    }
-
-    #share-list a {
-      display: block;
-      border-bottom: solid 1px #777;
-      padding: 1rem;
-    }
-
-    #share-list a:last-child {
-      border-bottom: none;
-    }
-
-    #share-list a span {
-      vertical-align: super;
-    }
-
-    .balloon i,
-    .balloon button {
-      font-size: 2.85rem;
-      margin-left: 1rem;
-      margin-right: 1rem;
-      transition: 0.3s;
-      display: inline;
-    }
-
-    .balloon a:hover {
-      opacity: 0.6;
-    }
-
-    .detail button.favorite {
-      padding: 0 2px;
-      margin-left: -2px;
-    }
 
 
 
-    #df_cart {
-      display: none
-    }
-
-    .sticky-bt {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 68px;
-      z-index: 98;
-    }
-
-    #sec_bt_cart {
-      box-sizing: border-box;
-      z-index: 81;
-      right: 19%;
-      bottom: 25px;
-      height: auto;
-      background: #fff;
-      box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
-      padding: 15px;
-    }
-
-    #sec_bt_cart .default {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    #sec_bt_cart .default .price span {
-      font-weight: bold;
-      font-size: 1.4rem;
-      padding: 0 4px 0 8px;
-    }
-
-    #sec_bt_cart {
-      text-align: center;
-      margin-top: 2.5rem;
-      margin-bottom: -1rem;
-      border-radius: 8px;
-      border: 1px solid #C8C8C8;
-    }
-
-    #sec_bt_cart .default .go-cart {
-      background: #FF004E;
-      color: #fff;
-      width: 55%;
-      border: 1px solid #FF004E;
-      padding: 1rem;
-      font-weight: bold;
-      font-size: 1.5rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      #sec_bt_cart .btns button.gocart {
-        width: 55% !important;
-        padding: 1rem !important;
-        font-size: 1.5rem !important;
-      }
-    }
-
-    #sec_bt_cart .default .go-cart:hover {
-      background: #fff;
-      color: #FF004E;
-      border: 1px solid #FF004E;
-    }
-
-    #sec_bt_cart .default .go-cart.disabled,
-    #sec_bt_cart .default .go-cart.disabled:hover {
-      background: gray;
-      color: white;
-      border: 1px solid gray;
-    }
-
-    #sec_bt_cart button {
-      border-radius: 8px;
-      font-size: 1.4rem;
-      text-align: center;
-      padding: 6px;
-    }
-
-    #sec_bt_cart .btns {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin-top: 1rem;
-    }
-
-    #sec_bt_cart .btns button.gocart {
-      display: block;
-      width: 60%;
-      border: 1px solid #F6F6F6;
-      background: #F6F6F6;
-      padding: 1.5rem;
-      font-weight: bold;
-      font-size: 2rem;
-    }
-
-    #sec_bt_cart .btns button.gocart:hover {
-      background: #fff;
-      border-color: #c8c8c8;
-    }
-
-    @media screen and (min-width: 769px) {
-      #sec_bt_cart .default .go-cart {
-        min-width: 60%;
-        padding: 1.5rem;
-        font-size: 2rem;
-      }
-
-      #sec_bt_cart .default .price span {
-        font-size: 2rem;
-      }
-
-      .sec_bt_cart_under {
-        width: 47%;
-        left: 26%;
-        top: 0;
-        position: relative;
-      }
-    }
-
-    .addition {
-      display: none;
-    }
   </style>
 
 
@@ -353,7 +161,7 @@
               <div class="btn-fav"><button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i> お気に入りに追加</button></div>
             </div>
 
-            <section class="sticky-bt">
+            <section class="sticky-bt d-none d-md-block">
               <div id="sec_bt_cart">
                 <form action="https://misaki.furusato-direct.jp/products/add_cart/1719" method="post" id="form1" name="form1">
                   <div class="default">
@@ -373,6 +181,25 @@
           </div>
 
         </div>
+
+
+        <section class="sticky-bt d-block d-md-none">
+          <div id="sec_bt_cart">
+            <form action="https://misaki.furusato-direct.jp/products/add_cart/1719" method="post" id="form1" name="form1">
+              <div class="default">
+                <p class="price">
+                  寄付金額<span>29,000</span>円</p>
+                <button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
+              </div>
+            </form>
+            <div class="addition" style="display: none;">
+              <div class="btns">
+                <button onclick="additionclose"><span class="fi ti-close"></span></button>
+                <button onclick="location.href='https://misaki.furusato-direct.jp/cart'" class="gocart">寄付カートへ進む</button>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
         <div class="row col-md-7 mx-auto">
@@ -480,153 +307,151 @@
         </div>
 
 
-      </div>
+
+        <div class="row col-md-7 mx-auto">
 
 
-
-
-      <div class="container">
-
-        <div id="kifu_bnrs">
-
-          <section class="d-md-none mb-5">
-            <div id="sec_bt_cart">
-              <form action="https://mombetsu.furusato-direct.jp/products/add_cart/141" method="post" id="form1" name="form1">
-                <div class="default">
-                  <p class="price">
-                    寄付金額<span>14,000</span>円</p>
-                  <button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
-                </div>
-
-              </form>
-
-              <div class="addition">
-                <div class="btns">
-                  <button onclick="additionclose"><span class="fi ti-close"></span></button>
-                  <button onclick="location.href='https://mombetsu.furusato-direct.jp/cart'" class="gocart">寄付カートへ進む</button>
+          <div class="col-md-6 area-pro mx-auto">
+            <section class="sticky-bt d-none d-md-block">
+              <div id="sec_bt_cart">
+                <form action="https://misaki.furusato-direct.jp/products/add_cart/1719" method="post" id="form1" name="form1">
+                  <div class="default">
+                    <p class="price">
+                      寄付金額<span>29,000</span>円</p>
+                    <button type="submit" class="add-cart go-cart">寄付カートに入れる</button>
+                  </div>
+                </form>
+                <div class="addition" style="display: none;">
+                  <div class="btns">
+                    <button onclick="additionclose"><span class="fi ti-close"></span></button>
+                    <button onclick="location.href='https://misaki.furusato-direct.jp/cart'" class="gocart">寄付カートへ進む</button>
+                  </div>
                 </div>
               </div>
+            </section>
+          </div>
+
+          <div id="kifu_bnrs">
+
+            <div class="part">
+              <h3>ポータルサイトから寄付する</h3>
+
+              <ul class="kifu_bnrs">
+
+                <li>
+                  <a id="bnr_rakuten" href="https://hb.afl.rakuten.co.jp/hgc/2e287241.d9aa9d80.2e287242.8baf850c/?pc=http%3A%2F%2Fwww.rakuten.co.jp%2Ff012190-mombetsu%2F&link_type=hybrid_url&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJoeWJyaWRfdXJsIiwiY29sIjoxLCJjYXQiOjEsImJhbiI6MTYzOTY1MSwiYW1wIjpmYWxzZX0%3D" target="_blank">
+                    <img src="./img/bnr/kifu_rakuten.png" alt="楽天ふるさと納税">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_furunavi" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=885918552&vc_url=https%3A%2F%2Ffurunavi.jp%2FMunicipal%2FProduct%2FSearch%3Fmunicipalid%3D19%26utm_source%3Dvc%26utm_medium%3Daffiliate%26utm_campaign%3Dproduct_detail" target="_blank">
+                    <img src="./img/bnr/kifu_furunavi.png" alt="ふるなび">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_satofull" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=885918470&vc_url=https%3A%2F%2Fwww.satofull.jp%2Fproducts%2Flist.php%3Fs4%3D%25E5%258C%2597%25E6%25B5%25B7%25E9%2581%2593%26s3%3D%25E7%25B4%258B%25E5%2588%25A5%25E5%25B8%2582%26utm_source%3Dvaluecomme%26utm_medium%3Daffiliate" target="_blank">
+                    <img src="./img/bnr/kifu_satofull.png" alt="さとふる">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_choice" href="https://www.furusato-tax.jp/city/product/01219?utm_source=hokkaido_mombetsushi&utm_medium=referral&utm_campaign=lgmk_01219" target="_blank">
+                    <img src="./img/bnr/kifu_choice.png" alt="ふるさとチョイス">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_furulabo" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531503&vc_url=https%3A%2F%2Ffurusato.asahi.co.jp%2Fgoods%2F%3Fcm%3D21%26cs%3D1" target="_blank">
+                    <img src="./img/bnr/kifu_furulabo.png" alt="ふるラボ">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_mynavi" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531781&vc_url=https%3A%2F%2Ffurusato.mynavi.jp%2Fproducts%2Fcm%3A30%2F" target="_blank">
+                    <img src="./img/bnr/kifu_mynavi.png" alt="マイナビふるさと納税">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_ana" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531784&vc_url=https%3A%2F%2Ffurusato.ana.co.jp%2Fproducts%2Flist.php%3Fs3%3D%25E5%258C%2597%25E6%25B5%25B7%25E9%2581%2593_%25E5%258C%2597%25E6%25B5%25B7%25E9%2581%2593_%25E7%25B4%258B%25E5%2588%25A5%25E5%25B8%2582%26sort%3Dnumber5%2CScore%2CNumber1" target="_blank">
+                    <img src="./img/bnr/kifu_ana.png" alt="ANAのふるさと納税">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_honpo" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531493&vc_url=https%3A%2F%2Ffurusatohonpo.jp%2Fdonate%2Fmunicipality%2F%3FlocalGovernmentId%3D81459d3a-00e0-494d-9977-72dc5031de60" target="_blank">
+                    <img src="./img/bnr/kifu_honpo.png" alt="ふるさと本舗">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_nippon" href="https://furusato-nippon.com/hokkaido/012190" target="_blank">
+                    <img src="./img/bnr/kifu_nippon.png" alt="ふるさと納税ニッポン">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_wowma" href="https://furusato.wowma.jp/012190/" target="_blank">
+                    <img src="./img/bnr/kifu_wowma.png" alt="au PAYふるさと納税">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_saisoncard" href="https://furusato.saisoncard.co.jp/city.php?n=012190" target="_blank">
+                    <img src="./img/bnr/kifu_saisoncard.png" alt="セゾンのふるさと納税">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_fururi" href="https://fururi.jp/city/01_hokkaido/2190_mombetsu/" target="_blank">
+                    <img src="./img/bnr/kifu_fururi.png" alt="ふるり">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_palette" href="https://tokyu-furusato.jp/city/detail/012190" target="_blank">
+                    <img src="./img/bnr/kifu_palette.png" alt="ふるさとパレット">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_gcall" href="https://www.g-call.com/furusato/city/?ygo_no=29244&amp;pg=1#pgtop" target="_blank">
+                    <img src="./img/bnr/kifu_gcall.png" alt="G-Callふるさと納税">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_plus" href="https://furusatoplus.com/local/012190/" target="_blank">
+                    <img src="./img/bnr/kifu_plus.png" alt="ふるさとぷらす">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_premium" href="https://26p.jp/areas/monbetsu-city" target="_blank">
+                    <img src="./img/bnr/kifu_premium.png" alt="ふるさとプレミアム">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_jre" href="https://www.jreastmall.com/shop/c/cf081/" target="_blank">
+                    <img src="./img/bnr/kifu_jre.png" alt="JRE MALL ふるさと納税">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_jal" href="https://furusato.jal.co.jp/municipality/012190" target="_blank">
+                    <img src="./img/bnr/kifu_jal.png" alt="JALふるさと納税">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_mitsukoshi" href="https://mifurusato.jp/j/012190.html" target="_blank">
+                    <img src="./img/bnr/kifu_mitsukoshi.png" alt="三越伊勢丹ふるさと納税">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_gurusuguri" href="https://gurusuguri.com/shop/city_mombetsu/?push_page_id=0_1__&amp;push_slot_id=CL-05&amp;push_campaign_id=8&amp;moduleclick=t" target="_blank">
+                    <img src="./img/bnr/kifu_gurusuguri.png" alt="ぐるすぐり">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_hyakusen" href="https://dshopping-furusato.docomo.ne.jp/jichitai/012190" target="_blank">
+                    <img src="./img/bnr/kifu_hyakusen.png" alt="ふるさと納税百選">
+                  </a>
+                </li>
+                <li>
+                  <a id="bnr_furusatomarket" href="https://furusatomarkets.jp/area/city/19" target="_blank">
+                    <img src="./img/bnr/kifu_furusatomarket.png" alt="ふるさとマーケット">
+                  </a>
+                </li>
+
+              </ul>
 
             </div>
-          </section>
-
-          <div class="part">
-            <h3>ポータルサイトから寄付する</h3>
-
-            <ul class="kifu_bnrs">
-
-              <li>
-                <a id="bnr_rakuten" href="https://hb.afl.rakuten.co.jp/hgc/2e287241.d9aa9d80.2e287242.8baf850c/?pc=http%3A%2F%2Fwww.rakuten.co.jp%2Ff012190-mombetsu%2F&link_type=hybrid_url&ut=eyJwYWdlIjoic2hvcCIsInR5cGUiOiJoeWJyaWRfdXJsIiwiY29sIjoxLCJjYXQiOjEsImJhbiI6MTYzOTY1MSwiYW1wIjpmYWxzZX0%3D" target="_blank">
-                  <img src="./img/bnr/kifu_rakuten.png" alt="楽天ふるさと納税">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_furunavi" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=885918552&vc_url=https%3A%2F%2Ffurunavi.jp%2FMunicipal%2FProduct%2FSearch%3Fmunicipalid%3D19%26utm_source%3Dvc%26utm_medium%3Daffiliate%26utm_campaign%3Dproduct_detail" target="_blank">
-                  <img src="./img/bnr/kifu_furunavi.png" alt="ふるなび">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_satofull" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=885918470&vc_url=https%3A%2F%2Fwww.satofull.jp%2Fproducts%2Flist.php%3Fs4%3D%25E5%258C%2597%25E6%25B5%25B7%25E9%2581%2593%26s3%3D%25E7%25B4%258B%25E5%2588%25A5%25E5%25B8%2582%26utm_source%3Dvaluecomme%26utm_medium%3Daffiliate" target="_blank">
-                  <img src="./img/bnr/kifu_satofull.png" alt="さとふる">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_choice" href="https://www.furusato-tax.jp/city/product/01219?utm_source=hokkaido_mombetsushi&utm_medium=referral&utm_campaign=lgmk_01219" target="_blank">
-                  <img src="./img/bnr/kifu_choice.png" alt="ふるさとチョイス">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_furulabo" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531503&vc_url=https%3A%2F%2Ffurusato.asahi.co.jp%2Fgoods%2F%3Fcm%3D21%26cs%3D1" target="_blank">
-                  <img src="./img/bnr/kifu_furulabo.png" alt="ふるラボ">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_mynavi" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531781&vc_url=https%3A%2F%2Ffurusato.mynavi.jp%2Fproducts%2Fcm%3A30%2F" target="_blank">
-                  <img src="./img/bnr/kifu_mynavi.png" alt="マイナビふるさと納税">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_ana" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531784&vc_url=https%3A%2F%2Ffurusato.ana.co.jp%2Fproducts%2Flist.php%3Fs3%3D%25E5%258C%2597%25E6%25B5%25B7%25E9%2581%2593_%25E5%258C%2597%25E6%25B5%25B7%25E9%2581%2593_%25E7%25B4%258B%25E5%2588%25A5%25E5%25B8%2582%26sort%3Dnumber5%2CScore%2CNumber1" target="_blank">
-                  <img src="./img/bnr/kifu_ana.png" alt="ANAのふるさと納税">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_honpo" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3354228&pid=889531493&vc_url=https%3A%2F%2Ffurusatohonpo.jp%2Fdonate%2Fmunicipality%2F%3FlocalGovernmentId%3D81459d3a-00e0-494d-9977-72dc5031de60" target="_blank">
-                  <img src="./img/bnr/kifu_honpo.png" alt="ふるさと本舗">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_nippon" href="https://furusato-nippon.com/hokkaido/012190" target="_blank">
-                  <img src="./img/bnr/kifu_nippon.png" alt="ふるさと納税ニッポン">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_wowma" href="https://furusato.wowma.jp/012190/" target="_blank">
-                  <img src="./img/bnr/kifu_wowma.png" alt="au PAYふるさと納税">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_saisoncard" href="https://furusato.saisoncard.co.jp/city.php?n=012190" target="_blank">
-                  <img src="./img/bnr/kifu_saisoncard.png" alt="セゾンのふるさと納税">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_fururi" href="https://fururi.jp/city/01_hokkaido/2190_mombetsu/" target="_blank">
-                  <img src="./img/bnr/kifu_fururi.png" alt="ふるり">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_palette" href="https://tokyu-furusato.jp/city/detail/012190" target="_blank">
-                  <img src="./img/bnr/kifu_palette.png" alt="ふるさとパレット">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_gcall" href="https://www.g-call.com/furusato/city/?ygo_no=29244&amp;pg=1#pgtop" target="_blank">
-                  <img src="./img/bnr/kifu_gcall.png" alt="G-Callふるさと納税">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_plus" href="https://furusatoplus.com/local/012190/" target="_blank">
-                  <img src="./img/bnr/kifu_plus.png" alt="ふるさとぷらす">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_premium" href="https://26p.jp/areas/monbetsu-city" target="_blank">
-                  <img src="./img/bnr/kifu_premium.png" alt="ふるさとプレミアム">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_jre" href="https://www.jreastmall.com/shop/c/cf081/" target="_blank">
-                  <img src="./img/bnr/kifu_jre.png" alt="JRE MALL ふるさと納税">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_jal" href="https://furusato.jal.co.jp/municipality/012190" target="_blank">
-                  <img src="./img/bnr/kifu_jal.png" alt="JALふるさと納税">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_mitsukoshi" href="https://mifurusato.jp/j/012190.html" target="_blank">
-                  <img src="./img/bnr/kifu_mitsukoshi.png" alt="三越伊勢丹ふるさと納税">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_gurusuguri" href="https://gurusuguri.com/shop/city_mombetsu/?push_page_id=0_1__&amp;push_slot_id=CL-05&amp;push_campaign_id=8&amp;moduleclick=t" target="_blank">
-                  <img src="./img/bnr/kifu_gurusuguri.png" alt="ぐるすぐり">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_hyakusen" href="https://dshopping-furusato.docomo.ne.jp/jichitai/012190" target="_blank">
-                  <img src="./img/bnr/kifu_hyakusen.png" alt="ふるさと納税百選">
-                </a>
-              </li>
-              <li>
-                <a id="bnr_furusatomarket" href="https://furusatomarkets.jp/area/city/19" target="_blank">
-                  <img src="./img/bnr/kifu_furusatomarket.png" alt="ふるさとマーケット">
-                </a>
-              </li>
-
-            </ul>
 
           </div>
         </div>

@@ -39,6 +39,8 @@
       min-height: 100vh;
     }
 
+    /*ec-progress__item*/
+
     .ec-role {
       padding: 0;
       margin-top: 5rem;
@@ -73,6 +75,46 @@
       align-items: center;
     }
 
+    .ec-cartRole .ec-cartRole__cart {
+      margin: 0;
+      width: 100%;
+    }
+
+
+    .ec-progress .is-complete .ec-progress__number {
+      background: #0dab65;
+      color: white;
+    }
+
+    .ec-progress .is-complete .ec-progress__label {
+      color: #0dab65;
+      font-weight: bold;
+    }
+
+    .ec-progress .ec-progress__label {
+      color: #c8c8c8;
+    }
+
+    .ec-progress .ec-progress__number {
+      background: #c4c4c4;
+      color: white;
+    }
+
+    .ec-progress .ec-progress__item:after {
+      background: #c4c4c4;
+      height: 0.2em;
+      top: 30%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-progress .ec-progress__item:after {
+        top: 20%;
+      }
+    }
+
+    /*END ec-progress__item*/
+
+    /* ec-blockBtn*/
     .ec-blockBtn--action,
     .ec-cartRole__action,
     .ec-blockBtn--cancel {
@@ -181,42 +223,10 @@
       }
     }
 
-    .ec-progress .is-complete .ec-progress__number {
-      background: #0dab65;
-      color: white;
-    }
+    /*END ec-blockBtn*/
 
-    .ec-progress .is-complete .ec-progress__label {
-      color: #0dab65;
-      font-weight: bold;
-    }
 
-    .ec-progress .ec-progress__label {
-      color: #c8c8c8;
-    }
-
-    .ec-progress .ec-progress__number {
-      background: #c4c4c4;
-      color: white;
-    }
-
-    .ec-progress .ec-progress__item:after {
-      background: #c4c4c4;
-      height: 0.2em;
-      top: 30%;
-    }
-
-    @media screen and (max-width: 768px) {
-      .ec-progress .ec-progress__item:after {
-        top: 20%;
-      }
-    }
-
-    .ec-cartRole .ec-cartRole__cart {
-      margin: 0;
-      width: 100%;
-    }
-
+    /*.ec-cartRow*/
     .ec-cartRow {
       column-gap: 1rem;
       display: flex;
@@ -392,6 +402,8 @@
       }
 
     }
+
+    /*END .ec-cartRow*/
   </style>
   <div class="wrap">
 
