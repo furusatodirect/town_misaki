@@ -55,6 +55,7 @@
 
     .ec-cartRole {
       padding: 0;
+
     }
 
     .ec-role .ec-pageHeader {
@@ -243,20 +244,16 @@
     }
 
     .ec-orderRole .ec-orderRole__detail {
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
       max-width: calc(1130px + (1rem * 2));
+      padding: 0 1rem;
       width: 100%;
     }
 
     .ec-orderRole .shopping-tbl {
       display: flex;
       margin-bottom: 1rem;
-    }
-
-    .ec-orderRole .shopping-tbl-ttl {
-      display: flex;
-      align-items: center;
-      width: 250px;
     }
 
     @media screen and (max-width: 768px) {
@@ -271,6 +268,13 @@
       .s-form-w20 {
         width: calc(100% / 3) !important;
       }
+
+    }
+
+    .ec-orderRole .shopping-tbl-ttl {
+      display: flex;
+      align-items: center;
+      width: 200px;
     }
 
     .ec-orderRole .shopping-formwrap {
@@ -354,10 +358,6 @@
       color: #fff;
     }
 
-    .shopping-tbl label.form-check-label {
-      display: none !important;
-    }
-
     /*END ec-orderRole*/
 
     /*ec-orderDelivery*/
@@ -377,8 +377,10 @@
     }
 
     .ec-orderDelivery .ec-orderRole__detail {
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
       max-width: calc(1130px + (1rem * 2));
+      padding: 0 1rem;
       width: 100%;
     }
 
@@ -420,6 +422,7 @@
       row-gap: 0.5rem;
     }
 
+
     .ec-orderDelivery .shopping-tbl-in {
       display: flex;
       align-items: baseline;
@@ -432,11 +435,6 @@
       gap: 2rem;
     }
 
-    .ec-orderDelivery .shopping-tbl-ttl {
-      display: flex;
-      align-items: center;
-      word-break: keep-all;
-    }
 
     @media screen and (max-width: 768px) {
       .ec-orderDelivery .shopping-tbl-in {
@@ -456,6 +454,12 @@
         margin-bottom: 0.5rem;
         width: auto !important;
       }
+    }
+
+    .ec-orderDelivery .shopping-tbl-ttl {
+      display: flex;
+      align-items: center;
+      word-break: keep-all;
     }
 
     @media screen and (max-width: 768px) {
@@ -519,225 +523,8 @@
       margin-left: auto;
       margin-right: auto;
       max-width: calc(1130px + (1rem * 2));
+      padding: 0 1rem;
       width: 100%;
-    }
-
-    .ec-orderDetail .shopping-wrap {
-      display: flex;
-      flex-flow: column;
-      justify-content: space-between;
-      row-gap: 3rem;
-    }
-
-    .ec-orderDetail .PT-txt {
-      font-size: calc(18px + 2 * ((100vw - 320px) / 670));
-      font-weight: bold;
-      color: #0dab65;
-    }
-
-    .ec-orderDetail .shopping-formwrap {
-      width: calc(100% - 0px);
-      display: flex;
-      align-items: center;
-    }
-
-    .ec-orderDetail .shopping-formwrap .selwrap {
-      position: relative;
-      width: calc(100% - 0px);
-    }
-
-    .ec-orderDetail .shopping-formwrap .selwrap::after {
-      content: "\e64b";
-      font-family: 'themify';
-      position: absolute;
-      right: 1.5rem;
-      color: #c4c4c4;
-      font-size: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all .3s;
-      cursor: pointer;
-      pointer-events: none;
-    }
-
-    .ec-orderDetail .shopping-tbl {
-      display: flex;
-      align-items: center;
-    }
-
-    .ec-orderDetail .shopping-tbl-ttl {
-      display: flex;
-      align-items: center;
-      width: 250px;
-      font-weight: bold;
-    }
-
-    @media screen and (max-width: 768px) {
-      .ec-orderDetail .shopping-tbl {
-        display: block;
-      }
-
-      .ec-orderDetail .shopping-tbl-ttl {
-        margin-bottom: 0.5rem;
-      }
-    }
-
-    .ec-orderDetail .ec-radio {
-      display: flex;
-      align-items: center;
-      /*
-      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
-      border-radius: 2.5rem;
-      background-color: #fff;
-      padding: 2rem;
-      color: #525263;
-      font-weight: bold;
-      touch-action: manipulation;
-      cursor: pointer;
-      border: 1px solid #c4c4c4;
-      white-space: nowrap;
-      text-decoration: none;
-      height: 0;
-      margin: 0;
-      */
-    }
-
-    .ec-orderDetail .form-check .form-check-input:checked {
-      background-color: #0dab65;
-      border-color: #0dab65;
-    }
-
-    .ec-orderDetail .form-check {
-      display: flex;
-      align-items: center;
-      padding: 0;
-      margin-bottom: 0;
-    }
-
-    .ec-orderDetail .form-check .form-check-input {
-      float: none;
-      margin-left: 0;
-    }
-
-    .ec-orderDetail .ec-radio input {
-      margin-right: 0;
-      margin-bottom: 0;
-    }
-
-    .ec-orderDetail .ec-radio label {
-      margin-right: 0;
-      line-height: 0;
-    }
-
-    .ec-orderDetail .form-check input[type="radio"] {
-      height: 20px;
-      width: 20px;
-      margin-right: 1rem;
-    }
-
-    .ec-orderDetail .form-check .form-check-input {
-      margin-top: 0;
-    }
-
-    .ec-orderDetail .payment-attention {
-      width: 200px;
-      margin-left: 1rem;
-    }
-
-    .ec-orderDetail #shopping_order_DonationPurpose,
-    .ec-orderDetail #shopping_order_cheer_message,
-    .ec-orderDetail #shopping_order_offer_memo {
-      border: solid 1px #c4c4c4;
-      border-radius: 8px;
-      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
-      font-family: 'Klee One', serif;
-      padding: 1rem;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    .ec-orderDetail .ec-select select {
-      display: inline-block;
-      width: auto;
-      max-width: 100%;
-      background-color: #f8f8f8;
-      -webkit-appearance: menulist;
-    }
-
-    .ec-orderDetail .form-check input[type="checkbox"] {
-      height: 20px;
-      width: 20px;
-      margin-right: 1rem;
-      border: solid 1px #c4c4c4;
-    }
-
-    .ec-cartRole textarea {
-      font-family: initial;
-    }
-
-
-    .ec-agreement {
-      width: 100%;
-      max-width: calc(1130px + (1rem * 2));
-      margin: 5rem auto;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      column-gap: 3rem;
-    }
-
-    .ec-agreement .agreement-link {
-      width: calc(100% - 0px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .ec-agreement .agreement-link .agreement-Btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 2.5rem;
-      background-color: #fff;
-      width: 360px;
-      padding: 2rem;
-      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
-      color: #525263;
-      font-weight: bold;
-      touch-action: manipulation;
-      cursor: pointer;
-      border: 2px solid #c4c4c4;
-      white-space: nowrap;
-      text-decoration: none;
-      height: 0;
-      line-height: 0;
-      position: relative;
-      /* Added */
-    }
-
-    .ec-agreement .agreement-link .agreement-Btn::after {
-      content: "\e649";
-      font-family: 'themify';
-      position: absolute;
-      right: 1rem;
-      color: #c4c4c4;
-      font-size: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: all .3s;
-    }
-
-    .ec-agreement .agreement-Btn:hover {
-      color: #fff;
-      background: #c4c4c4;
-      border: 2px solid #c4c4c4;
-    }
-
-    .ec-agreement .agreement-Btn:hover::after {
-      color: #fff;
     }
   </style>
   <div class="wrap">
@@ -1038,6 +825,7 @@
                 <div class="ec-orderDelivery__change">
                   <button type="button" class="ec-inlineBtn" data-trigger="click" data-path="/shopping/shipping_multiple">お届け先を変更する</button>
                 </div>
+                <p class="shipping-info">寄附証明書などの書類はお申込者のご住所にお送りいたします。</p>
               </div>
             </div>
 
@@ -1048,143 +836,158 @@
                   <h2>寄付情報入力</h2>
                 </div>
 
-                <div class="shopping-wrap">
+                <div class="ec-orderAccount__account non-customer-display">
 
                   <div class="shopping-tbl">
                     <div class="shopping-tbl-ttl">
                       <label>お支払い方法</label>
                     </div>
-
-                    <div class="shopping-formwrap">
-                      <div class="ec-radio ec-paymethod">
-                        <div class="form-check">
-                          <input type="radio" id="shopping_order_Payment_5" name="_shopping_order[Payment]" required="required" data-trigger="change" class="form-check-input" value="5" checked="checked">
-                          <label class="form-check-label required" for="shopping_order_Payment_5">クレジットカード決済</label>
-                        </div>
+                    <div class="ec-radio ec-paymethod">
+                      {% for key, child in form.Payment %}
+                      <div style="display: block;">
+                        {% set Payment = form.Payment.vars.choices[key].data %}
+                        {{ form_widget(child, { 'attr': { 'data-trigger': 'change' }}) }}
+                        {% if Payment.payment_image is not null %}
+                        <p><img src="{{ asset(Payment.payment_image, 'save_image') }}"></p>
+                        {% endif %}
                       </div>
+                      {% endfor %}
+                    </div>
+                    <div class="ec-input {{ has_errors(form.Payment) ? ' error' }}">{{ form_errors(form.Payment) }}</div>
 
-                      <div class="payment-attention">
-                        <img src="./img/credit_img.png" />
+                    {% if BaseInfo.isOptionPoint and Order.Customer is not null %}
+                    <div class="shopping-tbl">
+                      <div class="shopping-tbl-ttl">
+                        <h2>{{ 'front.shopping.point_info'|trans }}</h2>
+                      </div>
+                      <div class="ec-input {{ has_errors(form.use_point) ? ' error' }}">
+                        <p>{{ 'front.shopping.available_point'|trans({ '%point%': Order.Customer.Point|number_format }) }}</p>
+                        {{ form_widget(form.use_point, { 'attr': { 'type': 'text', 'class': 'form-control', 'data-trigger': 'change' }}) }}
+                        {{ form_errors(form.use_point) }}
                       </div>
                     </div>
-                  </div>
+                    {% endif %}
 
+                    <div class="payment-attention">
+                      <p>JCB/VISA/MASTER/AMEX/Dinersのクレジットカードでお支払い頂けます。<br>必ずお申込者ご本人様名義のクレジットカードにてお申込みいただきますようお願いいたします。</p>
+                      <img src="{{ asset('assets/img/credit_img.png', 'user_data') }}" />
+                    </div>
+                  </div>
 
                   <div class="shopping-tbl">
                     <div class="shopping-tbl-ttl">
                       <label>寄付金額</label>
                     </div>
-                    <div class="shopping-formwrap">
-                      <span class="PT-txt">100,000,000</span>
+                    <div class="ec-totalBox mt-5rem">
+                      <dl class="ec-totalBox__spec">
+                        <dt>{{ 'common.subtotal'|trans }}</dt>
+                        <dd class="ec-totalBox__specTotal">{{ Order.subtotal|price }}</dd>
+                      </dl>
+                      <dl class="ec-totalBox__spec">
+                        <dt>{{ 'common.charge'|trans }}</dt>
+                        <dd>{{ Order.charge|price }}</dd>
+                      </dl>
+                      <dl class="ec-totalBox__spec">
+                        <dt>{{ 'common.delivery_fee'|trans }}</dt>
+                        <dd>{{ Order.deliveryFeeTotal|price }}</dd>
+                      </dl>
+                      {% if Order.taxable_discount < 0 %}
+                      <dl class="ec-totalBox__spec">
+                        <dt>{{ 'common.discount'|trans }}</dt>
+                        <dd>{{ Order.taxable_discount|price }}</dd>
+                      </dl>
+                      {% endif %}
+                      <div class="ec-totalBox__total">{{ 'common.total'|trans }}<span class="ec-totalBox__price">{{ Order.taxable_total|price }}</span><span class="ec-totalBox__taxLabel">{{ 'common.tax_include'|trans }}</span></div>
+                      {% for rate, total in Order.taxable_total_by_tax_rate %}
+                      <dl class="ec-totalBox__taxRate">
+                        <dt>{{ 'common.tax_rate_target'|trans({ '%rate%': rate }) }}</dt>
+                        <dd>{{ total|price }}</dd>
+                      </dl>
+                      {% endfor %}
+                      {% for item in Order.tax_free_discount_items %}
+                      {% if loop.first %}<div class="ec-totalBox__total"></div>{% endif %}
+                      <dl class="ec-totalBox__spec">
+                        <dt>{{ item.product_name }}</dt>
+                        <dd>{{ item.total_price|price }}</dd>
+                      </dl>
+                      {% endfor %}
+                      <div class="ec-totalBox__paymentTotal">
+                        <p>現在のお礼の品を希望する場合、<br> <span>{{ Order.payment_total|number_format }}円</span>の寄付が必要です。</p>
+                      </div>
                     </div>
                   </div>
+
 
 
                   <div class="shopping-tbl">
                     <div class="shopping-tbl-ttl">
                       <label>寄付金の使い道</label>
                     </div>
-                    <div class="shopping-formwrap">
-                      <div class="selwrap">
-                        <select id="shopping_order_DonationPurpose" name="_shopping_order[DonationPurpose]" class="form-control form-control">
-                          <option value="1">アザラシの保護活動等のオホーツク海の海洋環境に関する事業</option>
-                          <option value="2">森林、湖沼、河川等の環境保全啓発活動に関する事業</option>
-                          <option value="3">市内経済の活性化に関する事業</option>
-                          <option value="4">次代を担う人材の育成に関する事業</option>
-                          <option value="5">医療、福祉又は子育て支援の充実に関する事業</option>
-                          <option value="6">人口減少対策に関する事業</option>
-                          <option value="7">公共施設の整備に関する事業</option>
-                          <option value="8">市長が必要と認める事業</option>
-                        </select>
-                      </div>
-                    </div>
+                    {{ form_widget(form.DonationPurpose, { 'attr': { 'class': 'form-control' }}) }}
+                    {{ form_errors(form.DonationPurpose) }}
                   </div>
+
 
                   <div class="shopping-tbl">
                     <div class="shopping-tbl-ttl one_stop_head">
                       <label>ワンストップ特例制度</label>
                     </div>
-                    <div class="shopping-formwrap">
-                      <div class="form-check">
-                        <input type="checkbox" id="shopping_order_one_stop" name="_shopping_order[one_stop]" class="form-check-input" value="1" data-gtm-form-interact-field-id="0">
-                        <label class="form-check-label" for="shopping_order_one_stop"></label>
-                      </div>
-                      <div class="shopping-formwrap">
-                        <span class="s-form-w100">希望する</span>
-                      </div>
+                    <div class="donate-checkbox">
+                      {{ form_widget(form.one_stop) }}
+                      <p><label for="shopping_order_one_stop">寄付金税額控除に係る申告特例申請書を要望する</label></p>
                     </div>
+                    {{ form_errors(form.one_stop) }}
                   </div>
 
                   <div class="shopping-tbl">
                     <div class="shopping-tbl-ttl">
                       <label>応援メッセージ</label>
                     </div>
-                    <div class="shopping-formwrap">
-                      <textarea id="shopping_order_cheer_message" name="_shopping_order[cheer_message]" class="form-control form-control" placeholder="寄付先への応援メッセージを、こちらにご入力ください。(3000文字まで)" rows="6"></textarea>
+                    <div class="ec-input">
+                      {{ form_widget(form.cheer_message, {'attr': {'class': 'form-control', 'placeholder': 'front.shopping.cheer_message_placeholder'|trans, 'rows': '6'}}) }}
+                      {{ form_errors(form.cheer_message) }}
                     </div>
                   </div>
 
                   <div class="shopping-tbl">
                     <div class="shopping-tbl-ttl">
-                      <label>メッセージを<br class="d-none d-md-inline" />サイトで公開</label>
+                      <label>メッセージを公開</label>
                     </div>
-                    <div class="shopping-formwrap">
-                      <div class="form-check">
-                        <input type="checkbox" id="shopping_order_cheer_message_publish" name="_shopping_order[cheer_message_publish]" class="form-check-input" value="1">
-                        <label class="form-check-label" for="shopping_order_cheer_message_publish"></label>
+                    <div class="ec-checkbox">
+                      <div class="donate-checkbox">
+                        {{ form_widget(form.cheer_message_publish) }}
+                        <p><label for="shopping_order_cheer_message_publish">許可する</label></p>
                       </div>
-                      <div class="shopping-formwrap">
-                        <span class="s-form-w100">許可する</span>
-                      </div>
+                      {{ form_errors(form.cheer_message_publish) }}
                     </div>
                   </div>
-
 
                   <div class="shopping-tbl">
                     <div class="shopping-tbl-ttl">
                       <label>寄付者名の公表</label>
                     </div>
-                    <div class="shopping-formwrap">
-                      <div class="form-check">
-                        <input type="checkbox" id="shopping_order_name_announce" name="_shopping_order[name_announce]" class="form-check-input" value="1">
-                        <label class="form-check-label" for="shopping_order_name_announce">Name announce</label>
-                      </div>
-                      <div class="shopping-formwrap">
-                        <span class="s-form-w100">承諾する</span>
-                      </div>
+                    <div class="donate-checkbox">
+                      {{ form_widget(form.name_announce) }}
+                      <p><label for="shopping_order_name_announce">公表する</label></p>
                     </div>
+                    {{ form_errors(form.name_announce) }}
                   </div>
 
                   <div class="shopping-tbl">
                     <div class="shopping-tbl-ttl">
                       <label>備考欄</label>
                     </div>
-                    <div class="shopping-formwrap">
-                      <textarea id="shopping_order_offer_memo" name="_shopping_order[offer_memo]" class="form-control form-control" placeholder="寄付に対する要望がございましたら、こちらにご入力ください。(3000文字まで)" rows="6"></textarea>
+                    <div class="ec-input">
+                      {{ form_widget(form.offer_memo, {'attr': {'class': 'form-control', 'placeholder': 'front.shopping.message_placeholder'|trans, 'rows': '6'}}) }}
+                      {{ form_errors(form.offer_memo) }}
                     </div>
                   </div>
 
+
                 </div>
 
               </div>
             </div>
-
-
-            <div class="ec-agreement">
-              <div class="ec-orderRole__detail">
-
-                <div class="agreement-link">
-                  <button type="button" class="agreement-Btn" data-trigger="click" data-path="{{url('help_agreement')}}">
-                    利用規約を確認する
-                  </button>
-                </div>
-
-              </div>
-            </div>
-
-
-
-
 
 
           </div>
