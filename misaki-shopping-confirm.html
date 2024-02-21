@@ -240,6 +240,7 @@
     .ec-orderRole .ec-rectHeading h2 {
       background: #0dab65;
       color: #fff;
+      border-radius: .5rem;
     }
 
     .ec-orderRole .ec-orderRole__detail {
@@ -374,6 +375,7 @@
     .ec-orderDelivery .ec-rectHeading h2 {
       background: #0dab65;
       color: #fff;
+      border-radius: .5rem;
     }
 
     .ec-orderDelivery .ec-orderRole__detail {
@@ -513,11 +515,11 @@
     .ec-orderDetail .ec-rectHeading h2 {
       background: #0dab65;
       color: #fff;
+      border-radius: .5rem;
     }
 
     .ec-orderDetail .ec-orderRole__detail {
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
       max-width: calc(1130px + (1rem * 2));
       width: 100%;
     }
@@ -675,7 +677,9 @@
       font-family: initial;
     }
 
+    /*END .ec-orderDetail*/
 
+    /*.ec-agreement*/
     .ec-agreement {
       width: 100%;
       max-width: calc(1130px + (1rem * 2));
@@ -686,6 +690,66 @@
       justify-content: center;
       flex-direction: column;
       column-gap: 3rem;
+      border-top: 1px solid #ccc;
+      padding-top: 3rem;
+    }
+
+    .ec-agreement .ec-orderRole__detail {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ec-agreement .shopping-formwrap {
+      width: calc(100% - 0px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ec-agreement .shopping-tbl {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .ec-agreement .shopping-tbl-ttl {
+      display: flex;
+      align-items: center;
+      width: 250px;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-agreement .shopping-tbl {
+        display: block;
+      }
+
+      .ec-agreement .shopping-tbl-ttl {
+        margin-bottom: 0.5rem;
+      }
+
+    }
+
+    .ec-agreement .form-check {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    .ec-agreement .form-check .form-check-input {
+      float: none;
+      margin-left: 0;
+    }
+
+    .ec-agreement .form-check .form-check-input {
+      margin-top: 0;
+    }
+
+    .ec-agreement .form-check input[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+      margin-right: 1rem;
+      border: solid 1px #c4c4c4;
     }
 
     .ec-agreement .agreement-link {
@@ -694,9 +758,10 @@
       align-items: center;
       justify-content: center;
       position: relative;
+      margin: 3rem 0 1rem;
     }
 
-    .ec-agreement .agreement-link .agreement-Btn {
+    .ec-agreement .agreement-link .agreement-Btn:disabled {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -705,17 +770,51 @@
       width: 360px;
       padding: 2rem;
       font-size: calc(10px + 2 * ((100vw - 320px) / 670));
-      color: #525263;
+      color: #e1e1e1;
       font-weight: bold;
       touch-action: manipulation;
       cursor: pointer;
-      border: 2px solid #c4c4c4;
+      border: 2px solid #e1e1e1;
       white-space: nowrap;
       text-decoration: none;
       height: 0;
       line-height: 0;
       position: relative;
+    }
+
+    .ec-agreement .agreement-link .agreement-Btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background: #0dab65;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #fff;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #0dab65;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+      transition: ease .2s;
       /* Added */
+    }
+
+    .ec-agreement .agreement-link .agreement-Btn:disabled::after {
+      content: "\e649";
+      font-family: 'themify';
+      position: absolute;
+      right: 1rem;
+      color: #e1e1e1;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
     }
 
     .ec-agreement .agreement-link .agreement-Btn::after {
@@ -723,22 +822,30 @@
       font-family: 'themify';
       position: absolute;
       right: 1rem;
-      color: #c4c4c4;
+      color: #fff;
       font-size: 1rem;
       top: 50%;
       transform: translateY(-50%);
       transition: all .3s;
     }
 
-    .ec-agreement .agreement-Btn:hover {
-      color: #fff;
-      background: #c4c4c4;
-      border: 2px solid #c4c4c4;
+    .desc {
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
     }
 
-    .ec-agreement .agreement-Btn:hover::after {
-      color: #fff;
+    .terms {
+      width: 100%;
+      height: 150px;
+      margin: 2rem 0;
+      padding: 0.5rem;
+      overflow-y: scroll;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      border-radius: 8px;
     }
+
+    /*END .ec-agreement*/
   </style>
   <div class="wrap">
 
@@ -825,11 +932,11 @@
                     <div class="ec-progress__number">1 </div>
                     <div class="ec-progress__label">選択したお礼の品 </div>
                   </li>
-                  <li class="ec-progress__item is-complete">
+                  <li class="ec-progress__item">
                     <div class="ec-progress__number">2 </div>
                     <div class="ec-progress__label">申込手続き </div>
                   </li>
-                  <li class="ec-progress__item">
+                  <li class="ec-progress__item is-complete">
                     <div class="ec-progress__number">3 </div>
                     <div class="ec-progress__label">入力確認 </div>
                   </li>
@@ -937,7 +1044,6 @@
                       </dd>
                     </dl>
 
-                    {% if is_granted('ROLE_USER') == false %}
                     <dl class="shopping-tbl">
                       <dt class="shopping-tbl-ttl">
                         <label>生年月日</label>
@@ -949,24 +1055,6 @@
 
                     <dl class="shopping-tbl">
                       <dt class="shopping-tbl-ttl">
-                        <label>性別</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w20" id="" type="text" value="{{ Order.sex }}" readonly="readonly">
-                      </dd>
-                    </dl>
-                    {% else %}
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>生年月日</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w20" id="" type="text" value="{{ Order.birth|date('Y年m月d日', 'asia/tokyo') }}" readonly="readonly">
-                      </dd>
-                    </dl>
-                    {% endif %}
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
                         <label>メールアドレス</label>
                       </dt>
                       <dd class="shopping-formwrap">
@@ -974,11 +1062,6 @@
                       </dd>
                     </dl>
 
-                    <div class="ec-orderAccount__change non-customer-display">
-                      <button id="customer" class="ec-inlineBtn customerinfo-change_btn" type="button">
-                        お申込者情報を修正する
-                      </button>
-                    </div>
 
                   </div>
                 </div>
@@ -989,7 +1072,7 @@
             <div class="ec-orderDelivery">
               <div class="ec-orderRole__detail">
                 <div class="ec-rectHeading">
-                  <h2>お届け先</h2>
+                  <h2>お礼の品とお届け先</h2>
                 </div>
 
                 <div class="ec-orderDelivery__item">
@@ -1019,6 +1102,13 @@
                         <dd class="shopping-formwrap">
                           <span class="s-form-w20">冷凍配送</span>
                         </dd>
+
+                        <dt class="shopping-tbl-ttl">
+                          <label>小計</label>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <span class="s-form-w20">100,000,000円</span>
+                        </dd>
                       </dl>
 
                       <dl class="shopping-tbl">
@@ -1035,9 +1125,7 @@
                   </div>
                 </div>
 
-                <div class="ec-orderDelivery__change">
-                  <button type="button" class="ec-inlineBtn" data-trigger="click" data-path="/shopping/shipping_multiple">お届け先を変更する</button>
-                </div>
+
               </div>
             </div>
 
@@ -1045,7 +1133,7 @@
             <div class="ec-orderDetail">
               <div class="ec-orderRole__detail">
                 <div class="ec-rectHeading">
-                  <h2>寄付情報入力</h2>
+                  <h2>寄付情報</h2>
                 </div>
 
                 <div class="shopping-wrap">
@@ -1058,14 +1146,10 @@
                     <div class="shopping-formwrap">
                       <div class="ec-radio ec-paymethod">
                         <div class="form-check">
-                          <input type="radio" id="shopping_order_Payment_5" name="_shopping_order[Payment]" required="required" data-trigger="change" class="form-check-input" value="5" checked="checked">
-                          <label class="form-check-label required" for="shopping_order_Payment_5">クレジットカード決済</label>
+                          <label>クレジットカード決済</label>
                         </div>
                       </div>
 
-                      <div class="payment-attention">
-                        <img src="./img/credit_img.png" />
-                      </div>
                     </div>
                   </div>
 
@@ -1079,23 +1163,13 @@
                     </div>
                   </div>
 
-
                   <div class="shopping-tbl">
                     <div class="shopping-tbl-ttl">
                       <label>寄付金の使い道</label>
                     </div>
                     <div class="shopping-formwrap">
                       <div class="selwrap">
-                        <select id="shopping_order_DonationPurpose" name="_shopping_order[DonationPurpose]" class="form-control form-control">
-                          <option value="1">アザラシの保護活動等のオホーツク海の海洋環境に関する事業</option>
-                          <option value="2">森林、湖沼、河川等の環境保全啓発活動に関する事業</option>
-                          <option value="3">市内経済の活性化に関する事業</option>
-                          <option value="4">次代を担う人材の育成に関する事業</option>
-                          <option value="5">医療、福祉又は子育て支援の充実に関する事業</option>
-                          <option value="6">人口減少対策に関する事業</option>
-                          <option value="7">公共施設の整備に関する事業</option>
-                          <option value="8">市長が必要と認める事業</option>
-                        </select>
+                        アザラシの保護活動等のオホーツク海の海洋環境に関する事業
                       </div>
                     </div>
                   </div>
@@ -1105,13 +1179,7 @@
                       <label>ワンストップ特例制度</label>
                     </div>
                     <div class="shopping-formwrap">
-                      <div class="form-check">
-                        <input type="checkbox" id="shopping_order_one_stop" name="_shopping_order[one_stop]" class="form-check-input" value="1" data-gtm-form-interact-field-id="0">
-                        <label class="form-check-label" for="shopping_order_one_stop"></label>
-                      </div>
-                      <div class="shopping-formwrap">
-                        <span class="s-form-w100">希望する</span>
-                      </div>
+                      <span class="s-form-w100">希望しない</span>
                     </div>
                   </div>
 
@@ -1120,7 +1188,6 @@
                       <label>応援メッセージ</label>
                     </div>
                     <div class="shopping-formwrap">
-                      <textarea id="shopping_order_cheer_message" name="_shopping_order[cheer_message]" class="form-control form-control" placeholder="寄付先への応援メッセージを、こちらにご入力ください。(3000文字まで)" rows="6"></textarea>
                     </div>
                   </div>
 
@@ -1129,13 +1196,7 @@
                       <label>メッセージを<br class="d-none d-md-inline" />サイトで公開</label>
                     </div>
                     <div class="shopping-formwrap">
-                      <div class="form-check">
-                        <input type="checkbox" id="shopping_order_cheer_message_publish" name="_shopping_order[cheer_message_publish]" class="form-check-input" value="1">
-                        <label class="form-check-label" for="shopping_order_cheer_message_publish"></label>
-                      </div>
-                      <div class="shopping-formwrap">
-                        <span class="s-form-w100">許可する</span>
-                      </div>
+                      <span class="s-form-w100">許可しない</span>
                     </div>
                   </div>
 
@@ -1145,13 +1206,7 @@
                       <label>寄付者名の公表</label>
                     </div>
                     <div class="shopping-formwrap">
-                      <div class="form-check">
-                        <input type="checkbox" id="shopping_order_name_announce" name="_shopping_order[name_announce]" class="form-check-input" value="1">
-                        <label class="form-check-label" for="shopping_order_name_announce">Name announce</label>
-                      </div>
-                      <div class="shopping-formwrap">
-                        <span class="s-form-w100">承諾する</span>
-                      </div>
+                      <span class="s-form-w100">承諾しない</span>
                     </div>
                   </div>
 
@@ -1160,7 +1215,6 @@
                       <label>備考欄</label>
                     </div>
                     <div class="shopping-formwrap">
-                      <textarea id="shopping_order_offer_memo" name="_shopping_order[offer_memo]" class="form-control form-control" placeholder="寄付に対する要望がございましたら、こちらにご入力ください。(3000文字まで)" rows="6"></textarea>
                     </div>
                   </div>
 
@@ -1173,11 +1227,64 @@
             <div class="ec-agreement">
               <div class="ec-orderRole__detail">
 
+                <div class="shopping-tbl">
+                  <div class="shopping-tbl-ttl">
+                    <label>注意事項</label>
+                  </div>
+
+                  <div class="shopping-formwrap">
+                    <div class="desc">
+                      以下の事項をご了承の上、お申込みください。
+                    </div>
+
+                    <div class="terms">
+                      ・お申し込みお手続きは、必ず控除対象者さまのご名義で行ってください。<br>
+                      ・寄附方法は、クレジットカード決済限定です。お申込者本人のクレジットカードのみご利用できます。<br>
+                      ・寄付の変更およびキャンセルは、いかなる理由でもお受けできません。<br>
+                      ・お礼の品、配送月の変更はお受けできません。<br>
+                      ・配送日、曜日、配送業者の指定はお受けできません。<br>
+                      ・配送業者での保管期間を過ぎた場合、再配送はいたしません。<br>
+                      ・農産物については、天候等の影響でご希望の配送月を前後する場合がございます。また、災害等によりお届け不能となった場合は、他のお礼品に変更をお願いする場合がございます。<br>
+                      ・お受け取りのお礼品につきましては、到着後直ぐに状態をご確認いただき、不具合のあった場合は早急にご連絡ください。<br>
+                      ・お日にちを経過してのご連絡は対応いたしかねます。<br>
+                      <div id="end"></div>
+                    </div>
+
+                    <div class="shopping-formwrap">
+                      <div class="form-check">
+                        <input type="checkbox" id="agree" disabled>
+                        <div class="s-form-w100">寄付の変更・キャンセルはいたしません</div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
                 <div class="agreement-link">
-                  <button type="button" class="agreement-Btn" data-trigger="click" data-path="{{url('help_agreement')}}">
-                    利用規約を確認する
+                  <button id="next" type="button" class="agreement-Btn" data-trigger="click" data-path="{{url('help_agreement')}}" disabled>
+                    <span>決済へ進む</span>
                   </button>
                 </div>
+
+                <a class="ec-blockBtn--cancel" href="/">戻る</a>
+
+                <script>
+                  var end = document.getElementById('end');
+                  var agree = document.getElementById('agree');
+                  var next = document.getElementById('next');
+                  agree.addEventListener('click', function () {
+                    next.disabled = !next.disabled;
+                  });
+                  var observer = new IntersectionObserver(function (changes) {
+                    if (changes[0].intersectionRatio === 1) {
+                      observer.disconnect();
+                      agree.disabled = false;
+                    }
+                  });
+                  observer.observe(end);
+                </script>
+
 
               </div>
             </div>
@@ -1222,6 +1329,7 @@
 
   </div>
 
+  <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
   <script type="text/javascript" src="./js/jquery.js"></script>
   <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
