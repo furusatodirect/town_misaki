@@ -64,184 +64,115 @@
       margin: 0;
     }
 
-    /*.ec-cartRow*/
-    .ec-cartRow {
-      column-gap: 1rem;
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid #fbfbfb;
+    /*ec-mypg*/
+    .ec-mypg-wrap {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
     }
 
-    .ec-cartRow .ec-cartRow__contentColumn {
-      border-bottom: none;
-      padding: 0;
-      column-gap: 1rem;
-      display: flex;
-      width: 60%;
-    }
-
-    .ec-cartRow .ec-cartRow__img {
-      display: inherit;
-      min-width: inherit;
-      max-width: inherit;
-      width: 30%;
-      padding: 0;
-    }
-
-    .ec-cartRow .ec-cartRow__img img {
-      border-radius: 1.5rem;
-    }
-
-    .ec-cartRow .ec-cartRow__summary {
-      display: flex;
-      flex-flow: column;
-      justify-content: space-between;
-      width: 70%;
-      margin-left: inherit;
-      vertical-align: middle;
-    }
-
-    .ec-cartRow .ec-cartRow__amountColumn {
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center;
-      border-bottom: none;
+    .ec-mypg-proCount {
+      margin: 2rem;
       text-align: center;
-      width: 10%;
-    }
-
-    .ec-cartRow .ec-cartRow__amountColumn .ec-cartRow__amountUpButton,
-    .ec-cartRow .ec-cartRow__amountColumn .ec-cartRow__amountDownButton {
-      border: 1px solid #c9c9c9;
-    }
-
-    .ec-cartRow .ec-cartRow__amountColumn .ec-cartRow__amountUpDown {
-      display: flex;
-    }
-
-    .ec-cartRow .ec-cartRow__subtotalColumn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-bottom: none;
-      vertical-align: middle;
-      text-align: center;
-      width: 20%;
       font-weight: bold;
     }
 
-    .ec-cartRow .ec-cartRow__delColumn {
+    .ec-mypg-detail {
+      column-gap: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 3rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-mypg-detail {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        row-gap: 1rem;
+      }
+
+      .ec-mypg-dleft {
+        width: 100% !important;
+        padding: 0;
+      }
+
+      .ec-mypg-proamount {
+        display: flex;
+        justify-content: center;
+        column-gap: 2rem;
+      }
+
+      .ec-mypg-detaiBtn a {
+        width: 300px;
+        height: 40px;
+      }
+
+      .ec-mypg-dright {
+        width: 300px !important;
+        margin: 2rem;
+      }
+
+    }
+
+    .ec-mypg-dleft {
+      width: 300px;
+      padding: 0;
+    }
+
+    .ec-mypg-proimg {
+      width: 100%;
+      padding: 0;
+    }
+
+    .ec-mypg-proimg img {
+      border-radius: 1.5rem;
+    }
+
+    .ec-mypg-dceter {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      row-gap: .3rem;
+    }
+
+    .ec-mypg-dceterrow {
+      display: flex;
+      flex-direction: column;
+      row-gap: .3rem;
+    }
+
+    .ec-mypg-proamount {
+      display: flex;
+      column-gap: 2rem;
+    }
+
+    .ec-mypg-dright {
+      width: 150px;
+      padding: 0;
+    }
+
+    .ec-mypg-detaiBtn {
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      width: 10%;
       border-bottom: none;
     }
 
-    .ec-cartRow .ec-cartRow__delColumn a {
+    .ec-mypg-detaiBtn a {
       display: flex;
       justify-content: center;
       align-items: center;
       border: 1px solid #c9c9c9;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       border-radius: 2rem;
       font-size: calc(10px + 2 * ((100vw - 320px) / 670));
       background-color: #f4f4f4;
     }
 
-    .ec-cartRow .ec-cartRow__delColumn a span {
-      padding-left: 0.5rem;
-    }
-
-    .ec-cartRole .ec-cartRole__actions {
-      width: 100%;
-      margin: 2rem 0;
-    }
-
-    .ec-cartRole .ec-cartRole__total {
-      padding: 2rem .5rem 2rem;
-      background-color: #fafffc;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    @media screen and (max-width: 768px) {
-      .ec-cartRow {
-        display: flex;
-        flex-flow: column;
-        justify-content: space-between;
-      }
-
-      .ec-cartRow .ec-cartRow__contentColumn {
-        display: flex;
-        flex-flow: column;
-        width: 100%;
-        padding: 1rem 0;
-      }
-
-      .ec-cartRow .ec-cartRow__img {
-        width: 100%;
-        padding: 0;
-      }
-
-      .ec-cartRow .ec-cartRow__summary {
-        padding: .5rem;
-        width: 100%;
-      }
-
-      .ec-cartRow .ec-cartRow__summary .ec-cartRow__unitPrice,
-      .ec-cartRow .ec-cartRow__summary .ec-cartRow__sutbtotalSP {
-        display: none;
-      }
-
-      .ec-cartRow .ec-cartRow__amountColumn {
-        display: flex;
-        flex-flow: row;
-        justify-content: start;
-        align-items: center;
-        border-bottom: none;
-        text-align: center;
-        width: 100%;
-        padding-left: .5rem;
-      }
-
-      .ec-cartRow .ec-cartRow__amountColumn .ec-cartRow__amountSP {
-        display: block;
-        margin-bottom: 5px;
-      }
-
-      .ec-cartRow .ec-cartRow__subtotalColumn {
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        border-bottom: none;
-        text-align: center;
-        width: 100%;
-        font-weight: bold;
-        position: relative;
-        top: -3rem;
-        padding-right: .5rem;
-      }
-
-      .ec-cartRow .ec-cartRow__amountUpDown {
-        padding: 0 1.5rem;
-      }
-
-      .ec-cartRow .ec-cartRow__delColumn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        border-bottom: none;
-      }
-
-    }
-
-    /*END .ec-cartRow*/
+    /*END    ec-mypg*/
   </style>
   <div class="wrap">
 
@@ -311,266 +242,6 @@
 
 
       <div class="container">
-        <div class="ec-layoutRole__main">
-          <div class="ec-mypageRole">
-            <div class="ec-pageHeader">
-              <h1>お申込履歴</h1>
-              <a href="https://mombetsu-stv.furusato-direct.jp/mymenu">＜</a>
-            </div>
-          </div>
-          <div class="ec-mypageRole">
-            <p class="ec-para-normal">3件のお申込履歴があります。</p>
-            <div class="ec-historyRole">
-              <p class="ec-historyListHeader__date">2023年09月25日　16:19:51</p>
-              <div class="ec-historyRole__contents">
-                <div class="ec-historyRole__header">
-                  <div class="ec-historyListHeader">
-
-                    <dl class="ec-definitions order_no">
-                      <dt>お申込番号</dt>
-                      <dd>
-                        <p class="ec-reportDescription">MFS62-333038356637323600000000062</p>
-
-                      </dd>
-                    </dl>
-                    <dl class="ec-definitions">
-                      <dt>お申込状況</dt>
-                      <dd>注文受付</dd>
-                    </dl>
-                  </div>
-                </div>
-                <div class="ec-historyRole__detail">
-                  <div class="ec-imageGrid">
-                    <div class="ec-imageGrid__img">
-                      <div class="mask">
-
-                        <div class="c-pic"><img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/1000330.jpg" alt="" loading="lazy"></div>
-                      </div>
-                    </div>
-                    <div class="ec-imageGrid__content">
-                      <p class="ec-historyRole__detailTitle">10-328 ボイルずわいがに姿切り1kg</p>
-                      <p class="ec-historyRole__detailPrice">10,000円
-                        × 1</p>
-                    </div>
-                  </div>
-                  <p class="ec-historyListHeader__action"><a class="ec-inlineBtn" href="https://mombetsu-stv.furusato-direct.jp/mypage/history/62">詳細を見る</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="ec-historyRole">
-              <p class="ec-historyListHeader__date">2023年09月25日　14:40:29</p>
-              <div class="ec-historyRole__contents">
-                <div class="ec-historyRole__header">
-                  <div class="ec-historyListHeader">
-
-                    <dl class="ec-definitions order_no">
-                      <dt>お申込番号</dt>
-                      <dd>
-                        <p class="ec-reportDescription">MFS61-323331343832613000000000061</p>
-
-                      </dd>
-                    </dl>
-                    <dl class="ec-definitions">
-                      <dt>お申込状況</dt>
-                      <dd>注文受付</dd>
-                    </dl>
-                  </div>
-                </div>
-                <div class="ec-historyRole__detail">
-                  <div class="ec-imageGrid">
-                    <div class="ec-imageGrid__img">
-                      <div class="mask">
-
-                        <div class="c-pic"><img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/1000330.jpg" alt="" loading="lazy"></div>
-                      </div>
-                    </div>
-                    <div class="ec-imageGrid__content">
-                      <p class="ec-historyRole__detailTitle">10-328 ボイルずわいがに姿切り1kg</p>
-                      <p class="ec-historyRole__detailPrice">10,000円
-                        × 1</p>
-                    </div>
-                  </div>
-                  <p class="ec-historyListHeader__action"><a class="ec-inlineBtn" href="https://mombetsu-stv.furusato-direct.jp/mypage/history/61">詳細を見る</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="ec-historyRole">
-              <p class="ec-historyListHeader__date">2023年09月25日　13:59:54</p>
-              <div class="ec-historyRole__contents">
-                <div class="ec-historyRole__header">
-                  <div class="ec-historyListHeader">
-
-                    <dl class="ec-definitions order_no">
-                      <dt>お申込番号</dt>
-                      <dd>
-                        <p class="ec-reportDescription">MFS60-363637383066343900000000060</p>
-
-                      </dd>
-                    </dl>
-                    <dl class="ec-definitions">
-                      <dt>お申込状況</dt>
-                      <dd>注文受付</dd>
-                    </dl>
-                  </div>
-                </div>
-                <div class="ec-historyRole__detail">
-                  <div class="ec-imageGrid">
-                    <div class="ec-imageGrid__img">
-                      <div class="mask">
-
-                        <div class="c-pic"><img src="//d2xf9yvm8p5xm3.cloudfront.net/images/012190/480741.jpg" alt="" loading="lazy"></div>
-                      </div>
-                    </div>
-                    <div class="ec-imageGrid__content">
-                      <p class="ec-historyRole__detailTitle">14-22 オホーツク産ホタテ玉冷大(1kg)</p>
-                      <p class="ec-historyRole__detailPrice">14,000円
-                        × 1</p>
-                    </div>
-                  </div>
-                  <p class="ec-historyListHeader__action"><a class="ec-inlineBtn" href="https://mombetsu-stv.furusato-direct.jp/mypage/history/60">詳細を見る</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="ec-pagerRole">
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div class="container">
-        <div class="ec-layoutRole__main">
-          <div class="ec-mypageRole">
-            <div class="ec-pageHeader">
-              <h1>お申込履歴</h1>
-              <a href="{{ url('mymenu') }}">＜</a>
-            </div>
-            {#{% include 'Mypage/navi.twig' %}#}
-          </div>
-          <div class="ec-mypageRole">
-            {% if pagination.totalItemCount > 0 %}
-            <p class="ec-para-normal">{{pagination.totalItemCount}}件のお申込履歴があります。</p>
-            {% for Order in pagination %}
-            <div class="ec-historyRole">
-              <p class="ec-historyListHeader__date">{{ Order.order_date|date_format('', 'Y年m月d日　H:i:s') }}</p>
-              <div class="ec-historyRole__contents">
-                <div class="ec-historyRole__header">
-                  <div class="ec-historyListHeader">
-
-                    <dl class="ec-definitions order_no">
-                      <dt>{{ 'front.mypage.order_no'|trans }}</dt>
-                      <dd>
-                        <p class="ec-reportDescription">{% if Order.id %}MFS{{ Order.orderNo }}-{{Order.complete_message| striptags | replace({'■クレジットカード決済情報':'','決済取引ID:':'',(' '):'','/\s+/g':'',' ':''}) |trim}}{% endif %}</p>
-
-                      </dd>
-                    </dl>
-                    {% if (BaseInfo.option_mypage_order_status_display) %}
-                    <dl class="ec-definitions">
-                      <dt>{{ 'front.mypage.order_status'|trans }}</dt>
-                      <dd>{{ Order.CustomerOrderStatus }}</dd>
-                    </dl>
-                    {% endif %}
-                  </div>
-                </div>
-                <div class="ec-historyRole__detail">
-                  {% for OrderItem in Order.MergedProductOrderItems %}
-                  <div class="ec-imageGrid">
-                    <div class="ec-imageGrid__img">
-                      {% if OrderItem.Product is null %}
-                      {#<img src="{{ asset(''|no_image_product, 's3_image') }}"/>#}
-                      <li class="sp-thumbnail">
-                        <img class="b-pic" src="{{ asset(ProductImage.file_name|no_image_product, 's3_image') }}" alt="{{ Product.name }}" loading="lazy">
-                        <div class="c-pic">
-                          <img src="{{ asset(ProductImage.file_name|no_image_product, 's3_image') }}" alt="{{ Product.name }}" loading="lazy">
-                        </div>
-                      </li>
-                      {% else %}
-                      <div class="mask">
-                        <img class="b-pic" src="{{ asset(OrderItem.Product.MainListImage|no_image_product, 's3_image') }}" alt="{{ Product.name }}" loading="lazy">
-                        <div class="c-pic"><img src="{{ asset(OrderItem.Product.MainListImage|no_image_product, 's3_image') }}" alt="{{ Product.name }}" loading="lazy"></div>
-                      </div>
-                      {% endif %}
-                    </div>
-                    <div class="ec-imageGrid__content">
-                      <p class="ec-historyRole__detailTitle">{{ OrderItem.product_name }}</p>
-                      {% if OrderItem.class_category_name1 is not empty %}
-                      {{ OrderItem.class_category_name1 }}
-                      {% endif %}
-                      {% if OrderItem.class_category_name2 is not empty %}
-                      / {{ OrderItem.class_category_name2 }}
-                      {% endif %}
-                      <p class="ec-historyRole__detailPrice">{{ OrderItem.price_inc_tax|number_format }}円
-                        × {{ OrderItem.quantity }}</p>
-                    </div>
-                  </div>
-                  {% endfor %}
-                  <p class="ec-historyListHeader__action"><a class="ec-inlineBtn" href="{{ url('mypage_history', {'order_no': Order.order_no}) }}">{{ 'front.mypage.view_detail'|trans }}</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-            <div class="ec-pagerRole">
-              {% include "pager.twig" with {'pages': pagination.paginationData} %}
-            </div>
-            {% else %}
-            <p class="ec-para-normal">{{ 'front.mypage.history_not_found'|trans }}</p>
-            {% endif %}
-          </div>
-        </div>
-
-      </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div class="container">
 
         <div class="ec-role">
           <div class="ec-pageHeader">
@@ -581,118 +252,69 @@
         <div class="ec-cartRole"> </div>
         <form name="form" id="form_cart" class="ec-cartRole" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
 
-          <div class="ec-cartRole__cart">
+          <div class="ec-mypg-wrap">
+
+            <div class="ec-mypg-proCount">3件のお申込履歴があります。</div>
 
 
-            <div class="ec-cartRow">
+            <div class="ec-mypg-detail">
 
-              <div class="ec-cartRow__contentColumn">
+              <div class="ec-mypg-dleft">
 
-                <div class="ec-cartRow__img">
+                <div class="ec-mypg-proimg">
                   <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">
                     <img src="./img/gift/misaki-product-01.jpg" alt="ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト">
                   </a>
                 </div>
 
-                <div class="ec-cartRow__summary">
-                  <div class="ec-cartRow__name">
-                    <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</a> </div>
-                  <div class="ec-cartRow__unitPrice">28,000円</div>
-                  <div class="ec-cartRow__sutbtotalSP">28,000円</div>
+              </div>
+
+              <div class="ec-mypg-dceter">
+
+                <div class="ec-mypg-reqDat">お申込日時： 2023年09月25日　16:19:51</div>
+                <div class="ec-mypg-reqNo">お申込番号： MFS62-333038356637323600000000062</div>
+                <div class="ec-mypg-reqSt">お申込状況： 注文受付</div>
+
+                <div class="ec-mypg-dceterrow">
+
+                  <div class="ec-mypg-prottl">
+                    <div class="ec-mypg-proname">
+                      <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</a> </div>
+                  </div>
+
+                  <div class="ec-mypg-proamount">
+                    <div class="ec-mypg-proPrice">28,000円</div>
+                    <div class="ec-mypg__proamount">数量：5</div>
+                    <div class="ec-mypg__sutbtotal">小計：<span>1,028,000円</span></div>
+                  </div>
+
                 </div>
 
+
               </div>
 
+              <div class="ec-mypg-dright">
 
-              <div class="ec-cartRow__amountColumn">
-
-
-                <div class="ec-cartRow__amount">数量：5</div>
-                <div class="ec-cartRow__amountSP">数量：5</div>
-                <div class="ec-cartRow__amountUpDown">
-                  <a href="http://myvegas.jp/cart/up/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-cartRow__amountUpButton load-overlay" data-method="put" data-confirm="false">
-                    <span class="ec-cartRow__amountUpButton__icon"><img src="./img/plus-dark.svg" alt="increase"></span>
-                  </a>
-                  <a href="http://myvegas.jp/cart/down/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-cartRow__amountDownButton load-overlay" data-method="put" data-confirm="false">
-                    <span class="ec-cartRow__amountDownButton__icon"><img src="./img/minus.svg" alt="reduce"></span>
-                  </a>
+                <div class="ec-mypg-detaiBtn">
+                  <a href="http://myvegas.jp/cart/remove/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-icon" data-method="put" data-message="カートからお礼の品を削除してもよろしいですか?">
+                    詳細を見る</a>
                 </div>
 
-              </div>
-
-              <div class="ec-cartRow__subtotalColumn">
-                <div class="ec-cartRow__sutbtotal">小計：<span>1,028,000円</span></div>
-              </div>
-
-              <div class="ec-cartRow__delColumn">
-                <a href="http://myvegas.jp/cart/remove/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-icon" data-method="put" data-message="カートからお礼の品を削除してもよろしいですか?">
-                  <img src="./img/cross.svg" alt="delete"><span>削除</span>
-                </a>
-              </div>
-
-            </div>
-
-
-            <div class="ec-cartRow">
-
-              <div class="ec-cartRow__contentColumn">
-
-                <div class="ec-cartRow__img">
-                  <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">
-                    <img src="./img/gift/misaki-product-01.jpg" alt="ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト">
-                  </a>
-                </div>
-
-                <div class="ec-cartRow__summary">
-                  <div class="ec-cartRow__name">
-                    <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</a> </div>
-                  <div class="ec-cartRow__unitPrice">28,000円</div>
-                  <div class="ec-cartRow__sutbtotalSP">28,000円</div>
-                </div>
-
-              </div>
-
-
-              <div class="ec-cartRow__amountColumn">
-
-
-                <div class="ec-cartRow__amount">数量：5</div>
-                <div class="ec-cartRow__amountSP">数量：5</div>
-                <div class="ec-cartRow__amountUpDown">
-                  <a href="http://myvegas.jp/cart/up/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-cartRow__amountUpButton load-overlay" data-method="put" data-confirm="false">
-                    <span class="ec-cartRow__amountUpButton__icon"><img src="./img/plus-dark.svg" alt="increase"></span>
-                  </a>
-                  <a href="http://myvegas.jp/cart/down/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-cartRow__amountDownButton load-overlay" data-method="put" data-confirm="false">
-                    <span class="ec-cartRow__amountDownButton__icon"><img src="./img/minus.svg" alt="reduce"></span>
-                  </a>
-                </div>
-
-              </div>
-
-              <div class="ec-cartRow__subtotalColumn">
-                <div class="ec-cartRow__sutbtotal">小計：<span>1,028,000円</span></div>
-              </div>
-
-              <div class="ec-cartRow__delColumn">
-                <a href="http://myvegas.jp/cart/remove/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-icon" data-method="put" data-message="カートからお礼の品を削除してもよろしいですか?">
-                  <img src="./img/cross.svg" alt="delete"><span>削除</span>
-                </a>
               </div>
 
             </div>
 
 
           </div>
-          <div class="ec-cartRole__progress"> </div>
-          <div class="ec-cartRole__actions">
-            <div class="ec-cartRole__total"> 合計金額 <span>28,000</span> 円 </div>
-            <a class="ec-blockBtn--action" href="/cart/buystep/8_1">次へ</a>
-            <a class="ec-blockBtn--cancel" href="/">続けて返礼品を探す</a>
-          </div>
+
+
+
 
       </div>
 
-      </form>
+  </div>
+
+  </form>
 
 
   </div>
