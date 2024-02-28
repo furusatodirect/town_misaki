@@ -820,12 +820,12 @@
             <div class="ec-cartTable">
               <div class="ec-cartRole__progress">
                 <ul class="ec-progress-n">
-                  <li class="ec-progress__item is-active">
+                  <li class="ec-progress__item">
                     <div class="ec-progress__number">
                       <span class="progress_circle"></span><span class="ec-progress__label">会員情報入力</span>
                     </div>
                   </li>
-                  <li class="ec-progress__item">
+                  <li class="ec-progress__item is-active">
                     <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">登録内容確認</span>
                     </div>
                   </li>
@@ -846,7 +846,7 @@
                 <div class="ec-orderAccount">
 
                   <div class="ec-rectHeading">
-                    <p>控除を受けられる方の<br class="d-sm-none" />お名前・ご住所を登録をください。</p>
+                    <p>ご登録内容をご確認ください。</p>
                   </div>
 
                   <div class="ec-orderAccount__account non-customer-display">
@@ -1084,71 +1084,11 @@
 
 
             <div class="ec-agreement">
-              <div class="ec-orderRole__detail">
 
-                <div class="shopping-tbl">
-                  <div class="shopping-tbl-ttl">
-                    <label>利用規約と個人情報保護</label>
-                  </div>
-
-                  <div class="shopping-formwrap">
-                    <p class="explain-l">必ず<a class="lb-icon" href="/help/agreement" target="_blank">利用規約</a><span class="fi ti-file"></span>および<a class="lb-icon" href="/help/privacy" target="_blank">個人情報取扱い</a><span class="fi ti-file"></span>をご確認ください</p>
-                    <div class="form-check">
-                      <input type="checkbox" id="agree">
-                      <div for="agree" class="s-form-w100">上記｢利用規約｣および｢個人情報取扱い｣に同意の上、会員登録をする</div>
-                    </div>
-                  </div>
-
-                </div>
-
+              <div class="ec-cartRole__actions">
+                <a class="ec-blockBtn--action" href="">次へ</a>
+                <a class="ec-blockBtn--cancel" href="">戻る</a>
               </div>
-
-              <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                  var checkbox = document.getElementById('agree');
-                  var formCheck = document.querySelector('.form-check');
-                  var next = document.getElementById('next');
-
-                  function updateCheckboxState() {
-                    formCheck.style.background = checkbox.checked ? '#525263' : '#fff';
-                    formCheck.style.color = checkbox.checked ? '#fff' : '#525263';
-                    formCheck.style.border = checkbox.checked ? '2px solid #525263' : '2px solid #e1e1e1';
-                    next.disabled = !checkbox.checked;
-                  }
-
-                  // チェックボックスの状態が変更された時の処理
-                  checkbox.addEventListener('change', updateCheckboxState);
-
-                  // フォームのどの範囲でもクリックするとチェックボックスにチェックが入るようにする
-                  formCheck.addEventListener('click', function () {
-                    checkbox.checked = !checkbox.checked; // チェック状態を反転させる
-                    updateCheckboxState(); // チェックボックスの状態を更新
-                  });
-
-                  // チェックボックスが表示される要素の監視
-                  var observer = new IntersectionObserver(function (changes) {
-                    if (changes[0].intersectionRatio === 1) {
-                      observer.disconnect();
-                      checkbox.disabled = false; // チェックボックスを有効にする
-                    }
-                  });
-                  observer.observe(end); // "end" 要素を監視
-
-                  // 初期状態でチェックボックスの状態を更新
-                  updateCheckboxState();
-                });
-              </script>
-
-              <div class="agreement-link">
-                <button id="next" type="button" class="agreement-Btn" data-trigger="click" data-path="{{url('help_agreement')}}" disabled>
-                  <span>登録内容確認へ進む</span>
-                </button>
-              </div>
-
-              <div class="agreement-link-back">
-                <a class="ec-blockBtn--cancel" href="/">戻る</a>
-              </div>
-
 
             </div>
           </div>
