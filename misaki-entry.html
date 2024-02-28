@@ -596,16 +596,23 @@
         margin-bottom: 0.5rem;
       }
 
+      .explain-l {
+        padding-left: 0 !important;
+        word-break: break-all !important;
+      }
+
     }
 
     .explain-l {
       font-size: 1.5rem;
       word-break: keep-all;
+      padding-left: 3rem;
     }
 
     .explain-l span {
       font-size: 1.4rem;
       padding: 0 .3rem;
+      color: #0dab65;
     }
 
     a.lb-icon {
@@ -618,13 +625,11 @@
     .ec-agreement .form-check {
       display: flex;
       align-items: center;
-      padding: 0;
+      padding: 2rem;
       margin-bottom: 0;
-    }
-
-    .ec-agreement .form-check .form-check-input {
-      float: none;
-      margin-left: 0;
+      border-radius: 4rem;
+      border: 2px solid #e1e1e1;
+      cursor: pointer;
     }
 
     .ec-agreement .form-check .form-check-input {
@@ -636,6 +641,7 @@
       width: 20px;
       margin-right: 1rem;
       border: solid 1px #c4c4c4;
+      cursor: pointer;
     }
 
     .ec-agreement .agreement-link {
@@ -645,6 +651,15 @@
       justify-content: center;
       position: relative;
       margin: 3rem 0 1rem;
+    }
+
+    .ec-agreement .agreement-link-back {
+      width: calc(100% - 0px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 0;
     }
 
     .ec-agreement .agreement-link .agreement-Btn:disabled {
@@ -714,6 +729,8 @@
       transform: translateY(-50%);
       transition: all .3s;
     }
+
+
 
     /*END .ec-agreement*/
   </style>
@@ -1068,7 +1085,7 @@
                     <p class="explain-l">必ず<a class="lb-icon" href="/help/agreement" target="_blank">利用規約</a><span class="fi ti-file"></span>および<a class="lb-icon" href="/help/privacy" target="_blank">個人情報取扱い</a><span class="fi ti-file"></span>をご確認ください</p>
                     <div class="form-check">
                       <input type="checkbox" id="agree">
-                      <div class="s-form-w100">上記｢利用規約｣および｢個人情報取扱い｣に同意の上、会員登録をする</div>
+                      <div for="agree" class="s-form-w100">上記｢利用規約｣および｢個人情報取扱い｣に同意の上、会員登録をする</div>
                     </div>
                   </div>
 
@@ -1076,28 +1093,52 @@
 
               </div>
 
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  var checkbox = document.getElementById('agree');
+                  var formCheck = document.querySelector('.form-check');
+                  var next = document.getElementById('next');
+
+                  function updateCheckboxState() {
+                    formCheck.style.background = checkbox.checked ? '#525263' : '#fff';
+                    formCheck.style.color = checkbox.checked ? '#fff' : '#525263';
+                    formCheck.style.border = checkbox.checked ? '2px solid #525263' : '2px solid #e1e1e1';
+                    next.disabled = !checkbox.checked;
+                  }
+
+                  // チェックボックスの状態が変更された時の処理
+                  checkbox.addEventListener('change', updateCheckboxState);
+
+                  // フォームのどの範囲でもクリックするとチェックボックスにチェックが入るようにする
+                  formCheck.addEventListener('click', function () {
+                    checkbox.checked = !checkbox.checked; // チェック状態を反転させる
+                    updateCheckboxState(); // チェックボックスの状態を更新
+                  });
+
+                  // チェックボックスが表示される要素の監視
+                  var observer = new IntersectionObserver(function (changes) {
+                    if (changes[0].intersectionRatio === 1) {
+                      observer.disconnect();
+                      checkbox.disabled = false; // チェックボックスを有効にする
+                    }
+                  });
+                  observer.observe(end); // "end" 要素を監視
+
+                  // 初期状態でチェックボックスの状態を更新
+                  updateCheckboxState();
+                });
+              </script>
+
               <div class="agreement-link">
                 <button id="next" type="button" class="agreement-Btn" data-trigger="click" data-path="{{url('help_agreement')}}" disabled>
                   <span>登録内容確認へ進む</span>
                 </button>
               </div>
 
-              <a class="ec-blockBtn--cancel" href="/">戻る</a>
+              <div class="agreement-link-back">
+                <a class="ec-blockBtn--cancel" href="/">戻る</a>
+              </div>
 
-              <script>
-                var agree = document.getElementById('agree');
-                var next = document.getElementById('next');
-                agree.addEventListener('click', function () {
-                  next.disabled = !next.disabled;
-                });
-                var observer = new IntersectionObserver(function (changes) {
-                  if (changes[0].intersectionRatio === 1) {
-                    observer.disconnect();
-                    agree.disabled = false;
-                  }
-                });
-                observer.observe(end);
-              </script>
 
             </div>
           </div>
