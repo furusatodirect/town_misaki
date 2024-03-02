@@ -425,51 +425,27 @@
 
         <div class="ec-role">
           <div class="ec-pageHeader">
-            <h1>新規会員登録</h1>
+            <h1>パスワード再発行</h1>
           </div>
         </div>
 
         <div class="ec-cartRole">
           <div class="ec-cartRole__cart">
 
-            <div class="ec-cartTable">
-              <div class="ec-cartRole__progress">
-                <ul class="ec-progress-n">
-                  <li class="ec-progress__item">
-                    <div class="ec-progress__number">
-                      <span class="progress_circle"></span><span class="ec-progress__label">会員情報入力</span>
-                    </div>
-                  </li>
-                  <li class="ec-progress__item">
-                    <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">登録内容確認</span>
-                    </div>
-                  </li>
-                  <li class="ec-progress__item is-active">
-                    <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">仮登録メール</span>
-                    </div>
-                  </li>
-                  <li class="ec-progress__item">
-                    <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">会員登録完了</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
             <div class="ec-orderRole">
               <div class="ec-orderRole__detail">
                 <div class="ec-orderAccount">
 
                   <div class="ec-rectHeading">
-                    <p>仮登録メールを送信しました</p>
+                    <p>パスワード再発行メールを送信しました</p>
                   </div>
 
                   <div class="info-wrap">
                     <p class="info-wrap-read-c">
-                      ただいま、ご入力いただいたメールアドレス宛に、<br class="d-sm-none" />ご本人様確認用のメールをお送りいたしました。<br>メール本文内のURLをアクセスすると、<br class="d-sm-none" />本会員登録が完了となります。
+                      ただいま、ご入力いただいたメールアドレス宛に、<br class="d-sm-none" />パスワード再発行メールをお送りいたしました。<br>10分以内にメール本文内のURLにアクセスし、<br class="d-sm-none" />パスワードの再設定を行ってください。
                     </p>
                     <p class="info-wrap-read-c">
-                      メールタイトル：会員登録のご確認<br>メールアドレス：info-misakiu@furusato-direct.jp
+                      メールタイトル：パスワード変更のご確認<br>メールアドレス：info-misakiu@furusato-direct.jp
                     </p>
 
                     <p class="info-wrap-read">
@@ -477,7 +453,7 @@
                       登録メールアドレスの入力間違いや迷惑メール設定などの可能性があります。なお、以下を確認しても解決しない場合は、お問い合わせフォームからお問い合わせください。
                     </p>
                     <p class="info-wrap-read-s">
-                      ※登録メールアドレスが間違っている場合、正しいメールアドレスであることを確認の上、こちらから再度新規会員登録手続きをお試しください。<br>
+                      ※登録メールアドレスが間違っている場合、正しいメールアドレスであることを確認の上、こちらから再度パスワードの再発行をお試しください。<br>
                       ※迷惑メールフォルダに振り分けられている場合、迷惑メールフォルダに保存されている場合があります。受信フォルダでメールが確認できない場合は、迷惑メールフォルダをご確認ください。<br>
                       ※受信拒否設定されている場合、迷惑メール設定を見直してください。受信許可リストに「furusato-direct.jp」を受信できるように設定を変更してください。同一のメールアドレスでは登録ができませんので、お問い合わせフォームからお問い合わせください。<br>
                     </p>
@@ -490,7 +466,7 @@
             </div>
 
             <div class="ec-cartRole__actions">
-              <a class="ec-blockBtn--cancel" href="/">会員情報入力へ戻る</a>
+              <a class="ec-blockBtn--action" href="{{ url('homepage') }}">サイトトップページへ</a>
             </div>
 
           </div>
