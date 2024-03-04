@@ -39,11 +39,144 @@
       min-height: 100vh;
     }
 
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Klee One', serif;
+    }
+
+    .ec-role {
+      padding: 0;
+      margin-top: 5rem;
+    }
+
+    .ec-cartRole {
+      padding: 0;
+    }
+
+    .ec-role .ec-pageHeader {
+      padding: 1rem 0.5rem 1rem;
+      background-color: #fafffc;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .ec-role .ec-pageHeader h1 {
+      border-top: none;
+      display: inline-block;
+      font-size: calc(20px + 2 * ((100vw - 320px) / 670));
+      border: none;
+      margin: 0;
+    }
+
+
+    /*ec-progress__item-n*/
+    .ec-cartTable {
+      display: flex;
+      margin: 2rem auto;
+      padding: 0;
+      width: 100%;
+      border-top: none;
+    }
+
+    .ec-cartRole__progress {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .ec-progress-n {
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .ec-progress-n .ec-progress__item {
+      position: relative;
+      flex: 1;
+    }
+
+    .ec-progress-n .ec-progress__item .ec-progress__number {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ec-progress-n .ec-progress__item.is-active .progress_circle {
+      background: #0dab65;
+    }
+
+    .ec-progress-n .ec-progress__item .progress_circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 3.3rem;
+      height: 3.3rem;
+      margin-bottom: .5rem;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .ec-progress-n .ec-progress__item.is-active .progress_circle:before {
+      content: "";
+      background: #fff;
+    }
+
+    .ec-progress-n .ec-progress__item .progress_circle:before {
+      display: block;
+      content: "";
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .ec-progress-n .ec-progress__item .progress_circle:before {
+      background: #c4c4c4;
+    }
+
+    .ec-progress-n .ec-progress__item.is-active .ec-progress__label {
+      font-size: 1.2rem;
+      color: #0dab65;
+      font-weight: bold;
+    }
+
+    .ec-progress-n .ec-progress__item .ec-progress__label {
+      font-size: 1.2rem;
+      color: #c4c4c4;
+    }
+
+
+    .ec-progress-n .ec-progress__item:after {
+      background: #c4c4c4;
+      left: 50%;
+    }
+
+    .ec-progress-n .ec-progress__item:after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      top: 15px;
+      left: 50%;
+    }
+
+    .ec-progress-n .ec-progress__item:last-child::after {
+      content: none;
+    }
+
+    /*END ec-progress__item-n*/
+
     /* ec-blockBtn*/
     .ec-blockBtn--action,
     .ec-cartRole__action,
     .ec-blockBtn--cancel {
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto
     }
 
     .ec-blockBtn--action,
@@ -150,33 +283,78 @@
     /*END ec-blockBtn*/
 
 
-    /*.ec-role*/
-    .ec-role {
+    /*ec-orderRole*/
+    .ec-orderRole {
+      width: 100%;
+      margin: 0 auto;
       padding: 0;
-      margin-top: 5rem;
     }
 
-    .ec-cartRole {
-      padding: 0;
-
+    .ec-orderRole .ec-rectHeading {
+      margin-bottom: 2rem;
     }
 
-    .ec-role .ec-pageHeader {
-      padding: 1rem 0.5rem 1rem;
-      background-color: #fafffc;
-      margin-bottom: 1rem;
+    .ec-orderRole .ec-rectHeading h2 {
+      background: #0dab65;
+      color: #fff;
+      border-radius: .5rem;
+    }
+
+    .ec-orderRole .ec-rectHeading p {
+      font-weight: bold;
       text-align: center;
+      padding: 1.5rem 0;
+      width: 360px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2.5rem;
+      margin: 0 auto;
+      padding: 2rem;
+      font-size: calc(14px + 2 * ((100vw - 320px) / 670));
+      color: #0dab65;
+      font-weight: bold;
+      touch-action: manipulation;
+      border: 2px solid #0dab65;
+      height: 0;
+      line-height: 0;
     }
 
-    .ec-role .ec-pageHeader h1 {
-      border-top: none;
-      display: inline-block;
-      font-size: calc(20px + 2 * ((100vw - 320px) / 670));
-      border: none;
-      margin: 0;
+    .ec-orderRole .ec-orderRole__detail {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
     }
 
-    /*END .ec-role*/
+    .ec-cartRole .ec-cartRole__actions {
+      width: 100%;
+      margin: 2rem 0;
+    }
+
+    .info-wrap {
+      margin: 2rem auto;
+      background-color: #fafffc;
+      border-radius: 2rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+
+    .info-wrap-read-c {
+      font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .info-wrap-read {
+      font-size: calc(12px + 0 * ((100vw - 320px) / 670));
+      font-weight: bold;
+    }
+
+    .info-wrap-read-s {
+      font-size: calc(12px + 0 * ((100vw - 320px) / 670));
+    }
   </style>
   <div class="wrap">
 
@@ -232,7 +410,11 @@
             <li><a href="/help/about">よくある質問</a></li>
             <li><a href="/help/about">お問い合わせ</a></li>
           </ul>
-
+          <!--
+        <div class="burger-menu-btn">
+          <div class="btn-common"><a href="">お問い合わせ</a></div>
+        </div>
+-->
         </div>
       </div>
     </header>
@@ -243,115 +425,29 @@
 
         <div class="ec-role">
           <div class="ec-pageHeader">
-            <h1>マイページ</h1>
+            <h1>その他 サイトに関するお問い合わせ</h1>
           </div>
         </div>
 
+        <div class="ec-cartRole">
+          <div class="ec-cartRole__cart">
 
-        <div class="mymenu-wrap">
-          <div class="mymenu-sec">
+            <div class="ec-orderRole">
+              <div class="ec-orderRole__detail">
+                <div class="ec-orderAccount">
 
-            <div class="mm-sec-left">
-              <div class="mm-sec-member">
-                <div class="mm-sec-mem-ttl">ご登録情報</div>
-                <div class="mm-sec-mem-body">
-                  <div class="mm-sec-mem-name">
-                    <span class="mem-name">板東 学</span><span>様</span>
+                  <div class="ec-rectHeading">
+                    <p>お問い合わせ内容をを送信しました</p>
                   </div>
-                  <ul class="navi-1st">
-                    <li><a href="{{ url('mypage_change') }}">会員情報の確認・変更</a></li>
-                    <li><a href="{{ url('mypage_delivery') }}">配送先情報の確認・変更</a></li>
-                    <li><a href="{{ url('mypage_withdraw') }}">退会手続き</a></li>
-                  </ul>
-                  <div class="mm-sec-btn">
-                    <a class="mm-sec-btn--logout" href="">ログアウト</a>
-                  </div>
+
+
                 </div>
+
               </div>
-
-              <ul class="mm-sec-bnr">
-                <li>
-                  <a href="https://mypg.jp/" target="_blink" class="bnr"><img src="./img/bnr_mypgjp.png"></a>
-                </li>
-                <li>
-                  <a href="" target="_blink" class="bnr"><img src="./img/bnr_simulator.png"></a>
-                </li>
-              </ul>
-
             </div>
 
-            <div class="mm-sec-right">
-              <div class="mm-sec-menu">
-
-                <ul class="mm-sec-menu-body myp-actionList">
-                  <li>
-                    <a href="{{ url('cart') }}">
-                      <div class="mm-sec-menuicon"><span class="fi ti-shopping-cart"></span></div>
-                      <dl class="mm-sec-menu-sec">
-                        <dt class="mm-sec-menu-secttl">寄付カート</dt>
-                        <dt class="mm-sec-menu-sectxt">返礼品の詳細や申込状況を確認する</dd>
-                      </dl>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{ url('mypage') }}">
-                      <div class="mm-sec-menuicon"><span class="fi ti-files"></span></div>
-                      <dl class="mm-sec-menu-sec">
-                        <dt class="mm-sec-menu-secttl">お申込履歴</dt>
-                        <dt class="mm-sec-menu-sectxt">返礼品の詳細や申込状況を確認する</dd>
-                      </dl>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{ url('mypage_favorite') }}">
-                      <div class="mm-sec-menuicon"><span class="fi ti-heart"></span></div>
-                      <dl class="mm-sec-menu-sec">
-                        <dt class="mm-sec-menu-secttl">お気に入り一覧</dt>
-                        <dt class="mm-sec-menu-sectxt">お気入りした返礼品を確認する</dd>
-                      </dl>
-                    </a>
-                  </li>
-                  <li><a href="{{ url('contact') }}">
-                      <div class="mm-sec-menuicon"><span class="fi ti-help-alt"></span></div>
-                      <dl class="mm-sec-menu-sec">
-                        <dt class="mm-sec-menu-secttl">お問い合わせ</dt>
-                        <dt class="mm-sec-menu-sectxt">よくある質問・ふるさと納税に関するQ&A</dd>
-                      </dl>
-                    </a>
-                  </li>
-                </ul>
-
-                <div class="mg-contents-Wrap">
-                  <div class="mg-c-sec">
-                    <p class="ttls">ふるさと納税についてのお問い合わせ</p>
-                    <p class="mgc-read">
-                      美咲町　みさき共創室<br>
-                      〒709-3717　岡山県岡山県久米郡美咲町原田1735</br>
-                      受付：8:30～17:00</br>
-                      TEL：0868-66-1660
-                    </p>
-                  </div>
-                  <div class="mg-c-sec">
-                    <p class="ttls">
-                      ワンストップ特例申請書送付先
-                    </p>
-                    <p class="mgc-read">
-                      〒709-3717　岡山県岡山県久米郡美咲町原田1735</br>
-                      美咲町　みさき共創室 宛<br>
-                    </p>
-                  </div>
-                </div>
-
-                <ul class="mm-sec-bnrbottom">
-                  <li>
-                    <a href="https://mypg.jp/" target="_blink" class="bnr"><img src="./img/bnr_mypgjp.png"></a>
-                  </li>
-                  <li>
-                    <a href="" target="_blink" class="bnr"><img src="./img/bnr_simulator.png"></a>
-                  </li>
-                </ul>
-
-              </div>
+            <div class="ec-cartRole__actions">
+              <a class="ec-blockBtn--action" href="{{ url('homepage') }}">サイトトップページへ</a>
             </div>
 
           </div>
@@ -359,6 +455,8 @@
 
       </div>
     </main>
+
+
 
     <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
 
@@ -387,6 +485,7 @@
 
   </div>
 
+  <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
   <script type="text/javascript" src="./js/jquery.js"></script>
   <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
