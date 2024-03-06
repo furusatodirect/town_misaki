@@ -380,11 +380,11 @@
             <li><a href="/help/about">よくある質問</a></li>
             <li><a href="/help/about">お問い合わせ</a></li>
           </ul>
-          <!--
-        <div class="burger-menu-btn">
-          <div class="btn-common"><a href="">お問い合わせ</a></div>
-        </div>
--->
+
+          <div class="burger-menu-btn">
+            <div class="btn-common"><a href="">お問い合わせ</a></div>
+          </div>
+
         </div>
       </div>
     </header>
@@ -407,34 +407,31 @@
               <p class="mypage-login-ttl">ログイン</p>
               <p class="mypage-login-read">ご登録のメールアドレス・パスワードを入力してください。</p>
               <form name="login_mypage" id="login_mypage" method="post" action="{{ url('mypage_login') }}">
-                <!--{% if app.session.flashBag.has('eccube.login.target.path') %}-->
-                <!--{% for targetPath in app.session.flashBag.peek('eccube.login.target.path') %}-->
-                <!--<input type="hidden" name="_target_path" value="{{ targetPath }}" />-->
-                <!--{% endfor %}-->
-                <!--{% endif %}-->
+                {% if app.session.flashBag.has('eccube.login.target.path') %}
+                {% for targetPath in app.session.flashBag.peek('eccube.login.target.path') %}
+                {% endfor %}
+                {% endif %}
 
                 <div class="mypage-login-formwrap">
                   <ul class="mypage-form-adpass">
                     <li class="mypage-form">
                       <p class="explain">メールアドレス</p>
-                      <input type="email" id="login_email" name="login_email" required="required" maxlength="255" style="ime-mode: disabled;" autofocus="autofocus" class="form-control">
-                      <!--{{ form_widget(form.login_email, {'attr': {'style' : 'ime-mode: disabled;', 'autofocus': true}}) }}-->
+                      {{ form_widget(form.login_email, {'attr': {'style' : 'ime-mode: disabled;', 'autofocus': true}}) }}
                     </li>
                     <li class="mypage-form">
                       <p class="explain">パスワード</p>
-                      <input type="password" id="login_pass" name="login_pass" required="required" maxlength="255" class="form-control">
-                      <!--{{ form_widget(form.login_pass) }}-->
+                      {{ form_widget(form.login_pass) }}
                     </li>
                   </ul>
                 </div>
-                <!--{% for reset_complete in app.session.flashbag.get('password_reset_complete') %}
+                {% for reset_complete in app.session.flashbag.get('password_reset_complete') %}
                 <p>{{ reset_complete|trans }}</p>
                 {% endfor %}
                 {% if error %}
                 <p class="ec-errorMessage">{{ error.messageKey|trans(error.messageData, 'validators')|nl2br }}</p>
-                {% endif %}-->
+                {% endif %}
 
-                <!--{% if BaseInfo.option_remember_me %}
+                {% if BaseInfo.option_remember_me %}
                 <div class="ec-grid2__cell">
                   <div class="ec-checkbox">
                     <label>
@@ -446,17 +443,23 @@
                     </label>
                   </div>
                 </div>
-                {% endif %}-->
+                {% endif %}
 
+                {% if BaseInfo.option_remember_me %}
                 <div class="mypage-login-Wrapcheck">
                   <div class="ec-checkbox">
                     <label>
                       <div class="form-check">
+                        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                        <input type="hidden" name="login_memory" value="1">
+                        {% else %}
                         <input type="checkbox" id="login_memory" name="login_memory" class="form-check-input" value="1">
+                        {% endif %}
                         <label class="form-check-label" for="login_memory">次回から自動的にログインする</label></div>
                     </label>
                   </div>
                 </div>
+                {% endif %}
 
                 <div class="mypage-login-WrapBtn">
                   <button id="next" type="submit" class="mypage-login-Btn">ログイン</button>
@@ -474,13 +477,13 @@
             <div class="mypage-login-col">
               <p class="mypage-login-ttl">新規会員登録(無料)</p>
               <div class="mypage-login-img">
-                <img class="" src="./img/15922_color.png" alt="" loading="lazy">
+                <img class="" src="{{ asset('assets/img/15922_color.png','user_data') }}" alt="" loading="lazy">
               </div>
               <p class="mypage-login-read">
                 会員登録(無料)をすると、マイページをご利用いただけます。<br>マイページでは、返礼品のお気に入りや寄付履歴など、簡単で便利に寄付を行うことが出来ます。<br>また、お客様情報の都度入力も不要になります。
               </p>
               <div class="mypage-login-WrapBtn">
-                <button href="{{ url('entry') }}" type="submit" class="mypage-login-Btns">会員登録する</button>
+                <a href="{{ url('entry') }}" class="mypage-login-Btns">会員登録する</a>
               </div>
             </div>
 
@@ -488,14 +491,14 @@
         </div>
 
         <div class="agreement-link-back">
-          <a class="ec-blockBtn--cancel" href="/">戻る</a>
+          <a class="ec-blockBtn--cancel" href="javascript:history.back()">戻る</a>
         </div>
 
       </div>
     </main>
 
 
-
+    {% block javascript %}
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var emailInput = document.getElementById("login_email");
@@ -527,7 +530,7 @@
         }
       });
     </script>
-
+{% endblock javascript %}
 
 
 
