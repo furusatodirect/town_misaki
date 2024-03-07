@@ -47,26 +47,28 @@
       font-family: 'Klee One', serif;
     }
 
-    /*ec-progress__item*/
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
 
-    .ec-role {
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
       padding: 0;
       margin-top: 5rem;
     }
 
-    .ec-cartRole {
-      padding: 0;
-
-    }
-
-    .ec-role .ec-pageHeader {
+    .ecv-header .ec-pageHeader {
       padding: 1rem 0.5rem 1rem;
       background-color: #fafffc;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .ec-role .ec-pageHeader h1 {
+    .ecv-header .ec-pageHeader h1 {
       border-top: none;
       display: inline-block;
       font-size: calc(20px + 2 * ((100vw - 320px) / 670));
@@ -74,6 +76,18 @@
       margin: 0;
     }
 
+    .ecv-contentsWrap {
+      margin: 0 10%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    /*ec-progress__item*/
     .ec-cartTable {
       display: flex;
       border-top: none;
@@ -82,12 +96,6 @@
       justify-content: center;
       align-items: center;
     }
-
-    .ec-cartRole .ec-cartRole__cart {
-      margin: 0;
-      width: 100%;
-    }
-
 
     .ec-progress .is-complete .ec-progress__number {
       background: #0dab65;
@@ -234,24 +242,24 @@
     /*END ec-blockBtn*/
 
 
-    /*ec-orderRole*/
-    .ec-orderRole {
-      width: 100%;
+    /*.ec-orderForm*/
+    .ec-orderForm {
       margin: 0 auto;
-      padding: 0;
+      max-width: calc(1130px +(1rem* 2));
+      width: 100%;
     }
 
-    .ec-orderRole .ec-rectHeading {
+    .ec-rectHeading {
       margin-bottom: 2rem;
     }
 
-    .ec-orderRole .ec-rectHeading h2 {
+    .ec-rectHeading h2 {
       background: #0dab65;
       color: #fff;
       border-radius: .5rem;
     }
 
-    .ec-orderRole .ec-rectHeading p {
+    .ec-rectHeading p {
       font-weight: bold;
       text-align: center;
       padding: 1.5rem 0;
@@ -271,16 +279,6 @@
       line-height: 0;
     }
 
-    .ec-orderRole .ec-orderRole__detail {
-      margin: 0 auto;
-      max-width: calc(1130px + (1rem * 2));
-      width: 100%;
-    }
-
-    .ec-cartRole .ec-cartRole__actions {
-      width: 100%;
-      margin: 2rem 0;
-    }
 
     .info-wrap {
       margin: 2rem auto;
@@ -373,15 +371,15 @@
 
     <main id="about">
       <div class="container">
+        <div class="ecv-Wrap">
 
-        <div class="ec-role">
-          <div class="ec-pageHeader">
-            <h1>お申込完了</h1>
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>お申込完了</h1>
+            </div>
           </div>
-        </div>
 
-        <div class="ec-cartRole">
-          <div class="ec-cartRole__cart">
+          <div class="ecv-contentsWrap">
 
             <div class="ec-cartTable">
               <div class="ec-cartRole__progress">
@@ -404,54 +402,43 @@
                   </li>
                 </ul>
               </div>
-
-              <div class="ec-orderRole">
-                <div class="ec-orderRole__detail">
-                  <div class="ec-orderAccount">
-
-                    <div class="ec-rectHeading">
-                      <p>お申込ありがとうございました！</p>
-                    </div>
-
-                    <div class="info-wrap">
-
-                      <p class="info-wrap-read-c">
-                        {% if Order.id %}お申込番号：MFS{{ Order.orderNo }}-{{Order.complete_message| striptags | replace({'■クレジットカード決済情報':'','決済取引ID:':'',(' '):'','/\s+/g':'',' ':''}) |trim}}{% endif %}
-                      </p>
-
-                      <p class="info-wrap-read-c">
-                        {{ Order.name01 }} {{ Order.name02 }}さん、<br class="d-sm-none" />ふるさと納税のお申込いただき、ありがとうございました。<br>
-                        ただいま、下記の内容でお申込の確認メールを<br class="d-sm-none" />お送りさせていただきました。
-                      </p>
-                      <p class="info-wrap-read-c">
-                        メールタイトル：美咲町へのふるさと納税のお申込ありがとうございます。<br>メールアドレス：info-misakiu@furusato-direct.jp
-                      </p>
-
-                      <p class="info-wrap-read">
-                        ※※確認用メールが届かない場合※※<br>
-                        登録メールアドレスの入力間違いや迷惑メール設定などの可能性があります。なお、以下を確認しても解決しない場合は、お問い合わせフォームからお問い合わせください。
-                      </p>
-                      <p class="info-wrap-read-s">
-                        ※登録メールアドレスが間違っている場合、マイページの会員情報・確認より確認の上、再度新規会員登録手続きをお試しください。<br>
-                        ※迷惑メールフォルダに振り分けられている場合、迷惑メールフォルダに保存されている場合があります。受信フォルダでメールが確認できない場合は、迷惑メールフォルダをご確認ください。<br>
-                        ※受信拒否設定されている場合、迷惑メール設定を見直してください。受信許可リストに「furusato-direct.jp」を受信できるように設定を変更してください。同一のメールアドレスでは登録ができませんので、お問い合わせフォームからお問い合わせください。<br>
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="ec-cartRole__actions">
-                <a class="ec-cartRole__action" href="/">トップページへ</a>
-              </div>
-
             </div>
+
+            <div class="ec-orderForm">
+              <div class="ec-rectHeading">
+                <p>お申込ありがとうございました！</p>
+              </div>
+              <div class="info-wrap">
+                <p class="info-wrap-read-c">
+                  {% if Order.id %}お申込番号：MFS{{ Order.orderNo }}-{{Order.complete_message| striptags | replace({'■クレジットカード決済情報':'','決済取引ID:':'',(' '):'','/\s+/g':'',' ':''}) |trim}}{% endif %}
+                </p>
+
+                <p class="info-wrap-read-c">
+                  {{ Order.name01 }} {{ Order.name02 }}さん、<br class="d-sm-none" />ふるさと納税のお申込いただき、ありがとうございました。<br>
+                  ただいま、下記の内容でお申込の確認メールを<br class="d-sm-none" />お送りさせていただきました。
+                </p>
+                <p class="info-wrap-read-c">
+                  メールタイトル：美咲町へのふるさと納税のお申込ありがとうございます。<br>メールアドレス：info-misakiu@furusato-direct.jp
+                </p>
+
+                <p class="info-wrap-read">
+                  ※※確認用メールが届かない場合※※<br>
+                  登録メールアドレスの入力間違いや迷惑メール設定などの可能性があります。なお、以下を確認しても解決しない場合は、お問い合わせフォームからお問い合わせください。
+                </p>
+                <p class="info-wrap-read-s">
+                  ※登録メールアドレスが間違っている場合、マイページの会員情報・確認より確認の上、再度新規会員登録手続きをお試しください。<br>
+                  ※迷惑メールフォルダに振り分けられている場合、迷惑メールフォルダに保存されている場合があります。受信フォルダでメールが確認できない場合は、迷惑メールフォルダをご確認ください。<br>
+                  ※受信拒否設定されている場合、迷惑メール設定を見直してください。受信許可リストに「furusato-direct.jp」を受信できるように設定を変更してください。同一のメールアドレスでは登録ができませんので、お問い合わせフォームからお問い合わせください。<br>
+                </p>
+              </div>
+            </div>
+
           </div>
 
+          <a class="ec-cartRole__action" href="/">トップページへ</a>
+
         </div>
+      </div>
     </main>
 
 

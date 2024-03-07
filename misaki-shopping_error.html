@@ -47,24 +47,28 @@
       font-family: 'Klee One', serif;
     }
 
-    .ec-role {
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
       padding: 0;
       margin-top: 5rem;
     }
 
-    .ec-cartRole {
-      padding: 0;
-
-    }
-
-    .ec-role .ec-pageHeader-error {
+    .ecv-header .ec-pageHeader-error {
       padding: 1rem 0.5rem 1rem;
       background-color: #d80303;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .ec-role .ec-pageHeader-error h1 {
+    .ecv-header .ec-pageHeader-error h1 {
       border-top: none;
       display: inline-block;
       font-size: calc(20px + 2 * ((100vw - 320px) / 670));
@@ -73,6 +77,16 @@
       color: #fff;
     }
 
+    .ecv-contentsWrap {
+      margin: 0 10%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
 
     /* ec-blockBtn*/
     .ec-blockBtn--action,
@@ -186,24 +200,30 @@
     /*END ec-blockBtn*/
 
 
-    /*ec-orderRole*/
-    .ec-orderRole {
-      width: 100%;
-      margin: 0 auto;
-      padding: 0;
+    /*ecv-contentsWrap*/
+    .ecv-contentsWrap {
+      margin: 0 10%;
     }
 
-    .ec-orderRole .ec-rectHeading-error {
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+
+    .ec-rectHeading-error {
       margin-bottom: 2rem;
     }
 
-    .ec-orderRole .ec-rectHeading-error h2 {
+    .ec-rectHeading-error h2 {
       background: #0dab65;
       color: #fff;
       border-radius: .5rem;
     }
 
-    .ec-orderRole .ec-rectHeading-error p {
+    .ec-rectHeading-error p {
       font-weight: bold;
       text-align: center;
       padding: 1.5rem 0;
@@ -221,17 +241,6 @@
       border: 2px solid #d80303;
       height: 0;
       line-height: 0;
-    }
-
-    .ec-orderRole .ec-orderRole__detail {
-      margin: 0 auto;
-      max-width: calc(1130px + (1rem * 2));
-      width: 100%;
-    }
-
-    .ec-cartRole .ec-cartRole__actions {
-      width: 100%;
-      margin: 2rem 0;
     }
 
     .info-wrap-error {
@@ -325,44 +334,32 @@
 
     <main id="about">
       <div class="container">
+        <div class="ecv-Wrap">
 
-        <div class="ec-role">
-          <div class="ec-pageHeader-error">
-            <h1>お申込エラー</h1>
+          <div class="ecv-header">
+            <div class="ec-pageHeader-error">
+              <h1>お申込エラー</h1>
+            </div>
           </div>
-        </div>
 
-        <div class="ec-cartRole">
-          <div class="ec-cartRole__cart">
 
-            <div class="ec-orderRole">
-              <div class="ec-orderRole__detail">
-                <div class="ec-orderAccount">
+          <div class="ecv-contentsWrap">
 
-                  <div class="ec-rectHeading-error">
-                    <p>{{ include('Shopping/alert.twig', { 'error_only': true }) }}</p>
-                  </div>
-
-                  <div class="info-wrap-error">
-
-                    <p class="info-wrap-read-c">
-                      お申込みの途中で問題が発生しました。下記「戻る」ボタンより、再度お試しください。
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </div>
+            <div class="ec-rectHeading-error">
+              <p>{{ include('Shopping/alert.twig', { 'error_only': true }) }}</p>
             </div>
 
-            <div class="ec-cartRole__actions">
-              <a class="ec-blockBtn--cancel" href="/">戻る</a>
+            <div class="info-wrap-error">
+              <p class="info-wrap-read-c">
+                お申込みの途中で問題が発生しました。下記「戻る」ボタンより、再度お試しください。
+              </p>
             </div>
 
           </div>
-        </div>
 
+          <a class="ec-blockBtn--cancel" href="/">戻る</a>
+
+        </div>
       </div>
     </main>
 
