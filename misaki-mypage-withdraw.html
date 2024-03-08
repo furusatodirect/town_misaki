@@ -37,6 +37,7 @@
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;
       min-height: 100vh;
+      font-size: 1.5rem;
     }
 
     button,
@@ -47,23 +48,28 @@
       font-family: 'Klee One', serif;
     }
 
-    .ec-role {
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
       padding: 0;
       margin-top: 5rem;
     }
 
-    .ec-cartRole {
-      padding: 0;
-    }
-
-    .ec-role .ec-pageHeader {
+    .ecv-header .ec-pageHeader {
       padding: 1rem 0.5rem 1rem;
       background-color: #fafffc;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .ec-role .ec-pageHeader h1 {
+    .ecv-header .ec-pageHeader h1 {
       border-top: none;
       display: inline-block;
       font-size: calc(20px + 2 * ((100vw - 320px) / 670));
@@ -71,6 +77,16 @@
       margin: 0;
     }
 
+    .ecv-contentsWrap {
+      margin: 0 10%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
 
     /*ec-progress__item-n*/
     .ec-cartTable {
@@ -79,6 +95,9 @@
       padding: 0;
       width: 100%;
       border-top: none;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 600px
     }
 
     .ec-cartRole__progress {
@@ -177,6 +196,12 @@
     .ec-blockBtn--cancel {
       margin-left: auto;
       margin-right: auto
+    }
+
+    .ec-cartRole__actions {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
     }
 
     .ec-blockBtn--action,
@@ -283,24 +308,24 @@
     /*END ec-blockBtn*/
 
 
-    /*ec-orderRole*/
-    .ec-orderRole {
-      width: 100%;
+    /*.ec-orderForm*/
+    .ec-orderForm {
       margin: 0 auto;
-      padding: 0;
+      max-width: calc(1130px +(1rem* 2));
+      width: 100%;
     }
 
-    .ec-orderRole .ec-rectHeading {
+    .ec-rectHeading {
       margin-bottom: 2rem;
     }
 
-    .ec-orderRole .ec-rectHeading h2 {
+    .ec-rectHeading h2 {
       background: #0dab65;
       color: #fff;
       border-radius: .5rem;
     }
 
-    .ec-orderRole .ec-rectHeading p {
+    .ec-rectHeading p {
       font-weight: bold;
       text-align: center;
       padding: 1.5rem 0;
@@ -312,17 +337,6 @@
       padding: 2rem;
       font-size: calc(14px + 2 * ((100vw - 320px) / 670));
       font-weight: bold;
-    }
-
-    .ec-orderRole .ec-orderRole__detail {
-      margin: 0 auto;
-      max-width: calc(1130px + (1rem * 2));
-      width: 100%;
-    }
-
-    .ec-cartRole .ec-cartRole__actions {
-      width: 100%;
-      margin: 2rem 0;
     }
 
     .info-wrap {
@@ -338,7 +352,7 @@
       font-weight: bold;
     }
 
-    .ec-orderRole img.icon-exclamation {
+    img.icon-exclamation {
       display: flex;
       margin: 0 auto;
       width: 80px;
@@ -410,50 +424,40 @@
 
     <main id="about">
       <div class="container">
+        <div class="ecv-Wrap">
 
-        <div class="ec-role">
-          <div class="ec-pageHeader">
-            <h1>退会手続き</h1>
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>退会手続き</h1>
+            </div>
           </div>
-        </div>
 
-        <div class="ec-cartRole">
-          <div class="ec-cartRole__cart">
+          <div class="ecv-contentsWrap">
 
-            <div class="ec-orderRole">
-              <div class="ec-orderRole__detail">
-                <div class="ec-orderAccount">
+            <div class="ec-orderForm">
+              <div class="ec-rectHeading">
+                <img class="icon-exclamation" src="./img/exclamation.svg" />
+                <p>退会手続きの前にご確認ください</p>
+              </div>
 
-                  <div class="ec-rectHeading">
-                    <img class="icon-exclamation" src="./img/exclamation.svg" />
-                    <p>退会手続きの前にご確認ください</p>
-                  </div>
-
-                  <div class="info-wrap">
-                    <p class="info-wrap-read">退会手続きが完了した時点で、<br>現在保存されている寄付履歴やお届け先等の情報は、<br>すべて削除されますのでご注意ください。
-                  </div>
-
-                </div>
-
+              <div class="info-wrap">
+                <p class="info-wrap-read">退会手続きが完了した時点で、<br>現在保存されている寄付履歴やお届け先等の情報は、<br>すべて削除されますのでご注意ください。
               </div>
             </div>
 
-            <div class="ec-cartRole__actions">
-              <a class="ec-blockBtn--action" href="">退会手続きへ</a>
-              <a class="ec-blockBtn--cancel" href="/">戻る</a>
-            </div>
-
           </div>
-        </div>
 
+          <div class="ec-cartRole__actions">
+            <a class="ec-blockBtn--action" href="">退会手続きへ</a>
+            <a class="ec-blockBtn--cancel" href="/">戻る</a>
+          </div>
+
+        </div>
       </div>
     </main>
 
 
-
     <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
-
-
 
 
     <footer>

@@ -37,31 +37,55 @@
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;
       min-height: 100vh;
+      font-size: 1.5rem;
     }
 
-    .ec-role {
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Klee One', serif;
+    }
+
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
       padding: 0;
       margin-top: 5rem;
     }
 
-    .ec-cartRole {
-      padding: 0;
-
-    }
-
-    .ec-role .ec-pageHeader {
+    .ecv-header .ec-pageHeader {
       padding: 1rem 0.5rem 1rem;
       background-color: #fafffc;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .ec-role .ec-pageHeader h1 {
+    .ecv-header .ec-pageHeader h1 {
       border-top: none;
       display: inline-block;
       font-size: calc(20px + 2 * ((100vw - 320px) / 670));
       border: none;
       margin: 0;
+    }
+
+    .ecv-contentsWrap {
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
     }
 
     /*ec-mypg*/
@@ -239,113 +263,93 @@
 
 
     <main id="about">
-
-
       <div class="container">
+        <div class="ecv-Wrap">
 
-        <div class="ec-role">
-          <div class="ec-pageHeader">
-            <h1>お申込履歴</h1>
-          </div>
-        </div>
-
-        <div class="ec-cartRole"> </div>
-        <form name="form" id="form_cart" class="ec-cartRole" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
-
-          <div class="ec-mypg-wrap">
-
-            <div class="ec-mypg-proCount">3件のお申込履歴があります</div>
-
-
-            <div class="ec-mypg-detail">
-
-              <div class="ec-mypg-dleft">
-
-                <div class="ec-mypg-proimg">
-                  <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">
-                    <img src="./img/gift/misaki-product-01.jpg" alt="ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト">
-                  </a>
-                </div>
-
-              </div>
-
-              <div class="ec-mypg-dceter">
-
-                <div class="ec-mypg-reqDat">お申込日時： 2023年09月25日　16:19:51</div>
-                <div class="ec-mypg-reqNo">お申込番号： MFS62-333038356637323600000000062</div>
-                <div class="ec-mypg-reqSt">お申込状況： 注文受付</div>
-
-                <div class="ec-mypg-dceterrow">
-
-                  <div class="ec-mypg-prottl">
-                    <div class="ec-mypg-proname">
-                      <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</a> </div>
-                  </div>
-
-                  <div class="ec-mypg-proamount">
-                    <div class="ec-mypg-proPrice">28,000円</div>
-                    <div class="ec-mypg__proamount">数量：5</div>
-                    <div class="ec-mypg__sutbtotal">小計：<span>1,028,000円</span></div>
-                  </div>
-
-                </div>
-
-
-              </div>
-
-              <div class="ec-mypg-dright">
-
-                <div class="ec-mypg-detaiBtn">
-                  <a href="http://myvegas.jp/cart/remove/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-icon" data-method="put" data-message="カートからお礼の品を削除してもよろしいですか?">
-                    詳細を見る</a>
-                </div>
-
-              </div>
-
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>お申込履歴</h1>
             </div>
-
-
           </div>
 
 
+          <div class="ecv-contentsWrap">
+            <form name="form" id="form_cart" class="" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
+
+              <div class="ec-mypg-wrap">
+
+                <div class="ec-mypg-proCount">3件のお申込履歴があります</div>
+
+                <div class="ec-mypg-detail">
+                  <div class="ec-mypg-dleft">
+                    <div class="ec-mypg-proimg">
+                      <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">
+                        <img src="./img/gift/misaki-product-01.jpg" alt="ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト">
+                      </a>
+                    </div>
+                  </div>
+
+                  <div class="ec-mypg-dceter">
+                    <div class="ec-mypg-reqDat">お申込日時： 2023年09月25日　16:19:51</div>
+                    <div class="ec-mypg-reqNo">お申込番号： MFS62-333038356637323600000000062</div>
+                    <div class="ec-mypg-reqSt">お申込状況： 注文受付</div>
+                    <div class="ec-mypg-dceterrow">
+                      <div class="ec-mypg-prottl">
+                        <div class="ec-mypg-proname">
+                          <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</a> </div>
+                      </div>
+                      <div class="ec-mypg-proamount">
+                        <div class="ec-mypg-proPrice">28,000円</div>
+                        <div class="ec-mypg__proamount">数量：5</div>
+                        <div class="ec-mypg__sutbtotal">小計：<span>1,028,000円</span></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ec-mypg-dright">
+                    <div class="ec-mypg-detaiBtn">
+                      <a href="http://myvegas.jp/cart/remove/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-icon" data-method="put" data-message="カートからお礼の品を削除してもよろしいですか?">
+                        詳細を見る</a>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </main>
 
 
+
+    <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+    <footer>
+      <div class="col-12 col-xl-6 mx-auto inner">
+        <ul class="subnav">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+        </ul>
       </div>
 
-  </div>
+      <div class="copyright">
+        <a href="{{ url('homepage') }}">
+          <img src="./img/misaki.png" />
+          <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+        </a>
+      </div>
 
-  </form>
-
-
-  </div>
-  </main>
-
-
-
-  <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
-
-
-
-
-  <footer>
-    <div class="col-12 col-xl-6 mx-auto inner">
-      <ul class="subnav">
-        <li><a href="/help/agreement">ご利用規約</a></li>
-        <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
-        <li><a href="/help/privacy">個人情報保護方針</a></li>
-        <li><a href="/help/about">よくある質問</a></li>
-        <li><a href="/contact">お問い合わせ</a></li>
-      </ul>
-    </div>
-
-    <div class="copyright">
-      <a href="{{ url('homepage') }}">
-        <img src="./img/misaki.png" />
-        <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
-      </a>
-    </div>
-
-  </footer>
+    </footer>
 
   </div>
 

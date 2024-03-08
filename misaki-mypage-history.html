@@ -37,6 +37,7 @@
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;
       min-height: 100vh;
+      font-size: 1.5rem;
     }
 
     button,
@@ -47,24 +48,28 @@
       font-family: 'Klee One', serif;
     }
 
-    /*ec-progress__item*/
-    .ec-role {
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
       padding: 0;
       margin-top: 5rem;
     }
 
-    .ec-cartRole {
-      padding: 0;
-    }
-
-    .ec-role .ec-pageHeader {
+    .ecv-header .ec-pageHeader {
       padding: 1rem 0.5rem 1rem;
       background-color: #fafffc;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .ec-role .ec-pageHeader h1 {
+    .ecv-header .ec-pageHeader h1 {
       border-top: none;
       display: inline-block;
       font-size: calc(20px + 2 * ((100vw - 320px) / 670));
@@ -72,6 +77,18 @@
       margin: 0;
     }
 
+    .ecv-contentsWrap {
+      margin: 0 10%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    /*ec-progress__item*/
     .ec-cartTable {
       display: flex;
       border-top: none;
@@ -120,6 +137,12 @@
     .ec-blockBtn--cancel {
       margin-left: auto;
       margin-right: auto
+    }
+
+    .ec-cartRole__actions {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
     }
 
     .ec-blockBtn--action,
@@ -226,46 +249,40 @@
     /*END ec-blockBtn*/
 
 
-    /*ec-orderRole*/
-    .ec-orderRole {
-      width: 100%;
+    /*.ec-orderForm*/
+    .ec-orderForm {
       margin: 0 auto;
-      padding: 0;
+      max-width: calc(1130px +(1rem* 2));
+      width: 100%;
     }
 
-    .ec-orderRole .ec-rectHeading {
+    .ec-rectHeading {
       margin-bottom: 2rem;
     }
 
-    .ec-orderRole .ec-rectHeading h2 {
+    .ec-rectHeading h2 {
       background: #0dab65;
       color: #fff;
       border-radius: .5rem;
     }
 
-    .ec-orderRole .ec-orderRole__detail {
-      margin: 0 auto;
-      max-width: calc(1130px + (1rem * 2));
-      width: 100%;
-    }
-
-    .ec-orderRole .shopping-tbl {
+    .shopping-tbl {
       display: flex;
       margin-bottom: 1rem;
     }
 
-    .ec-orderRole .shopping-tbl-ttl {
+    .shopping-tbl-ttl {
       display: flex;
       align-items: center;
       width: 250px;
     }
 
     @media screen and (max-width: 768px) {
-      .ec-orderRole .shopping-tbl {
+      .shopping-tbl {
         display: block;
       }
 
-      .ec-orderRole .shopping-tbl-ttl {
+      .shopping-tbl-ttl {
         margin-bottom: 0.5rem;
       }
 
@@ -274,7 +291,7 @@
       }
     }
 
-    .ec-orderRole .shopping-formwrap {
+    .shopping-formwrap {
       width: calc(100% - 0px);
     }
 
@@ -282,12 +299,12 @@
       margin-bottom: 0;
     }
 
-    .ec-orderRole .shopping-formwrap ul {
+    .shopping-formwrap ul {
       display: flex;
       gap: 1rem;
     }
 
-    .ec-orderRole .shopping-formwrap .s-form-add {
+    .shopping-formwrap .s-form-add {
       display: flex;
       flex-direction: column;
     }
@@ -304,7 +321,7 @@
       width: 100%;
     }
 
-    .ec-orderAccount .ec-orderAccount__change {
+    .ec-orderAccount__change {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -378,12 +395,6 @@
       border-radius: .5rem;
     }
 
-    .ec-orderDelivery .ec-orderRole__detail {
-      margin: 0 auto;
-      max-width: calc(1130px + (1rem * 2));
-      width: 100%;
-    }
-
     /*END ec-orderDelivery*/
 
     /*.ec-orderDelivery__item*/
@@ -417,7 +428,7 @@
       justify-content: space-between;
       margin-left: inherit;
       vertical-align: middle;
-      width: 100%;
+      width: 70%;
       word-break: break-all;
       row-gap: 0.5rem;
     }
@@ -498,8 +509,6 @@
       position: inherit;
       right: inherit;
     }
-
-    /*END .ec-cartRow*/
 
     /*.ec-orderDetail*/
     .ec-orderDetail {
@@ -921,8 +930,6 @@
       padding-right: .5rem;
     }
 
-
-
     /*END .ec-orderMailList*/
   </style>
   <div class="wrap">
@@ -991,141 +998,127 @@
 
     <main id="about">
       <div class="container">
+        <div class="ecv-Wrap">
 
-        <div class="ec-role">
-          <div class="ec-pageHeader">
-            <h1>お申込履歴詳細</h1>
-          </div>
-        </div>
-
-        <div class="ec-cartRole"> </div>
-        <form name="form" id="form_cart" class="ec-cartRole" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
-          <div class="ec-cartRole__cart">
-
-
-
-
-            <div class="ec-orderRole">
-              <div class="ec-orderRole__detail">
-                <div class="ec-orderAccount">
-
-                  <div class="ec-rectHeading">
-                    <h2>お申込者</h2>
-                  </div>
-
-                  <div class="ec-orderAccount__account non-customer-display">
-
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>お名前</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <ul>
-                          <li class="s-form-w50">
-                            <input class="" id="" type="text" value="{{ Order.name01 }}" readonly="readonly">
-                          </li>
-                          <li class="s-form-w50">
-                            <input class="" id="" type="text" value="{{ Order.name02 }}" readonly="readonly">
-                          </li>
-                        </ul>
-                      </dd>
-                    </dl>
-
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>お名前カナ</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <ul>
-                          <li class="s-form-w50">
-                            <input class="" id="" type="text" value="{{ Order.kana01 }}" readonly="readonly">
-                          </li>
-                          <li class="s-form-w50">
-                            <input class="" id="" type="text" value="{{ Order.kana02 }}" readonly="readonly">
-                          </li>
-                        </ul>
-                      </dd>
-                    </dl>
-
-                    <dl class="shopping-tbl" style="display:none">
-                      <dt class="shopping-tbl-ttl">
-                        <label>会社名</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w100" id="" type="text" value="{{ Order.companyName }}" readonly="readonly">
-                      </dd>
-                    </dl>
-
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>郵便番号</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w20" id="" type="text" value="{{ Order.postal_code }}" readonly="readonly">
-                      </dd>
-                    </dl>
-
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>都道府県</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w20" id="" type="text" value="{{ Order.pref }}" readonly="readonly">
-                      </dd>
-                    </dl>
-
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>住所</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <ul class="s-form-add">
-                          <li class="s-form-w100">
-                            <input class="" id="" type="text" value="{{ Order.addr01 }}" readonly="readonly">
-                          </li>
-                          <li class="s-form-w100">
-                            <input class="" id="" type="text" value="{{ Order.addr02 }}" readonly="readonly">
-                          </li>
-                        </ul>
-                      </dd>
-                    </dl>
-
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>電話番号</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w20" id="" type="text" value="{{ Order.phone_number }}" readonly="readonly">
-                      </dd>
-                    </dl>
-
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>生年月日</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w20" id="" type="text" value="{{ Order.birth|date('Y-m-d') }}" readonly="readonly">
-                      </dd>
-                    </dl>
-
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>メールアドレス</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w100" id="" type="text" value="{{ Order.email }}" readonly="readonly">
-                      </dd>
-                    </dl>
-
-
-                  </div>
-                </div>
-              </div>
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>お申込履歴詳細</h1>
             </div>
+          </div>
 
+          <div class="ecv-contentsWrap">
+            <form name="form" id="form_cart" class="" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
 
-            <div class="ec-orderDelivery">
-              <div class="ec-orderRole__detail">
+              <div class="ec-orderForm">
+                <div class="ec-rectHeading">
+                  <h2>お申込者</h2>
+                </div>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>お名前</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul>
+                      <li class="s-form-w50">
+                        <input class="" id="" type="text" value="{{ Order.name01 }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w50">
+                        <input class="" id="" type="text" value="{{ Order.name02 }}" readonly="readonly">
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>お名前カナ</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul>
+                      <li class="s-form-w50">
+                        <input class="" id="" type="text" value="{{ Order.kana01 }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w50">
+                        <input class="" id="" type="text" value="{{ Order.kana02 }}" readonly="readonly">
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl" style="display:none">
+                  <dt class="shopping-tbl-ttl">
+                    <label>会社名</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w100" id="" type="text" value="{{ Order.companyName }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>郵便番号</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.postal_code }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>都道府県</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.pref }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>住所</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul class="s-form-add">
+                      <li class="s-form-w100">
+                        <input class="" id="" type="text" value="{{ Order.addr01 }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w100">
+                        <input class="" id="" type="text" value="{{ Order.addr02 }}" readonly="readonly">
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>電話番号</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.phone_number }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>生年月日</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.birth|date('Y-m-d') }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>メールアドレス</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w100" id="" type="text" value="{{ Order.email }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+              </div>
+
+              <div class="ec-orderDelivery">
                 <div class="ec-rectHeading">
                   <h2>お礼の品とお届け先</h2>
                 </div>
@@ -1141,7 +1134,6 @@
                     <div class="ec-cartRow__summary">
                       <div class="ec-cartRow__name">
                         <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</a> </div>
-
 
                       <dl class="shopping-tbl-in">
                         <dt class="shopping-tbl-ttl">
@@ -1180,13 +1172,10 @@
                   </div>
                 </div>
 
-
               </div>
-            </div>
 
 
-            <div class="ec-orderDetail">
-              <div class="ec-orderRole__detail">
+              <div class="ec-orderDetail">
                 <div class="ec-rectHeading">
                   <h2>寄付情報</h2>
                 </div>
@@ -1276,11 +1265,8 @@
                 </div>
 
               </div>
-            </div>
 
-
-            <div class="ec-orderMailList">
-              <div class="ec-orderRole__detail">
+              <div class="ec-orderMailList">
                 <div class="ec-rectHeading">
                   <h2>メール配信履歴一覧</h2>
                 </div>
@@ -1301,47 +1287,38 @@
               </div>
 
 
-            </div>
+            </form>
 
           </div>
+        </div>
+    </main>
+
+
+
+    <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
 
 
 
 
-
-
+    <footer>
+      <div class="col-12 col-xl-6 mx-auto inner">
+        <ul class="subnav">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+        </ul>
       </div>
-      </form>
 
-  </div>
-  </main>
+      <div class="copyright">
+        <a href="{{ url('homepage') }}">
+          <img src="./img/misaki.png" />
+          <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+        </a>
+      </div>
 
-
-
-  <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
-
-
-
-
-  <footer>
-    <div class="col-12 col-xl-6 mx-auto inner">
-      <ul class="subnav">
-        <li><a href="/help/agreement">ご利用規約</a></li>
-        <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
-        <li><a href="/help/privacy">個人情報保護方針</a></li>
-        <li><a href="/help/about">よくある質問</a></li>
-        <li><a href="/contact">お問い合わせ</a></li>
-      </ul>
-    </div>
-
-    <div class="copyright">
-      <a href="{{ url('homepage') }}">
-        <img src="./img/misaki.png" />
-        <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
-      </a>
-    </div>
-
-  </footer>
+    </footer>
 
   </div>
 

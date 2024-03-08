@@ -37,6 +37,7 @@
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;
       min-height: 100vh;
+      font-size: 1.5rem;
     }
 
     button,
@@ -47,23 +48,28 @@
       font-family: 'Klee One', serif;
     }
 
-    .ec-role {
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
       padding: 0;
       margin-top: 5rem;
     }
 
-    .ec-cartRole {
-      padding: 0;
-    }
-
-    .ec-role .ec-pageHeader {
+    .ecv-header .ec-pageHeader {
       padding: 1rem 0.5rem 1rem;
       background-color: #fafffc;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .ec-role .ec-pageHeader h1 {
+    .ecv-header .ec-pageHeader h1 {
       border-top: none;
       display: inline-block;
       font-size: calc(20px + 2 * ((100vw - 320px) / 670));
@@ -71,6 +77,16 @@
       margin: 0;
     }
 
+    .ecv-contentsWrap {
+      margin: 0 10%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
 
     /*ec-progress__item-n*/
     .ec-cartTable {
@@ -79,6 +95,8 @@
       padding: 0;
       width: 100%;
       border-top: none;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .ec-cartRole__progress {
@@ -92,6 +110,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      max-width: 600px
     }
 
     .ec-progress-n .ec-progress__item {
@@ -177,6 +196,12 @@
     .ec-blockBtn--cancel {
       margin-left: auto;
       margin-right: auto
+    }
+
+    .ec-cartRole__actions {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
     }
 
     .ec-blockBtn--action,
@@ -283,53 +308,47 @@
     /*END ec-blockBtn*/
 
 
-    /*ec-Nonmember*/
-    .ec-Nonmember {
-      width: 100%;
+    /*.ec-orderForm*/
+    .ec-orderForm {
       margin: 0 auto;
-      padding: 0;
+      max-width: calc(1130px +(1rem* 2));
+      width: 100%;
     }
 
-    .ec-Nonmember .ec-rectHeading {
+    .ec-rectHeading {
       margin-bottom: 2rem;
     }
 
-    .ec-Nonmember .ec-rectHeading h2 {
+    .ec-rectHeading h2 {
       background: #0dab65;
       color: #fff;
       border-radius: .5rem;
     }
 
-    .ec-Nonmember .ec-rectHeading p {
+    .ec-rectHeading p {
       font-weight: bold;
       text-align: center;
       padding: 1.5rem 0;
     }
 
-    .ec-Nonmember .ec-Nonmember__detail {
-      margin: 0 auto;
-      max-width: calc(1130px + (1rem * 2));
-      width: 100%;
-    }
-
-    .ec-Nonmember .shopping-tbl {
+    .shopping-tbl {
       display: flex;
       margin-bottom: 4rem;
     }
 
-    .ec-Nonmember .shopping-tbl-ttl {
+    .shopping-tbl-ttl {
       display: flex;
       align-items: center;
       width: 250px;
     }
 
     @media screen and (max-width: 768px) {
-      .ec-Nonmember .shopping-tbl {
+      .shopping-tbl {
         display: block;
         margin-bottom: 3rem;
       }
 
-      .ec-Nonmember .shopping-tbl-ttl {
+      .shopping-tbl-ttl {
         margin-bottom: 0.5rem;
       }
 
@@ -342,7 +361,7 @@
       }
     }
 
-    .ec-Nonmember .shopping-formwrap {
+    .shopping-formwrap {
       width: calc(100% - 0px);
     }
 
@@ -350,12 +369,12 @@
       margin-bottom: 0;
     }
 
-    .ec-Nonmember .shopping-formwrap ul {
+    .shopping-formwrap ul {
       display: flex;
       gap: 1rem;
     }
 
-    .ec-Nonmember .shopping-formwrap .s-form-add {
+    .shopping-formwrap .s-form-add {
       display: flex;
       flex-direction: column;
     }
@@ -388,14 +407,14 @@
       word-break: keep-all;
     }
 
-    .ec-Nonmember .shopping-tbl-ttl .ec-required {
+    .shopping-tbl-ttl .ec-required {
       color: #fff;
       background: #d80303;
       margin-left: .8rem;
       margin-top: .3rem;
     }
 
-    .ec-Nonmember .shopping-tbl-ttl .ec-required {
+    .shopping-tbl-ttl .ec-required {
       border-radius: 0.5rem;
       display: inline-block;
       line-height: 1.5rem;
@@ -405,13 +424,12 @@
     }
 
     @media screen and (max-width: 768px) {
-
-      .ec-Nonmember .shopping-tbl-ttl .ec-required {
+      .shopping-tbl-ttl .ec-required {
         margin-bottom: .5rem;
       }
     }
 
-    .ec-orderAccount .ec-orderAccount__change {
+    .ec-orderAccount__change {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -483,7 +501,7 @@
       height: 40px;
     }
 
-    .ec-Nonmember .shopping-formwrap #entry_sex {
+    .shopping-formwrap #entry_sex {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -491,11 +509,11 @@
       gap: 0 1rem;
     }
 
-    .ec-Nonmember .shopping-formwrap #entry_sex input {
+    .shopping-formwrap #entry_sex input {
       display: none;
     }
 
-    .ec-Nonmember .shopping-formwrap #entry_sex input:checked+label,
+    .shopping-formwrap #entry_sex input:checked+label,
     #entry_mail_magazine input:checked+label {
       background-color: #0dab65;
       border: 1px solid #0dab65;
@@ -504,7 +522,7 @@
       line-height: 4rem;
     }
 
-    .ec-Nonmember .shopping-formwrap #entry_sex label,
+    .shopping-formwrap #entry_sex label,
     #entry_mail_magazine label {
       border: 1px solid #c4c4c4;
       text-align: center;
@@ -521,7 +539,7 @@
       height: 40px;
     }
 
-    .ec-Nonmember .shopping-formwrap #entry_mail_magazine {
+    .shopping-formwrap #entry_mail_magazine {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -529,11 +547,11 @@
       gap: 0 1rem;
     }
 
-    .ec-Nonmember .shopping-formwrap #entry_mail_magazine input {
+    .shopping-formwrap #entry_mail_magazine input {
       display: none;
     }
 
-    .ec-Nonmember .shopping-formwrap #entry_mail_magazine input:checked+label,
+    .shopping-formwrap #entry_mail_magazine input:checked+label,
     #entry_mail_magazine input:checked+label {
       background-color: #0dab65;
       border: 1px solid #0dab65;
@@ -542,7 +560,7 @@
       line-height: 4rem;
     }
 
-    .ec-Nonmember .shopping-formwrap #entry_mail_magazine label,
+    .shopping-formwrap #entry_mail_magazine label,
     #entry_mail_magazine label {
       border: 1px solid #c4c4c4;
       text-align: center;
@@ -551,8 +569,6 @@
       flex: 1;
       line-height: 4rem;
     }
-
-    /*END ec-Nonmember*/
 
     /*.ec-agreement*/
     .ec-agreement {
@@ -806,321 +822,307 @@
 
     <main id="about">
       <div class="container">
+        <div class="ecv-Wrap">
 
-        <div class="ec-role">
-          <div class="ec-pageHeader">
-            <h1>寄付者情報入力</h1>
-          </div>
-        </div>
-
-        <div class="ec-cartRole"> </div>
-        <form name="form" id="form_cart" class="ec-cartRole" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
-          <div class="ec-cartRole__cart">
-
-            <div class="ec-cartTable">
-              <div class="ec-cartRole__progress">
-                <ul class="ec-progress-n">
-                  <li class="ec-progress__item">
-                    <div class="ec-progress__number">
-                      <span class="progress_circle"></span><span class="ec-progress__label">選択したお礼の品</span>
-                    </div>
-                  </li>
-                  <li class="ec-progress__item is-active">
-                    <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">申込手続き</span>
-                    </div>
-                  </li>
-                  <li class="ec-progress__item">
-                    <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">入力確認</span>
-                    </div>
-                  </li>
-                  <li class="ec-progress__item">
-                    <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">完了</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>寄付者情報入力</h1>
             </div>
+          </div>
 
-            <div class="ec-Nonmember">
-              <div class="ec-Nonmember__detail">
-                <div class="ec-orderAccount">
+          <div class="ecv-contentsWrap">
+            <form name="form" id="form_cart" class="" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
 
-                  <div class="ec-rectHeading">
-                    <p>控除を受けられる方の<br class="d-sm-none" />お名前・ご住所を登録をください。</p>
-                  </div>
+              <div class="ec-cartTable">
+                <div class="ec-cartRole__progress">
+                  <ul class="ec-progress-n">
+                    <li class="ec-progress__item">
+                      <div class="ec-progress__number">
+                        <span class="progress_circle"></span><span class="ec-progress__label">選択したお礼の品</span>
+                      </div>
+                    </li>
+                    <li class="ec-progress__item is-active">
+                      <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">申込手続き</span>
+                      </div>
+                    </li>
+                    <li class="ec-progress__item">
+                      <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">入力確認</span>
+                      </div>
+                    </li>
+                    <li class="ec-progress__item">
+                      <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">完了</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
-                  <div class="ec-orderAccount__account non-customer-display">
+              <div class="ec-orderForm">
 
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>お名前</label><span class="ec-required">必須</span>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <ul>
-                          <li class="s-form-w50">
-                            <p class="explain">姓（例：美咲）</p>
-                            <input class="" id="" type="text" value="{{ Order.name01 }}" readonly="readonly">
-                          </li>
-                          <li class="s-form-w50">
-                            <p class="explain">名（例：花子）</p>
-                            <input class="" id="" type="text" value="{{ Order.name02 }}" readonly="readonly">
-                          </li>
-                        </ul>
-                      </dd>
-                    </dl>
+                <div class="ec-rectHeading">
+                  <p>控除を受けられる方の<br class="d-sm-none" />お名前・ご住所を登録をください。</p>
+                </div>
 
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>お名前カナ</label><span class="ec-required">必須</span>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <ul>
-                          <li class="s-form-w50">
-                            <p class="explain">セイ（例：ミサキ）</p>
-                            <input class="" id="" type="text" value="{{ Order.kana01 }}" readonly="readonly">
-                          </li>
-                          <li class="s-form-w50">
-                            <p class="explain">セイ（例：ハナコ）</p>
-                            <input class="" id="" type="text" value="{{ Order.kana02 }}" readonly="readonly">
-                          </li>
-                        </ul>
-                      </dd>
-                    </dl>
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>お名前</label><span class="ec-required">必須</span>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul>
+                      <li class="s-form-w50">
+                        <p class="explain">姓（例：美咲）</p>
+                        <input class="" id="" type="text" value="{{ Order.name01 }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w50">
+                        <p class="explain">名（例：花子）</p>
+                        <input class="" id="" type="text" value="{{ Order.name02 }}" readonly="readonly">
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
 
-                    <dl class="shopping-tbl" style="display:none">
-                      <dt class="shopping-tbl-ttl">
-                        <label>会社名</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w100" id="" type="text" value="{{ Order.companyName }}" readonly="readonly">
-                      </dd>
-                    </dl>
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>お名前カナ</label><span class="ec-required">必須</span>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul>
+                      <li class="s-form-w50">
+                        <p class="explain">セイ（例：ミサキ）</p>
+                        <input class="" id="" type="text" value="{{ Order.kana01 }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w50">
+                        <p class="explain">セイ（例：ハナコ）</p>
+                        <input class="" id="" type="text" value="{{ Order.kana02 }}" readonly="readonly">
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
 
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>郵便番号</label><span class="ec-required">必須</span>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <p class="explain">ハイフン無し（例：1234567）</p>
-                        <input class="s-form-w20" id="" type="text" value="{{ Order.postal_code }}" readonly="readonly">
-                      </dd>
-                    </dl>
+                <dl class="shopping-tbl" style="display:none">
+                  <dt class="shopping-tbl-ttl">
+                    <label>会社名</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w100" id="" type="text" value="{{ Order.companyName }}" readonly="readonly">
+                  </dd>
+                </dl>
 
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>都道府県</label><span class="ec-required">必須</span>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <input class="s-form-w20" id="" type="text" value="{{ Order.pref }}" readonly="readonly">
-                      </dd>
-                    </dl>
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>郵便番号</label><span class="ec-required">必須</span>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <p class="explain">ハイフン無し（例：1234567）</p>
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.postal_code }}" readonly="readonly">
+                  </dd>
+                </dl>
 
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>住所</label><span class="ec-required">必須</span>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <ul class="s-form-add">
-                          <li class="s-form-w100">
-                            <p class="explain">市区町村名（例：港区南麻布）</p>
-                            <input class="" id="" type="text" value="{{ Order.addr01 }}" readonly="readonly">
-                          </li>
-                          <li class="s-form-w100">
-                            <p class="explain">番地・建物名・階・部屋番号など（例：４－１１－２１ザ・パークレックス南麻布２Ｆ）</p>
-                            <input class="" id="" type="text" value="{{ Order.addr02 }}" readonly="readonly">
-                            <p class="explain-s">※全角で入力してください</p>
-                          </li>
-                        </ul>
-                      </dd>
-                    </dl>
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>都道府県</label><span class="ec-required">必須</span>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.pref }}" readonly="readonly">
+                  </dd>
+                </dl>
 
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>電話番号</label><span class="ec-required">必須</span>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <p class="explain">ハイフン無し（例：09012345678）</p>
-                        <input class="s-form-w20" id="" type="text" value="{{ Order.phone_number }}" readonly="readonly">
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>住所</label><span class="ec-required">必須</span>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul class="s-form-add">
+                      <li class="s-form-w100">
+                        <p class="explain">市区町村名（例：港区南麻布）</p>
+                        <input class="" id="" type="text" value="{{ Order.addr01 }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w100">
+                        <p class="explain">番地・建物名・階・部屋番号など（例：４－１１－２１ザ・パークレックス南麻布２Ｆ）</p>
+                        <input class="" id="" type="text" value="{{ Order.addr02 }}" readonly="readonly">
+                        <p class="explain-s">※全角で入力してください</p>
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>電話番号</label><span class="ec-required">必須</span>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <p class="explain">ハイフン無し（例：09012345678）</p>
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.phone_number }}" readonly="readonly">
+                    <p class="explain-s">※半角で入力してください</p>
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>メールアドレス</label><span class="ec-required">必須</span>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul class="s-form-add">
+                      <li class="s-form-w70">
+                        <p class="explain">（例：furusato@misaki.com）</p>
+                        <input class="" id="" type="text" value="{{ Order.email }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w70">
+                        <p class="explain">確認用</p>
+                        <input class="" id="" type="text" value="{{ Order.email }}" readonly="readonly">
                         <p class="explain-s">※半角で入力してください</p>
-                      </dd>
-                    </dl>
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
 
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>メールアドレス</label><span class="ec-required">必須</span>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <ul class="s-form-add">
-                          <li class="s-form-w70">
-                            <p class="explain">（例：furusato@misaki.com）</p>
-                            <input class="" id="" type="text" value="{{ Order.email }}" readonly="readonly">
-                          </li>
-                          <li class="s-form-w70">
-                            <p class="explain">確認用</p>
-                            <input class="" id="" type="text" value="{{ Order.email }}" readonly="readonly">
-                            <p class="explain-s">※半角で入力してください</p>
-                          </li>
-                        </ul>
-                      </dd>
-                    </dl>
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>生年月日</label><span class="ec-required">必須</span>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <div class="ec-select ">
+                      <select id="vt4g_expiry_mon" name="payment_credit[expiry_month]" required="required">
+                        <option value="" selected="selected">--</option>
+                      </select>
+                      年<select id="payment_credit_expiry_year" name="payment_credit[expiry_year]" required="required">
+                        <option value="" selected="selected">--</option>
+                      </select>
+                      月<select id="payment_credit_expiry_year" name="payment_credit[expiry_year]" required="required">
+                        <option value="" selected="selected">--</option>
+                      </select>
+                      日
+                    </div>
+                  </dd>
+                </dl>
 
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>生年月日</label><span class="ec-required">必須</span>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <div class="ec-select ">
-                          <select id="vt4g_expiry_mon" name="payment_credit[expiry_month]" required="required">
-                            <option value="" selected="selected">--</option>
-                          </select>
-                          年<select id="payment_credit_expiry_year" name="payment_credit[expiry_year]" required="required">
-                            <option value="" selected="selected">--</option>
-                          </select>
-                          月<select id="payment_credit_expiry_year" name="payment_credit[expiry_year]" required="required">
-                            <option value="" selected="selected">--</option>
-                          </select>
-                          日
-                        </div>
-                      </dd>
-                    </dl>
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>性別</label><span class="ec-required">必須</span>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <div class="ec-radio">
+                      <div id="entry_sex">
+                        <input type="radio" id="entry_sex_3" name="entry[sex]" value="3" checked="checked">
+                        <label for="entry_sex_3">
+                          <span>回答しない</span>
+                        </label>
+                        <input type="radio" id="entry_sex_1" name="entry[sex]" value="1">
+                        <label for="entry_sex_1">
+                          <span>男性</span>
+                        </label>
+                        <input type="radio" id="entry_sex_2" name="entry[sex]" value="2">
+                        <label for="entry_sex_2">
+                          <span>女性</span>
+                        </label>
+                      </div>
+                    </div>
+                    <p class="explain-s">※ワンストップ特例制度のご利用に必要となりますので、お選びください</p>
+                  </dd>
+                </dl>
 
-                    <dl class="shopping-tbl">
-                      <dt class="shopping-tbl-ttl">
-                        <label>性別</label>
-                      </dt>
-                      <dd class="shopping-formwrap">
-                        <div class="ec-radio">
-                          <div id="entry_sex">
-                            <input type="radio" id="entry_sex_3" name="entry[sex]" value="3" checked="checked">
-                            <label for="entry_sex_3">
-                              <span>回答しない</span>
-                            </label>
-                            <input type="radio" id="entry_sex_1" name="entry[sex]" value="1">
-                            <label for="entry_sex_1">
-                              <span>男性</span>
-                            </label>
-                            <input type="radio" id="entry_sex_2" name="entry[sex]" value="2">
-                            <label for="entry_sex_2">
-                              <span>女性</span>
-                            </label>
-                          </div>
-                        </div>
-                        <p class="explain-s">※ワンストップ特例制度のご利用に必要となりますので、お選びください</p>
-                      </dd>
-                    </dl>
-
-
-
-                  </div>
-
-                </div>
               </div>
-            </div>
 
 
-            <div class="ec-agreement">
-              <div class="ec-Nonmember__detail">
-
-                <div class="shopping-tbl">
-                  <div class="shopping-tbl-ttl">
-                    <label>利用規約と個人情報保護</label>
-                  </div>
-
-                  <div class="shopping-formwrap">
-                    <p class="explain-l">必ず<a class="lb-icon" href="/help/agreement" target="_blank">利用規約</a><span class="fi ti-file"></span>および<a class="lb-icon" href="/help/privacy" target="_blank">個人情報取扱い</a><span class="fi ti-file"></span>をご確認ください</p>
-                    <div class="form-check">
-                      <input type="checkbox" id="agree">
-                      <div for="agree" class="s-form-w100">上記｢利用規約｣および｢個人情報取扱い｣に同意の上、会員登録をする</div>
+              <div class="ec-agreement">
+                <div class="ec-orderRole__detail">
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>利用規約と個人情報保護</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                      <p class="explain-l">必ず<a class="lb-icon" href="/help/agreement" target="_blank">利用規約</a><span class="fi ti-file"></span>および<a class="lb-icon" href="/help/privacy" target="_blank">個人情報取扱い</a><span class="fi ti-file"></span>をご確認ください</p>
+                      <div class="form-check">
+                        <input type="checkbox" id="agree">
+                        <div for="agree" class="s-form-w100">上記｢利用規約｣および｢個人情報取扱い｣に同意の上、会員登録をする</div>
+                      </div>
                     </div>
                   </div>
+                </div>
 
+                <script>
+                  document.addEventListener('DOMContentLoaded', function () {
+                    var checkbox = document.getElementById('agree');
+                    var formCheck = document.querySelector('.form-check');
+                    var next = document.getElementById('next');
+
+                    function updateCheckboxState() {
+                      formCheck.style.background = checkbox.checked ? '#525263' : '#fff';
+                      formCheck.style.color = checkbox.checked ? '#fff' : '#525263';
+                      formCheck.style.border = checkbox.checked ? '2px solid #525263' : '2px solid #e1e1e1';
+                      next.disabled = !checkbox.checked;
+                    }
+
+                    // チェックボックスの状態が変更された時の処理
+                    checkbox.addEventListener('change', updateCheckboxState);
+
+                    // フォームのどの範囲でもクリックするとチェックボックスにチェックが入るようにする
+                    formCheck.addEventListener('click', function () {
+                      checkbox.checked = !checkbox.checked; // チェック状態を反転させる
+                      updateCheckboxState(); // チェックボックスの状態を更新
+                    });
+
+                    // チェックボックスが表示される要素の監視
+                    var observer = new IntersectionObserver(function (changes) {
+                      if (changes[0].intersectionRatio === 1) {
+                        observer.disconnect();
+                        checkbox.disabled = false; // チェックボックスを有効にする
+                      }
+                    });
+                    observer.observe(end); // "end" 要素を監視
+
+                    // 初期状態でチェックボックスの状態を更新
+                    updateCheckboxState();
+                  });
+                </script>
+
+                <div class="agreement-link">
+                  <button id="next" type="button" class="agreement-Btn" data-trigger="click" data-path="{{url('help_agreement')}}" disabled>
+                    <span>内容確認へ進む</span>
+                  </button>
+                </div>
+
+                <div class="agreement-link-back">
+                  <a class="ec-blockBtn--cancel" href="/">戻る</a>
                 </div>
 
               </div>
 
-              <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                  var checkbox = document.getElementById('agree');
-                  var formCheck = document.querySelector('.form-check');
-                  var next = document.getElementById('next');
-
-                  function updateCheckboxState() {
-                    formCheck.style.background = checkbox.checked ? '#525263' : '#fff';
-                    formCheck.style.color = checkbox.checked ? '#fff' : '#525263';
-                    formCheck.style.border = checkbox.checked ? '2px solid #525263' : '2px solid #e1e1e1';
-                    next.disabled = !checkbox.checked;
-                  }
-
-                  // チェックボックスの状態が変更された時の処理
-                  checkbox.addEventListener('change', updateCheckboxState);
-
-                  // フォームのどの範囲でもクリックするとチェックボックスにチェックが入るようにする
-                  formCheck.addEventListener('click', function () {
-                    checkbox.checked = !checkbox.checked; // チェック状態を反転させる
-                    updateCheckboxState(); // チェックボックスの状態を更新
-                  });
-
-                  // チェックボックスが表示される要素の監視
-                  var observer = new IntersectionObserver(function (changes) {
-                    if (changes[0].intersectionRatio === 1) {
-                      observer.disconnect();
-                      checkbox.disabled = false; // チェックボックスを有効にする
-                    }
-                  });
-                  observer.observe(end); // "end" 要素を監視
-
-                  // 初期状態でチェックボックスの状態を更新
-                  updateCheckboxState();
-                });
-              </script>
-
-              <div class="agreement-link">
-                <button id="next" type="button" class="agreement-Btn" data-trigger="click" data-path="{{url('help_agreement')}}" disabled>
-                  <span>内容確認へ進む</span>
-                </button>
-              </div>
-
-              <div class="agreement-link-back">
-                <a class="ec-blockBtn--cancel" href="/">戻る</a>
-              </div>
-
-
-            </div>
+            </form>
           </div>
 
 
+        </div>
       </div>
-      </form>
-
-  </div>
-  </main>
-
-
-
-  <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+    </main>
 
 
 
 
-  <footer>
-    <div class="col-12 col-xl-6 mx-auto inner">
-      <ul class="subnav">
-        <li><a href="/help/agreement">ご利用規約</a></li>
-        <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
-        <li><a href="/help/privacy">個人情報保護方針</a></li>
-        <li><a href="/help/about">よくある質問</a></li>
-        <li><a href="/contact">お問い合わせ</a></li>
-      </ul>
-    </div>
+    <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
 
-    <div class="copyright">
-      <a href="{{ url('homepage') }}">
-        <img src="./img/misaki.png" />
-        <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
-      </a>
-    </div>
 
-  </footer>
+
+
+    <footer>
+      <div class="col-12 col-xl-6 mx-auto inner">
+        <ul class="subnav">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+        <a href="{{ url('homepage') }}">
+          <img src="./img/misaki.png" />
+          <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+        </a>
+      </div>
+
+    </footer>
 
   </div>
 

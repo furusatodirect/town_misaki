@@ -32,44 +32,26 @@
 <body>
 
   <style type="text/css">
-    .wrap {
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      grid-template-columns: 100%;
-      min-height: 100vh;
-      font-size: 1.5rem;
-    }
+    /*ec-progress__item*/
 
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-      font-family: 'Klee One', serif;
-    }
-
-    .ecv-Wrap {
-      margin: 3rem auto;
-      max-width: calc(1130px + (1rem * 2));
-      width: 100%;
-    }
-
-    .ecv-header {
-      margin: 0 auto;
-      max-width: calc(1130px + (1rem * 2));
-      width: 100%;
+    .ec-role {
       padding: 0;
       margin-top: 5rem;
     }
 
-    .ecv-header .ec-pageHeader {
+    .ec-cartRole {
+      padding: 0;
+
+    }
+
+    .ec-role .ec-pageHeader {
       padding: 1rem 0.5rem 1rem;
       background-color: #fafffc;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .ecv-header .ec-pageHeader h1 {
+    .ec-role .ec-pageHeader h1 {
       border-top: none;
       display: inline-block;
       font-size: calc(20px + 2 * ((100vw - 320px) / 670));
@@ -77,18 +59,6 @@
       margin: 0;
     }
 
-    .ecv-contentsWrap {
-      margin: 0 auto;
-    }
-
-    @media screen and (max-width: 768px) {
-      .ecv-contentsWrap {
-        margin: 0;
-        width: 100%;
-      }
-    }
-
-    /*ec-progress__item*/
     .ec-cartTable {
       display: flex;
       border-top: none;
@@ -97,6 +67,12 @@
       justify-content: center;
       align-items: center;
     }
+
+    .ec-cartRole .ec-cartRole__cart {
+      margin: 0;
+      width: 100%;
+    }
+
 
     .ec-progress .is-complete .ec-progress__number {
       background: #0dab65;
@@ -136,12 +112,6 @@
     .ec-cartRole__action,
     .ec-blockBtn--cancel {
       margin: 0 auto;
-    }
-
-    .ec-cartRole__actions {
-      display: flex;
-      flex-direction: column;
-      row-gap: 1rem;
     }
 
     .ec-blockBtn--action,
@@ -297,7 +267,8 @@
     }
 
     .ec-cartRow .ec-cartRow__amountColumn .ec-cartRow__amountUpButton,
-    .ec-cartRow .ec-cartRow__amountColumn .ec-cartRow__amountDownButton {
+    .ec-cartRow .ec-cartRow__amountColumn .ec-cartRow__amountDownButton,
+    .ec-cartRow .ec-cartRow__amountColumn .ec-cartRow__amountDownButtonDisabled {
       border: 1px solid #c9c9c9;
     }
 
@@ -340,12 +311,12 @@
       padding-left: 0.5rem;
     }
 
-    .ec-cartRole__actions {
+    .ec-cartRole .ec-cartRole__actions {
       width: 100%;
       margin: 2rem 0;
     }
 
-    .ec-cartRole__total {
+    .ec-cartRole .ec-cartRole__total {
       padding: 2rem .5rem 2rem;
       background-color: #fafffc;
       margin-bottom: 1rem;
@@ -425,6 +396,36 @@
 
     }
 
+    .ec-rectHeading-error {
+      margin-bottom: 2rem;
+    }
+
+    .ec-rectHeading-error h2 {
+      background: #0dab65;
+      color: #fff;
+      border-radius: .5rem;
+    }
+
+    .ec-rectHeading-error p {
+      font-weight: bold;
+      text-align: center;
+      padding: 1.5rem 0;
+      width: 360px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2.5rem;
+      margin: 0 auto;
+      padding: 2rem;
+      font-size: calc(14px + 2 * ((100vw - 320px) / 670));
+      color: #d80303;
+      font-weight: bold;
+      touch-action: manipulation;
+      border: 2px solid #d80303;
+      height: 0;
+      line-height: 0;
+    }
+
     /*END .ec-cartRow*/
   </style>
   <div class="wrap">
@@ -493,35 +494,96 @@
 
     <main id="about">
       <div class="container">
-        <div class="ecv-Wrap">
 
-          <div class="ecv-header">
-            <div class="ec-pageHeader">
-              <h1>寄付カートの中身</h1>
+        <div class="ec-role">
+          <div class="ec-pageHeader">
+            <h1>寄付カートの中身</h1>
+          </div>
+        </div>
+
+        <div class="ec-cartRole">
+
+          {% set productStr = app.session.flashbag.get('eccube.front.request.product') %}
+          {% for error in app.session.flashbag.get('eccube.front.request.error') %}
+          {% set idx = loop.index0 %}
+          <div class="ec-cartRole__error">
+            <div class="ec-alert-warning">
+              <div class="ec-alert-warning__icon"><img src="{{ asset('assets/icon/exclamation-white.svg') }}"></div>
+              <div class="ec-alert-warning__text">
+                {% if productStr[idx] is defined %}
+                {{ error|trans({'%product%':productStr[idx]})|nl2br }}
+                {% else %}
+                {{ error|trans|nl2br }}
+                {% endif %}
+              </div>
             </div>
           </div>
+          {% endfor %}
+          {% for error in app.session.flashbag.get('eccube.front.cart.error') %}
+          <div class="ec-cartRole__error">
+            <div class="ec-alert-warning">
+              <div class="ec-alert-warning__icon"><img src="{{ asset('assets/icon/exclamation-white.svg') }}"></div>
+              <div class="ec-alert-warning__text">
+                {{ error|trans|nl2br }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% if totalQuantity > 0 %}
+          {% if Carts|length > 1 %}
+          <div class="ec-cartRole__error">
+            <div class="ec-alert-warning">
+              <div class="ec-alert-warning__text">
+                {{ 'front.cart.divide_cart'|trans|nl2br }}
+              </div>
+            </div>
+          </div>
+          {% endif %}
 
-          <div class="ecv-contentsWrap">
-            <form name="form" id="form_cart" class="" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
+          <form name="form" id="form_cart" class="ec-cartRole" method="post" action="{{ url('cart') }}">
+
+            {% for CartIndex,Cart in Carts %}
+            {% set cartKey = Cart.cart_key %}
+            {% for error in app.session.flashbag.get('eccube.front.cart.' ~ cartKey ~ '.request.error') %}
+            <div class="ec-cartRole__error">
+              <div class="ec-alert-warning">
+                <div class="ec-alert-warning__icon"><img src="{{ asset('assets/icon/exclamation-white.svg') }}"></div>
+                <div class="ec-alert-warning__text">
+                  {{ error|trans|nl2br }}
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+
+            <div class="ec-cartRole__cart">
 
               <div class="ec-cartTable">
-                <a class="ec-blockBtn--action" href="/cart/buystep/8_1">次へ</a>
+                {#NU <ol class="ec-cartHeader">
+                  <li class="ec-cartHeader__label">{{ 'front.cart.delete'|trans }}</li>
+                  <li class="ec-cartHeader__label">{{ 'front.cart.product'|trans }}</li>
+                  <li class="ec-cartHeader__label">{{ 'common.quantity'|trans }}</li>
+                  <li class="ec-cartHeader__label">{{ 'common.subtotal'|trans }}</li>
+                </ol>#}
+
+                <a class="ec-blockBtn--action" href="{{ path('cart_buystep', {'cart_key':cartKey}) }}">次へ</a>
                 <div class="ec-cartRole__progress">
                   <ul class="ec-progress">
+                    {% set step = 1 %}
                     <li class="ec-progress__item is-complete">
-                      <div class="ec-progress__number">1 </div>
+                      <div class="ec-progress__number">{{ step }}{% set step = step + 1 %}</div>
                       <div class="ec-progress__label">選択したお礼の品 </div>
                     </li>
                     <li class="ec-progress__item">
-                      <div class="ec-progress__number">2 </div>
+                      <div class="ec-progress__number">{{ step }}{% set step = step + 1 %}</div>
                       <div class="ec-progress__label">申込手続き </div>
                     </li>
                     <li class="ec-progress__item">
-                      <div class="ec-progress__number">3 </div>
+                      <div class="ec-progress__number">{{ step }}{% set step = step + 1 %}</div>
                       <div class="ec-progress__label">入力確認 </div>
                     </li>
                     <li class="ec-progress__item">
-                      <div class="ec-progress__number">4 </div>
+                      <div class="ec-progress__number">{{ step }}{% set step = step + 1 %}</div>
                       <div class="ec-progress__label">完了 </div>
                     </li>
                   </ul>
@@ -529,84 +591,166 @@
               </div>
 
 
+              {% for CartItem in Cart.CartItems %}
+              {% set ProductClass = CartItem.ProductClass %}
+              {% set Product = ProductClass.Product %}
               <div class="ec-cartRow">
                 <div class="ec-cartRow__contentColumn">
                   <div class="ec-cartRow__img">
-                    <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">
-                      <img src="./img/gift/misaki-product-01.jpg" alt="ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト">
+                    <a target="_blank" href="{{ url('product_detail', {id : Product.id} ) }}">
+                      <img src="{{ asset(Product.main_list_image|no_image_product, 's3_image') }}" alt="{{ Product.name }}" loading="lazy">
                     </a>
                   </div>
                   <div class="ec-cartRow__summary">
                     <div class="ec-cartRow__name">
-                      <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</a> </div>
-                    <div class="ec-cartRow__unitPrice">28,000円</div>
-                    <div class="ec-cartRow__sutbtotalSP">28,000円</div>
+                      <a target="_blank" href="{{ url('product_detail', {id : Product.id} ) }}">{{ Product.name }}</a>
+                      {% if ProductClass.ClassCategory1 and ProductClass.ClassCategory1.id %}
+                      <br>{{ ProductClass.ClassCategory1.ClassName.name }}：{{ ProductClass.ClassCategory1 }}
+                      {% endif %}
+                      {% if ProductClass.ClassCategory2 and ProductClass.ClassCategory2.id %}
+                      <br>{{ ProductClass.ClassCategory2.ClassName.name }}：{{ ProductClass.ClassCategory2 }}
+                      {% endif %}
+                    </div>
+                    <!--<div class="ec-cartRow__unitPrice"></div>
+                    <div class="ec-cartRow__sutbtotalSP"></div>-->
+                    {% if Product.room_temperature_delivery == '1' %}
+                    <p>配送方法：常温配送</p>
+                    {% elseif  Product.refrigerated_delivery == '1' %}
+                    <p>配送方法：冷蔵配送</p>
+                    {% elseif  Product.refrigerated_delivery == '1' %}
+                    <p>配送方法：冷凍配送</p>
+                    {% endif %}
                   </div>
                 </div>
-
                 <div class="ec-cartRow__amountColumn">
-                  <div class="ec-cartRow__amount">数量：5</div>
-                  <div class="ec-cartRow__amountSP">数量：5</div>
+                  <div class="ec-cartRow__amount">{{ 'common.quantity__with_separator'|trans }}{{ CartItem.quantity|number_format }}</div>
+                  <div class="ec-cartRow__amountSP">{{ 'common.quantity__with_separator'|trans }}{{ CartItem.quantity|number_format }}</div>
                   <div class="ec-cartRow__amountUpDown">
-                    <a href="http://myvegas.jp/cart/up/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-cartRow__amountUpButton load-overlay" data-method="put" data-confirm="false">
-                      <span class="ec-cartRow__amountUpButton__icon"><img src="./img/plus-dark.svg" alt="increase"></span>
+                    {% if CartItem.quantity > 1 %}
+                    <a href="{{ url('cart_handle_item', {'operation': 'down', 'productClassId': ProductClass.id}) }}" {{ csrf_token_for_anchor() }} class="ec-cartRow__amountDownButton load-overlay" data-method="put" data-confirm="false">
+                      <span class="ec-cartRow__amountDownButton__icon"><img src="{{ asset('assets/icon/minus-dark.svg') }}" alt="reduce"></span>
                     </a>
-                    <a href="http://myvegas.jp/cart/down/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-cartRow__amountDownButton load-overlay" data-method="put" data-confirm="false">
-                      <span class="ec-cartRow__amountDownButton__icon"><img src="./img/minus.svg" alt="reduce"></span>
+                    {% else %}
+                    <div class="ec-cartRow__amountDownButtonDisabled">
+                      <span class="ec-cartRow__amountDownButton__icon"><img src="{{ asset('assets/icon/minus-dark.svg') }}" alt="reduce"></span>
+                    </div>
+                    {% endif %}
+                    <a href="{{ url('cart_handle_item', {'operation': 'up', 'productClassId': ProductClass.id}) }}" {{ csrf_token_for_anchor() }} class="ec-cartRow__amountUpButton load-overlay" data-method="put" data-confirm="false">
+                      <span class="ec-cartRow__amountUpButton__icon"><img src="{{ asset('assets/icon/plus-dark.svg') }}" alt="reduce"></span>
                     </a>
                   </div>
                 </div>
-
                 <div class="ec-cartRow__subtotalColumn">
-                  <div class="ec-cartRow__sutbtotal">小計：<span>1,028,000円</span></div>
+                  <div class="ec-cartRow__sutbtotal">小計：<span>{{ CartItem.total_price|number_format }}円</span></div>
                 </div>
-
                 <div class="ec-cartRow__delColumn">
-                  <a href="http://myvegas.jp/cart/remove/11" token-for-anchor="YyU6qxkg8JUEqnGk7Uy8-q5QXDKU_dkBIW71deIyXUo" class="ec-icon" data-method="put" data-message="カートからお礼の品を削除してもよろしいですか?">
-                    <img src="./img/cross.svg" alt="delete"><span>削除</span>
+                  <a href="{{ url('cart_handle_item', {'operation': 'remove', 'productClassId': ProductClass.id }) }}" {{ csrf_token_for_anchor() }} class="ec-icon" data-method="put" data-message="カートからお礼の品を削除してもよろしいですか?">
+                    <img src="{{ asset('assets/icon/cross.svg') }}" alt="delete"><span>削除</span>
                   </a>
                 </div>
               </div>
+              {% endfor %}
 
-              <div class="ec-cartRole__actions">
-                <div class="ec-cartRole__total"> 合計金額 <span>28,000</span> 円 </div>
-                <a class="ec-blockBtn--action" href="/cart/buystep/8_1">次へ</a>
-                <a class="ec-blockBtn--cancel" href="/">続けて返礼品を探す</a>
-              </div>
 
-            </form>
-          </div>
+              <!--<div class="ec-cartRole__progress">-->
+              {% if BaseInfo.delivery_free_amount and BaseInfo.delivery_free_quantity %}
+              <br />
+              {% if is_delivery_free[cartKey] %}
+              {{ 'front.cart.delivery_fee_free__now'|trans }}
+              {% else %}
+              {{ 'front.cart.delivery_fee_free__price_and_quantity'|trans({ '%price%': least[cartKey]|number_format, '%quantity%': quantity[cartKey]|number_format })|raw }}
+              {% endif %}
+              {% elseif BaseInfo.delivery_free_amount %}
+              <br />
+              {% if is_delivery_free[cartKey] %}
+              {{ 'front.cart.delivery_fee_free__now'|trans }}
+              {% else %}
+              {{ 'front.cart.delivery_fee_free__price'|trans({ '%price%': least[cartKey]|number_format })|raw }}
+              {% endif %}
+              {% elseif BaseInfo.delivery_free_quantity %}
+              <br />
+              {% if is_delivery_free[cartKey] %}
+              {{ 'front.cart.delivery_fee_free__now'|trans }}
+              {% else %}
+              {{ 'front.cart.delivery_fee_free__quantity'|trans({ '%quantity%': quantity[cartKey]|number_format })|raw }}
+              {% endif %}
+              {% endif %}
+              <!--</div>-->
 
+
+            </div>
+
+            <div class="ec-cartRole__actions">
+              <div class="ec-cartRole__total"> 合計金額 <span>{{ Cart.totalPrice|number_format }}</span> 円 </div>
+              <a class="ec-blockBtn--action" href="{{ path('cart_buystep', {'cart_key':cartKey}) }}">次へ</a>
+              {% if loop.last %}
+              <a class="ec-blockBtn--cancel" href="{{ url('product_list') }}?orderby={{eccube_config.eccube_product_order_price_lower}}">続けて返礼品を探す</a>
+              {% endif %}
+            </div>
         </div>
       </div>
-    </main>
-
-
-
-    <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
-
-
-
-
-    <footer>
-      <div class="col-12 col-xl-6 mx-auto inner">
-        <ul class="subnav">
-          <li><a href="/help/agreement">ご利用規約</a></li>
-          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
-          <li><a href="/help/privacy">個人情報保護方針</a></li>
-          <li><a href="/help/about">よくある質問</a></li>
-          <li><a href="/contact">お問い合わせ</a></li>
-        </ul>
+      {% endfor %}
+      </form>
+      {% else %}
+      <div class="ec-cartRole__actions">
+        <div class="ec-rectHeading-error">
+          <p>寄付カートには何も入っていません。</p>
+        </div>
       </div>
-
-      <div class="copyright">
-        <a href="{{ url('homepage') }}">
-          <img src="./img/misaki.png" />
-          <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
-        </a>
+      {% for CartIndex,Cart in Carts %}い
+      {% set cartKey = Cart.cart_key %}
+      {% for error in app.session.flashbag.get('eccube.front.cart.' ~ cartKey ~ '.request.error') %}
+      <div class="ec-cartRole__error">
+        <div class="ec-alert-warning">
+          <div class="ec-alert-warning__icon"><img src="{{ asset('assets/icon/exclamation-white.svg') }}"></div>
+          <div class="ec-alert-warning__text">
+            {{ error|trans|nl2br }}
+          </div>
+        </div>
       </div>
+      {% endfor %}
+      {% endfor %}
+      {% endif %}
+      {% if is_granted('ROLE_USER') %}
+      {% else %}
+      {% if totalQuantity > 0 %}
+      {% else %}
+      <div class="ec-cartRole__actions">
+        <a class="ec-blockBtn--action" href="{{ url('mypage_login') }}">ログインページへ</a>
+      </div>
+      {% endif %}
+      {% endif %}
 
-    </footer>
+
+
+  </div>
+  </main>
+
+
+  <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+  <footer>
+    <div class="col-12 col-xl-6 mx-auto inner">
+      <ul class="subnav">
+        <li><a href="/help/agreement">ご利用規約</a></li>
+        <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+        <li><a href="/help/privacy">個人情報保護方針</a></li>
+        <li><a href="/help/about">よくある質問</a></li>
+        <li><a href="/contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+
+    <div class="copyright">
+      <a href="{{ url('homepage') }}">
+        <img src="./img/misaki.png" />
+        <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+      </a>
+    </div>
+
+  </footer>
 
   </div>
 

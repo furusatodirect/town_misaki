@@ -37,31 +37,55 @@
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;
       min-height: 100vh;
+      font-size: 1.5rem;
     }
 
-    .ec-role {
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Klee One', serif;
+    }
+
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
       padding: 0;
       margin-top: 5rem;
     }
 
-    .ec-cartRole {
-      padding: 0;
-
-    }
-
-    .ec-role .ec-pageHeader {
+    .ecv-header .ec-pageHeader {
       padding: 1rem 0.5rem 1rem;
       background-color: #fafffc;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .ec-role .ec-pageHeader h1 {
+    .ecv-header .ec-pageHeader h1 {
       border-top: none;
       display: inline-block;
       font-size: calc(20px + 2 * ((100vw - 320px) / 670));
       border: none;
       margin: 0;
+    }
+
+    .ecv-contentsWrap {
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
     }
 
     /* ec-blockBtn*/
@@ -70,6 +94,12 @@
     .ec-blockBtn--cancel {
       margin-left: auto;
       margin-right: auto
+    }
+
+    .ec-cartRole__actions {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
     }
 
     .ec-blockBtn--action,
@@ -371,46 +401,45 @@
 
 
     <main id="about">
-
-
       <div class="container">
+        <div class="ecv-Wrap">
 
-        <div class="ec-role">
-          <div class="ec-pageHeader">
-            <h1>お届け先一覧</h1>
-          </div>
-        </div>
-
-        <div class="ec-cartRole">
-
-          <div class="ec-mypg-wrap">
-            <div class="ec-mypg-proCount">1件のお届け先登録があります</div>
-            <div class="ec-mypg-detail">
-              <div class="ec-mypg-dceter">
-                <div class="ec-mypg-reqDat">宛先名： MLJ</div>
-                <div class="ec-mypg-reqNo">配送先： 〒1060047 東京都港区南麻布1-1-1</div>
-                <div class="ec-mypg-reqSt">連絡先： 0357890445</div>
-              </div>
-              <div class="ec-mypg-dright">
-                <div class="ec-mypg-detaiChe">
-                  <a href="/" class="">変更する</a>
-                </div>
-                <div class="ec-mypg-detaiBtn">
-                  <a href="/" class="">削除する</a>
-                </div>
-              </div>
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>お届け先一覧</h1>
             </div>
           </div>
 
-          <div class="ec-cartRole__actions">
-            <a class="ec-blockBtn--action" href="">お届け先を変更する</a>
-            <a class="ec-blockBtn--cancel" href="/">戻る</a>
+          <div class="ecv-contentsWrap">
+
+            <div class="ec-mypg-wrap">
+              <div class="ec-mypg-proCount">1件のお届け先登録があります</div>
+              <div class="ec-mypg-detail">
+                <div class="ec-mypg-dceter">
+                  <div class="ec-mypg-reqDat">宛先名： MLJ</div>
+                  <div class="ec-mypg-reqNo">配送先： 〒1060047 東京都港区南麻布1-1-1</div>
+                  <div class="ec-mypg-reqSt">連絡先： 0357890445</div>
+                </div>
+                <div class="ec-mypg-dright">
+                  <div class="ec-mypg-detaiChe">
+                    <a href="/" class="">変更する</a>
+                  </div>
+                  <div class="ec-mypg-detaiBtn">
+                    <a href="/" class="">削除する</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ec-cartRole__actions">
+              <a class="ec-blockBtn--action" href="">お届け先を変更する</a>
+              <a class="ec-blockBtn--cancel" href="/">戻る</a>
+            </div>
+
           </div>
 
         </div>
-
       </div>
-
     </main>
 
 

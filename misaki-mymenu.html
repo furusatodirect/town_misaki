@@ -37,6 +37,55 @@
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;
       min-height: 100vh;
+      font-size: 1.5rem;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Klee One', serif;
+    }
+
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+      padding: 0;
+      margin-top: 5rem;
+    }
+
+    .ecv-header .ec-pageHeader {
+      padding: 1rem 0.5rem 1rem;
+      background-color: #fafffc;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .ecv-header .ec-pageHeader h1 {
+      border-top: none;
+      display: inline-block;
+      font-size: calc(20px + 2 * ((100vw - 320px) / 670));
+      border: none;
+      margin: 0;
+    }
+
+    .ecv-contentsWrap {
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
     }
 
     /* ec-blockBtn*/
@@ -44,6 +93,12 @@
     .ec-cartRole__action,
     .ec-blockBtn--cancel {
       margin: 0 auto;
+    }
+
+    .ec-cartRole__actions {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
     }
 
     .ec-blockBtn--action,
@@ -148,35 +203,6 @@
     }
 
     /*END ec-blockBtn*/
-
-
-    /*.ec-role*/
-    .ec-role {
-      padding: 0;
-      margin-top: 5rem;
-    }
-
-    .ec-cartRole {
-      padding: 0;
-
-    }
-
-    .ec-role .ec-pageHeader {
-      padding: 1rem 0.5rem 1rem;
-      background-color: #fafffc;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    .ec-role .ec-pageHeader h1 {
-      border-top: none;
-      display: inline-block;
-      font-size: calc(20px + 2 * ((100vw - 320px) / 670));
-      border: none;
-      margin: 0;
-    }
-
-    /*END .ec-role*/
   </style>
   <div class="wrap">
 
@@ -240,123 +266,128 @@
 
     <main id="about">
       <div class="container">
+        <div class="ecv-Wrap">
 
-        <div class="ec-role">
-          <div class="ec-pageHeader">
-            <h1>マイページ</h1>
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>マイページ</h1>
+            </div>
           </div>
-        </div>
 
+          <div class="ecv-contentsWrap">
 
-        <div class="mymenu-wrap">
-          <div class="mymenu-sec">
+            <div class="mymenu-wrap">
+              <div class="mymenu-sec">
 
-            <div class="mm-sec-left">
-              <div class="mm-sec-member">
-                <div class="mm-sec-mem-ttl">ご登録情報</div>
-                <div class="mm-sec-mem-body">
-                  <div class="mm-sec-mem-name">
-                    <span class="mem-name">板東 学</span><span>様</span>
+                <div class="mm-sec-left">
+                  <div class="mm-sec-member">
+                    <div class="mm-sec-mem-ttl">ご登録情報</div>
+                    <div class="mm-sec-mem-body">
+                      <div class="mm-sec-mem-name">
+                        <span class="mem-name">板東 学</span><span>様</span>
+                      </div>
+                      <ul class="navi-1st">
+                        <li><a href="{{ url('mypage_change') }}">会員情報の確認・変更</a></li>
+                        <li><a href="{{ url('mypage_delivery') }}">配送先情報の確認・変更</a></li>
+                        <li><a href="{{ url('mypage_withdraw') }}">退会手続き</a></li>
+                      </ul>
+                      <div class="mm-sec-btn">
+                        <a class="mm-sec-btn--logout" href="">ログアウト</a>
+                      </div>
+                    </div>
                   </div>
-                  <ul class="navi-1st">
-                    <li><a href="{{ url('mypage_change') }}">会員情報の確認・変更</a></li>
-                    <li><a href="{{ url('mypage_delivery') }}">配送先情報の確認・変更</a></li>
-                    <li><a href="{{ url('mypage_withdraw') }}">退会手続き</a></li>
+
+                  <ul class="mm-sec-bnr">
+                    <li>
+                      <a href="https://mypg.jp/" target="_blink" class="bnr"><img src="./img/bnr_mypgjp.png"></a>
+                    </li>
+                    <li>
+                      <a href="" target="_blink" class="bnr"><img src="./img/bnr_simulator.png"></a>
+                    </li>
                   </ul>
-                  <div class="mm-sec-btn">
-                    <a class="mm-sec-btn--logout" href="">ログアウト</a>
-                  </div>
-                </div>
-              </div>
 
-              <ul class="mm-sec-bnr">
-                <li>
-                  <a href="https://mypg.jp/" target="_blink" class="bnr"><img src="./img/bnr_mypgjp.png"></a>
-                </li>
-                <li>
-                  <a href="" target="_blink" class="bnr"><img src="./img/bnr_simulator.png"></a>
-                </li>
-              </ul>
-
-            </div>
-
-            <div class="mm-sec-right">
-              <div class="mm-sec-menu">
-
-                <ul class="mm-sec-menu-body myp-actionList">
-                  <li>
-                    <a href="{{ url('cart') }}">
-                      <div class="mm-sec-menuicon"><span class="fi ti-shopping-cart"></span></div>
-                      <dl class="mm-sec-menu-sec">
-                        <dt class="mm-sec-menu-secttl">寄付カート</dt>
-                        <dt class="mm-sec-menu-sectxt">返礼品の詳細や申込状況を確認する</dd>
-                      </dl>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{ url('mypage') }}">
-                      <div class="mm-sec-menuicon"><span class="fi ti-files"></span></div>
-                      <dl class="mm-sec-menu-sec">
-                        <dt class="mm-sec-menu-secttl">お申込履歴</dt>
-                        <dt class="mm-sec-menu-sectxt">返礼品の詳細や申込状況を確認する</dd>
-                      </dl>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{ url('mypage_favorite') }}">
-                      <div class="mm-sec-menuicon"><span class="fi ti-heart"></span></div>
-                      <dl class="mm-sec-menu-sec">
-                        <dt class="mm-sec-menu-secttl">お気に入り一覧</dt>
-                        <dt class="mm-sec-menu-sectxt">お気入りした返礼品を確認する</dd>
-                      </dl>
-                    </a>
-                  </li>
-                  <li><a href="{{ url('contact') }}">
-                      <div class="mm-sec-menuicon"><span class="fi ti-help-alt"></span></div>
-                      <dl class="mm-sec-menu-sec">
-                        <dt class="mm-sec-menu-secttl">お問い合わせ</dt>
-                        <dt class="mm-sec-menu-sectxt">よくある質問・ふるさと納税に関するQ&A</dd>
-                      </dl>
-                    </a>
-                  </li>
-                </ul>
-
-                <div class="mg-contents-Wrap">
-                  <div class="mg-c-sec">
-                    <p class="ttls">ふるさと納税についてのお問い合わせ</p>
-                    <p class="mgc-read">
-                      美咲町　みさき共創室<br>
-                      〒709-3717　岡山県岡山県久米郡美咲町原田1735</br>
-                      受付：8:30～17:00</br>
-                      TEL：0868-66-1660
-                    </p>
-                  </div>
-                  <div class="mg-c-sec">
-                    <p class="ttls">
-                      ワンストップ特例申請書送付先
-                    </p>
-                    <p class="mgc-read">
-                      〒709-3717　岡山県岡山県久米郡美咲町原田1735</br>
-                      美咲町　みさき共創室 宛<br>
-                    </p>
-                  </div>
                 </div>
 
-                <ul class="mm-sec-bnrbottom">
-                  <li>
-                    <a href="https://mypg.jp/" target="_blink" class="bnr"><img src="./img/bnr_mypgjp.png"></a>
-                  </li>
-                  <li>
-                    <a href="" target="_blink" class="bnr"><img src="./img/bnr_simulator.png"></a>
-                  </li>
-                </ul>
+                <div class="mm-sec-right">
+                  <div class="mm-sec-menu">
+
+                    <ul class="mm-sec-menu-body myp-actionList">
+                      <li>
+                        <a href="{{ url('cart') }}">
+                          <div class="mm-sec-menuicon"><span class="fi ti-shopping-cart"></span></div>
+                          <dl class="mm-sec-menu-sec">
+                            <dt class="mm-sec-menu-secttl">寄付カート</dt>
+                            <dt class="mm-sec-menu-sectxt">返礼品の詳細や申込状況を確認する</dd>
+                          </dl>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('mypage') }}">
+                          <div class="mm-sec-menuicon"><span class="fi ti-files"></span></div>
+                          <dl class="mm-sec-menu-sec">
+                            <dt class="mm-sec-menu-secttl">お申込履歴</dt>
+                            <dt class="mm-sec-menu-sectxt">返礼品の詳細や申込状況を確認する</dd>
+                          </dl>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('mypage_favorite') }}">
+                          <div class="mm-sec-menuicon"><span class="fi ti-heart"></span></div>
+                          <dl class="mm-sec-menu-sec">
+                            <dt class="mm-sec-menu-secttl">お気に入り一覧</dt>
+                            <dt class="mm-sec-menu-sectxt">お気入りした返礼品を確認する</dd>
+                          </dl>
+                        </a>
+                      </li>
+                      <li><a href="{{ url('contact') }}">
+                          <div class="mm-sec-menuicon"><span class="fi ti-help-alt"></span></div>
+                          <dl class="mm-sec-menu-sec">
+                            <dt class="mm-sec-menu-secttl">お問い合わせ</dt>
+                            <dt class="mm-sec-menu-sectxt">よくある質問・ふるさと納税に関するQ&A</dd>
+                          </dl>
+                        </a>
+                      </li>
+                    </ul>
+
+                    <div class="mg-contents-Wrap">
+                      <div class="mg-c-sec">
+                        <p class="ttls">ふるさと納税についてのお問い合わせ</p>
+                        <p class="mgc-read">
+                          美咲町　みさき共創室<br>
+                          〒709-3717　岡山県岡山県久米郡美咲町原田1735</br>
+                          受付：8:30～17:00</br>
+                          TEL：0868-66-1660
+                        </p>
+                      </div>
+                      <div class="mg-c-sec">
+                        <p class="ttls">
+                          ワンストップ特例申請書送付先
+                        </p>
+                        <p class="mgc-read">
+                          〒709-3717　岡山県岡山県久米郡美咲町原田1735</br>
+                          美咲町　みさき共創室 宛<br>
+                        </p>
+                      </div>
+                    </div>
+
+                    <ul class="mm-sec-bnrbottom">
+                      <li>
+                        <a href="https://mypg.jp/" target="_blink" class="bnr"><img src="./img/bnr_mypgjp.png"></a>
+                      </li>
+                      <li>
+                        <a href="" target="_blink" class="bnr"><img src="./img/bnr_simulator.png"></a>
+                      </li>
+                    </ul>
+
+                  </div>
+                </div>
 
               </div>
             </div>
 
           </div>
-        </div>
 
+        </div>
       </div>
     </main>
 

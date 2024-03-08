@@ -37,31 +37,55 @@
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;
       min-height: 100vh;
+      font-size: 1.5rem;
     }
 
-    .ec-role {
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Klee One', serif;
+    }
+
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
       padding: 0;
       margin-top: 5rem;
     }
 
-    .ec-cartRole {
-      padding: 0;
-
-    }
-
-    .ec-role .ec-pageHeader {
+    .ecv-header .ec-pageHeader {
       padding: 1rem 0.5rem 1rem;
       background-color: #fafffc;
       margin-bottom: 1rem;
       text-align: center;
     }
 
-    .ec-role .ec-pageHeader h1 {
+    .ecv-header .ec-pageHeader h1 {
       border-top: none;
       display: inline-block;
       font-size: calc(20px + 2 * ((100vw - 320px) / 670));
       border: none;
       margin: 0;
+    }
+
+    .ecv-contentsWrap {
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
     }
 
     .ec-favoriteRole {
@@ -149,133 +173,133 @@
 
     <main id="about">
       <div class="container">
+        <div class="ecv-Wrap">
 
-        <div class="ec-role">
-          <div class="ec-pageHeader">
-            <h1>お気に入り一覧</h1>
-          </div>
-        </div>
-
-
-
-        <div class="ec-favoriteRole">
-
-          <div class="ec-mypg-proCount">3件のお申込履歴があります</div>
-
-
-          <div class="row g-2 g-md-3 card-pro">
-
-            <div class="col-15">
-              <div class="card">
-
-                <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
-                  <div class="ec-icon">
-                    <img src="./img/cross-white.svg" alt="close">
-                  </div>
-                </a>
-
-                <a href="product_detail.html">
-                  <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-01.jpg" alt="..." loading="lazy" /></div>
-                  <div class="card-body">
-                    <div class="detail-price-reco">
-                      <p>17,000 円</p>
-                    </div>
-                    <div class="detail-product-name">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</div>
-                  </div>
-                </a>
-              </div>
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>お気に入り一覧</h1>
             </div>
-
-            <div class="col-15">
-              <div class="card">
-
-                <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
-                  <div class="ec-icon">
-                    <img src="./img/cross-white.svg" alt="close">
-                  </div>
-                </a>
-
-                <a href="product_detail.html">
-                  <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-02.jpg" alt="..." loading="lazy" /></div>
-                  <div class="card-body">
-                    <div class="detail-price-reco">
-                      <p>56,000 円</p>
-                    </div>
-                    <div class="detail-product-name">桃 2024年 先行予約 岡山 白桃 5玉（1玉310g以上）等級：ロイヤル指定／糖度：12度以上 木箱入り もも モモ 岡山県産 国産 フルーツ 果物 ギフト</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-15">
-              <div class="card">
-
-                <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
-                  <div class="ec-icon">
-                    <img src="./img/cross-white.svg" alt="close">
-                  </div>
-                </a>
-
-                <a href="product_detail.html">
-                  <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-03.jpg" alt="..." loading="lazy" /></div>
-                  <div class="card-body">
-                    <div class="detail-price-reco">
-                      <p>42,000 円</p>
-                    </div>
-                    <div class="detail-product-name">おかやま和牛(A5等級)ステーキ 600g</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-15">
-              <div class="card">
-
-                <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
-                  <div class="ec-icon">
-                    <img src="./img/cross-white.svg" alt="close">
-                  </div>
-                </a>
-
-                <a href="product_detail.html">
-                  <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-04.jpg" alt="..." loading="lazy" /></div>
-                  <div class="card-body">
-                    <div class="detail-price-reco">
-                      <p>19,000 円</p>
-                    </div>
-                    <div class="detail-product-name">2024年先行予約 『京鴨』 鴨肉 ふるさと串盛り20本セット（約750g）【配達不可：離島】</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-15">
-              <div class="card">
-
-                <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
-                  <div class="ec-icon">
-                    <img src="./img/cross-white.svg" alt="close">
-                  </div>
-                </a>
-
-                <a href="product_detail.html">
-                  <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-05.jpg" alt="..." loading="lazy" /></div>
-                  <div class="card-body">
-                    <div class="detail-price-reco">
-                      <p>26,000 円</p>
-                    </div>
-                    <div class="detail-product-name">お米 コシヒカリ 10kg 岡山県美咲町産 おこめ 米 国産</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
           </div>
 
+
+          <div class="ecv-contentsWrap">
+
+            <div class="ec-favoriteRole">
+              <div class="ec-mypg-proCount">3件のお申込履歴があります</div>
+
+              <div class="row g-2 g-md-3 card-pro">
+
+                <div class="col-15">
+                  <div class="card">
+
+                    <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
+                      <div class="ec-icon">
+                        <img src="./img/cross-white.svg" alt="close">
+                      </div>
+                    </a>
+
+                    <a href="product_detail.html">
+                      <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-01.jpg" alt="..." loading="lazy" /></div>
+                      <div class="card-body">
+                        <div class="detail-price-reco">
+                          <p>17,000 円</p>
+                        </div>
+                        <div class="detail-product-name">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-15">
+                  <div class="card">
+
+                    <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
+                      <div class="ec-icon">
+                        <img src="./img/cross-white.svg" alt="close">
+                      </div>
+                    </a>
+
+                    <a href="product_detail.html">
+                      <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-02.jpg" alt="..." loading="lazy" /></div>
+                      <div class="card-body">
+                        <div class="detail-price-reco">
+                          <p>56,000 円</p>
+                        </div>
+                        <div class="detail-product-name">桃 2024年 先行予約 岡山 白桃 5玉（1玉310g以上）等級：ロイヤル指定／糖度：12度以上 木箱入り もも モモ 岡山県産 国産 フルーツ 果物 ギフト</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-15">
+                  <div class="card">
+
+                    <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
+                      <div class="ec-icon">
+                        <img src="./img/cross-white.svg" alt="close">
+                      </div>
+                    </a>
+
+                    <a href="product_detail.html">
+                      <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-03.jpg" alt="..." loading="lazy" /></div>
+                      <div class="card-body">
+                        <div class="detail-price-reco">
+                          <p>42,000 円</p>
+                        </div>
+                        <div class="detail-product-name">おかやま和牛(A5等級)ステーキ 600g</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-15">
+                  <div class="card">
+
+                    <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
+                      <div class="ec-icon">
+                        <img src="./img/cross-white.svg" alt="close">
+                      </div>
+                    </a>
+
+                    <a href="product_detail.html">
+                      <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-04.jpg" alt="..." loading="lazy" /></div>
+                      <div class="card-body">
+                        <div class="detail-price-reco">
+                          <p>19,000 円</p>
+                        </div>
+                        <div class="detail-product-name">2024年先行予約 『京鴨』 鴨肉 ふるさと串盛り20本セット（約750g）【配達不可：離島】</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-15">
+                  <div class="card">
+
+                    <a class="ec-closeBtn--circle" href="https://mombetsu-stv.furusato-direct.jp/mypage/favorite/1705/delete" token-for-anchor="5MKX-Jv0rkhjLlkhAy1vvxJCLFu_oi7lpOQ9MZXNsmM" data-method="delete">
+                      <div class="ec-icon">
+                        <img src="./img/cross-white.svg" alt="close">
+                      </div>
+                    </a>
+
+                    <a href="product_detail.html">
+                      <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-05.jpg" alt="..." loading="lazy" /></div>
+                      <div class="card-body">
+                        <div class="detail-price-reco">
+                          <p>26,000 円</p>
+                        </div>
+                        <div class="detail-product-name">お米 コシヒカリ 10kg 岡山県美咲町産 おこめ 米 国産</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
         </div>
-
-
-
       </div>
     </main>
 
