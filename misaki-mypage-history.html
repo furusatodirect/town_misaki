@@ -538,7 +538,7 @@
       display: flex;
       flex-flow: column;
       justify-content: space-between;
-      row-gap: 3rem;
+      row-gap: .2rem;
     }
 
     .ec-orderDetail .PT-txt {
@@ -887,7 +887,7 @@
       display: flex;
       flex-flow: column;
       justify-content: space-between;
-      row-gap: 3rem;
+      row-gap: .5rem;
     }
 
     .ec-orderMailList .shopping-tbl {
@@ -928,6 +928,36 @@
 
     .ec-orderMailList span {
       padding-right: .5rem;
+    }
+
+    .ec-orderMail__body {
+      padding: 1.5rem;
+      border: 1px solid #c4c4c4;
+      border-radius: 1.5rem;
+    }
+
+    p.ec-orderMail__close {
+      text-align: center;
+      width: 100px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      border-radius: 1.5rem;
+      background: #0dab65;
+      color: #fff;
+      border: 1px solid #0dab65;
+      text-decoration: none;
+    }
+
+    p.ec-orderMail__close:hover {
+      text-align: center;
+      width: 100px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      border-radius: 1.5rem;
+      background: #fff;
+      color: #333;
+      border: 1px solid #0dab65;
+      text-decoration: none;
     }
 
     /*END .ec-orderMailList*/
@@ -1008,6 +1038,46 @@
 
           <div class="ecv-contentsWrap">
             <form name="form" id="form_cart" class="" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
+
+
+              <div class="ec-orderForm">
+                <div class="ec-rectHeading">
+                  <h2>お申込情報</h2>
+                </div>
+
+                <div class="shopping-wrap">
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>お申込日時</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                      <label>2023年03月01日　19:35:01</label>
+                    </div>
+                  </div>
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>お申込番号</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                      <label>MFS6-313530666233643000000000006</label>
+                    </div>
+                  </div>
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>お申込状況</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                      <label>注文受付</label>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
 
               <div class="ec-orderForm">
                 <div class="ec-rectHeading">
@@ -1282,12 +1352,102 @@
                       <div class="ec-orderMail__link">寄付のお申込ありがとうございます。</div>
                     </div>
                   </div>
+                  <div class="ec-orderMail__body" style="display: block;">柳井 基孝 様<br>
+                    <br>
+                    紋別市へのふるさと納税の寄付お申込みを受付けいたしました。<br>
+                    下記、お申込み内容となります。<br>
+                    <br>
+                    ************************************************<br>
+                    【お申込み日時】　：2023/03/01 19:36:21<br>
+                    【お申込み番号】　：MFS6-313530666233643000000000006<br>
+                    <br>
+                    <br>
+                    ************************************************<br>
+                    　お申込者基本情報<br>
+                    ************************************************<br>
+                    【お名前】　　　　：柳井 基孝 様<br>
+                    【お名前(カナ)】　：ヤナイ モトタカ 様<br>
+                    【郵便番号】　　　：〒1320021<br>
+                    【住所】　　　　　：東京都江戸川区中央4-2-23 ブルージュタウン8号棟<br>
+                    【電話番号】　　　：09010666660<br>
+                    【メールアドレス】：yanai@mlj-inc.com<br>
+                    【生年月日】　　　：1974/02/09<br>
+                    【性別】　　　　　：男性<br>
+                    <br>
+                    ************************************************<br>
+                    　お申込内容<br>
+                    ************************************************<br>
+                    【寄付金の使い道】：アザラシの保護活動等のオホーツク海の海洋環境に関する事業<br>
+                    <br>
+                    【寄付金額合計】　：￥12,000<br>
+                    【お支払い方法】　：クレジットカード決済<br>
+                    【お支払い状況】　：決済完了<br>
+                    <br>
+                    【ワンストップ特例申請書の希望有無】：希望しない<br>
+                    【寄付者名の公表の有無】：公表する<br>
+                    <br>
+                    【応援メッセージの公表の有無】：公表する<br>
+                    【応援メッセージ】：紋別市のお役に立てればと思っています。<br>
+                    <br>
+                    【備考記入内容】　：<br>
+                    <br>
+                    ************************************************<br>
+                    　お申込み内容詳細<br>
+                    ************************************************<br>
+                    ◎お届け先<br>
+                    【お名前】　　　　：柳井 基孝 様<br>
+                    【お名前(カナ)】　：ヤナイ モトタカ 様<br>
+                    【郵便番号】　　　：〒1320021<br>
+                    【住所】　　　　　：東京都江戸川区中央4-2-23 ブルージュタウン8号棟<br>
+                    【電話番号】　　　：09010666660<br>
+                    <br>
+                    <br>
+                    【配送方法】　　　：通常配送<br>
+                    【お礼の品コード】：12-45<br>
+                    【お礼の品名称】　：12-45 太陽牧場の新・ベストセレクション（無添加『ミルクジャム』と『ミルクソース「とろ～りミルク」』と『つぶつぶソース』詰め合わせ） <br>
+                    【数量】　　　　　：1<br>
+                    【寄付金額】　　　：￥12,000<br>
+                    <br>
+                    ==============================<br>
+                    【寄付金合計】　　：￥12,000<br>
+                    ==============================<br>
+                    <br>
+                    <br>
+                    ============================================<br>
+                    ●寄付に関するお問い合わせは下記までお問い合わせください。<br>
+                    <br>
+                    【紋別市ふるさと納税お問い合わせ】<br>
+                    TEL：0120-04-9791<br>
+                    FAX：0158-23-1833<br>
+                    <br>
+                    ●ふるさと納税ワンストップ特例制度を利用される方へ<br>
+                    ※ふるさと納税ワンストップ特例制度の申請を行う場合、ふるさと納税を行った翌年の1月10日までに必着で、ワンストップ特例申請書（寄附金税額控除に係る申告特例申請書）と必要な添付書類を、下記住所へ郵送してください。<br>
+                    →必要書類についてはこちらをご覧ください。https://mombetsu.furusato-direct.jp/guide<br>
+                    <br>
+                    【ワンストップ特例申請書類の送付先】<br>
+                    〒320-8790<br>
+                    日本郵便株式会社 宇都宮中央郵便局<br>
+                    私書箱第64号 株式会社新朝プレス<br>
+                    <br>
+                    ============================================<br>
+                    <br>
+                    このメッセージはお知らせ専用です。<br>
+                    このメッセージへの返信としてご質問をお送りいただいても回答できません。<br>
+                    ご了承ください。<br>
+                    <br>
+                    <p class="ec-orderMail__close"><a>閉じる</a></p>
+                  </div>
+
 
                 </div>
               </div>
 
 
             </form>
+            <div class="ec-cartRole__actions">
+              <a href="{{ url('mypage') }}" class="ec-blockBtn--cancel">お申込履歴一覧に戻る</a>
+            </div>
+
 
           </div>
         </div>
