@@ -334,22 +334,22 @@ new Swiper(".sw_catelist", {
   },
   breakpoints: {
     320: {
-      slidesPerView: 2.5,
-    },
-    640: {
-      slidesPerView: 2.5,
-    },
-    768: {
       slidesPerView: 3.5,
     },
-    820: {
+    640: {
       slidesPerView: 4.5,
+    },
+    768: {
+      slidesPerView: 4.5,
+    },
+    820: {
+      slidesPerView: 6.5,
     },
     1020: {
-      slidesPerView: 4.5,
+      slidesPerView: 6.5,
     },
     1440: {
-      slidesPerView: 6.5,
+      slidesPerView: 9.5,
     },
   },
 });

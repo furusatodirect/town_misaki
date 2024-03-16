@@ -912,7 +912,7 @@ header nav ul li a .cart_number {
 .catebar .sw_catelist {
   background: #eeeeee 0% 0% no-repeat padding-box;
   height: 100%;
-  border-radius: 0 1rem 1rem 0;
+  border-radius: 1rem;
 }
 
 .catebar .swiper-slide {
