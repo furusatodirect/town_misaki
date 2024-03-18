@@ -112,11 +112,11 @@ $(function () {
     $(".burger-btn").toggleClass("close");
     $(".burger-menu").toggleClass("fade");
     if ($(".burger-btn").hasClass("close")) {
-      $("main, .toppicswiper, footer").css({
+      $("main, .toppicswiper, .catebar, .sec-my, footer").css({
         filter: "blur(3px)",
       });
     } else {
-      $("main, .toppicswiper, footer").css({
+      $("main, .toppicswiper, .catebar, .sec-my, footer").css({
         filter: "none",
       });
     }
