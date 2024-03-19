@@ -2243,6 +2243,48 @@ end top
   display: none;
 }
 
+#kifu_bnrs {
+  margin: 5rem auto;
+}
+
+#kifu_bnrs .kifu_bnrs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-left: 1.3rem;
+}
+
+#kifu_bnrs .kifu_bnrs li {
+  flex-basis: calc(24% - 0px);
+}
+
+@media screen and (max-width: 768px) {
+  #kifu_bnrs {
+    margin: 3rem auto;
+  }
+
+  #kifu_bnrs .kifu_bnrs {
+    justify-content: center;
+    padding-left: 0rem;
+  }
+
+  #kifu_bnrs .kifu_bnrs li {
+    flex-basis: calc(48% - 0px);
+  }
+}
+
+#kifu_bnrs .kifu_bnrs a {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #C8C8C8;
+  border-radius: 8px;
+}
+
+#kifu_bnrs .kifu_bnrs a:hover {
+  opacity: .5;
+}
 
 /*products-list*/
 
