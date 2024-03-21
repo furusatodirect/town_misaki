@@ -219,6 +219,21 @@ $(function () {
   });
 });
 
+/*SNSリンク*/
+function showBalloon() {
+  var wObjballoon = document.getElementById("share-list");
+  if (wObjballoon.className == "balloon1") {
+    wObjballoon.className = "balloon";
+  } else {
+    wObjballoon.className = "balloon1";
+  }
+}
+
+$("#share-list a").click(function () {
+  $("#share-list").removeClass("balloon");
+  $("#share-list").addClass("balloon1");
+});
+
 /*アコーディオン*/
 $(function () {
   $("#top .ac-open").hide();

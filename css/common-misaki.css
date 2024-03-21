@@ -98,7 +98,7 @@ i {
 
 button.favorite {
   text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff;
-  font-size: 2.4rem;
+  font-size: calc(14px + 2 * ((100vw - 320px) / 670));
   color: #333;
 }
 
@@ -1920,7 +1920,7 @@ end top
   margin-top: 7.5rem;
 }
 
-.detail-pro .area-pro {
+.area-pro {
   flex-direction: column !important;
   height: 100% !important;
   display: flex !important;
@@ -1928,20 +1928,19 @@ end top
   padding: 1rem;
 }
 
-.detail-pro .area-pro:nth-of-type(2)+.sticky-bt {
+.area-pro:nth-of-type(2)+.sticky-bt {
   position: static;
 }
 
-.detail-pro .area-pro:first-child {
+.area-pro:first-child {
   row-gap: 0rem !important;
   padding: 0;
 }
 
-.detail-pro .swiper {
+.area-pro .swiper {
   width: 100%;
   height: 100%;
 }
-
 
 /*
 .detail-pro .swiper-button-next:after,
@@ -1952,7 +1951,7 @@ end top
 
 /*pic-m*/
 
-.detail-pro .pd_main {
+.pd_main {
   border-radius: 1rem;
   border: 1px solid rgba(0, 0, 0, .125);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15) !important;
@@ -1964,7 +1963,7 @@ end top
   overflow: hidden;
 }
 
-.detail-pro .pd_main .swiper-slide {
+.pd_main .swiper-slide {
   position: relative;
   width: 100%;
   height: auto;
@@ -1974,7 +1973,7 @@ end top
   cursor: pointer;
 }
 
-.detail-pro .pd_main .swiper-slide img {
+.pd_main .swiper-slide img {
   max-width: 100%;
   max-height: 100%;
   width: auto;
@@ -1985,12 +1984,12 @@ end top
 
 /*pic-t*/
 
-.detail-pro .pd_thumb {
+.pd_thumb {
   box-sizing: border-box;
   padding: 6px 0;
 }
 
-.detail-pro .pd_thumb .swiper-slide {
+.pd_thumb .swiper-slide {
   width: 25%;
   height: auto;
   display: flex;
@@ -2002,12 +2001,12 @@ end top
   box-sizing: border-box;
 }
 
-.detail-pro .pd_thumb .swiper-slide img {
+.pd_thumb .swiper-slide img {
   border-radius: .3rem;
   box-sizing: border-box;
 }
 
-.detail-pro .pd_thumb .swiper-slide-thumb-active {
+.pd_thumb .swiper-slide-thumb-active {
   opacity: 1;
   border-radius: .5rem;
   border: 3px solid #0dab65;
@@ -2017,19 +2016,19 @@ end top
 
 /*area-pro-txt*/
 
-.detail-pro .pro-ttl {
+.pro-ttl {
   font-size: calc(20px + 2 * ((100vw - 320px) / 670));
   font-weight: bold;
 }
 
-.detail-pro .pro-sub {
+.pro-sub {
   font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
 
 /*area-pro-rec*/
 
-.detail-pro .area-pro .area-pro-rec {
+.area-pro .area-pro-rec {
   display: flex !important;
   align-items: center;
   justify-content: space-between;
@@ -2038,13 +2037,19 @@ end top
 
 /*btn-fav*/
 
-.detail-pro .area-pro-rec .btn-fav {
-  border: #000 1px solid;
+.btn-fav.fav-off {
+  border: #808080 1px solid;
   border-radius: 3rem;
-  padding: 1rem;
+  padding: .5rem 1rem;
 }
 
-.detail-pro .area-pro-rec .btn-fav .favorite {
+.btn-fav.fav-on {
+  border: #FF004E 1px solid;
+  border-radius: 3rem;
+  padding: .5rem 1rem;
+}
+
+.btn-fav.fa-sharp {
   font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
@@ -2056,7 +2061,6 @@ end top
   margin-bottom: calc(40px + 10 * ((100vw - 320px) / 670));
   padding: 0;
 }
-
 
 /*area-pro-tbl*/
 
@@ -2071,7 +2075,7 @@ end top
 
 /*product detail */
 
-.detail-pro .area-tbl .area-pro-tbl {
+.area-tbl .area-pro-tbl {
   column-count: 1;
   gap: 1rem;
 }
@@ -2086,17 +2090,17 @@ end top
   text-decoration: underline;
 }
 
-.detail-pro .part {
+.area-pro-tbl .part {
   border-top: solid 1px #c4c4c4;
 }
 
-.detail-pro .part dl {
+.area-pro-tbl .part dl {
   display: flex;
   border-bottom: solid 1px #c4c4c4;
   margin: 0;
 }
 
-.detail-pro .part dl dt {
+.area-pro-tbl .part dl dt {
   min-width: 28%;
   background-color: #f5f5f5;
   flex-grow: 0;
@@ -2110,13 +2114,60 @@ end top
   overflow-wrap: break-word;
 }
 
-.detail-pro .part dl dd {
+.area-pro-tbl .part dl dd {
   flex-grow: 1;
   margin: 0;
   padding: .5rem;
   overflow-wrap: break-word;
 }
 
+/*marks*/
+.marks {
+  background: #333;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+
+}
+
+.share {
+  font-size: 2rem;
+  padding-left: .3rem;
+  color: #fff;
+}
+
+.icons {
+  position: relative;
+}
+
+.balloon1 {
+  display: none;
+}
+
+.balloon {
+  position: absolute;
+  left: 4rem;
+  bottom: -1rem;
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+#share-list a {
+  display: block;
+  padding: .2rem;
+}
+
+.balloon i,
+.balloon button {
+  font-size: 3rem;
+  transition: 0.3s;
+  display: inline;
+}
+
+.balloon a:hover {
+  opacity: 0.6;
+}
 
 /*.sticky-bt */
 
