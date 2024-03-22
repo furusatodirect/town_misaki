@@ -2192,9 +2192,9 @@ end top
 
 @media screen and (max-width: 768px) {
   #sec_bt_cart .btns button.gocart {
-    width: 55% !important;
+    width: 50% !important;
     padding: 1rem !important;
-    font-size: 1.5rem !important;
+    font-size: 1rem !important;
   }
 }
 
@@ -2227,12 +2227,12 @@ end top
 
 #sec_bt_cart .btns button.gocart {
   display: block;
-  width: 60%;
+  width: 50%;
   border: 1px solid #F6F6F6;
   background: #F6F6F6;
-  padding: 1.5rem;
+  padding: 1rem;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 #sec_bt_cart .btns button.gocart:hover {
