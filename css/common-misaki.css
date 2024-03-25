@@ -18,6 +18,22 @@ body {
 }
 
 main {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    display: initial !important;
+    grid-template-rows: initial !important;
+    grid-template-columns: initial !important;
+    min-height: initial !important;
+  }
+}
+
+main {
   width: 100%;
   /*overflow:hidden;*/
   margin: auto;
@@ -2034,7 +2050,7 @@ end top
 /*area-pro-tbl*/
 
 .area-pro-tbl {
-  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
 .area-pro-tbl:first-child {
@@ -2740,19 +2756,13 @@ end top
 }
 
 .BaseWrap-detail-txt p {
-  font-size: calc(12px + 2 * ((100vw - 320px) / 670));
-  line-height: 1.5rem;
-}
-
-@media screen and (max-width: 768px) {
-  .BaseWrap-detail-txt p {
-    font-size: calc(14px + 2 * ((100vw - 320px) / 670));
-  }
+  font-size: calc(14px + 2 * ((100vw - 320px) / 670));
 }
 
 /*tradelaw*/
 .BaseWrap-tb {
   margin: 2rem 0;
+  font-size: calc(14px + 2 * ((100vw - 320px) / 670));
 }
 
 .BaseWrap-tb dl {
@@ -2789,6 +2799,7 @@ end top
 .BaseWrap-detail-txt p.dtxtb {
   font-weight: bold;
   margin: .5rem 0;
+  font-size: calc(14px + 2*((100vw - 320px) / 670));
 }
 
 .indent {
@@ -2810,6 +2821,7 @@ end top
 #faq .option {
   position: relative;
   margin-bottom: 1em;
+  font-size: calc(14px + 2*((100vw - 320px) / 670));
 }
 
 #faq .title,
