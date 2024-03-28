@@ -31,14 +31,26 @@
 
 <body>
   <style type="text/css">
-    .wrap {
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      grid-template-columns: 100%;
-      min-height: 100vh;
-      font-size: 1.5rem;
+    .ec-layoutRole {
+      width: 100%;
+      transition: transform 0.3s;
+      background: #fff;
     }
 
+    .ec-layoutRole .ec-layoutRole__contents {
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%;
+      max-width: 1150px;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .ec-layoutRole .ec-layoutRole__main {
+      width: 100%;
+    }
+  </style>
+  <style type="text/css">
     button,
     input,
     optgroup,
@@ -839,244 +851,376 @@
       </div>
     </header>
 
-    <main id="about">
-      <div class="container">
-        <div class="ecv-Wrap">
+    <div class="ec-layoutRole">
+      <div class="ec-layoutRole__header">
+        <!-- ▼■ヘッダー -->
+        <header>
+          <div class="container">
+            <nav>
+              <ul>
+                <li class="burger-btn">
+                  <a>
+                    <div><span></span><span></span><span></span></div>
+                    <p>メニュー</p>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <a class="logo" href="https://misaki.furusato-direct.jp/"><img src="/html/user_data/assets/img/logo-misaki.png" loading="lazy"></a>
+            <nav>
+              <ul>
+                <li class="ec-headerRole__cart ">
+                  <a href="https://misaki.furusato-direct.jp/cart"><span class="fi ti-shopping-cart"></span>
+                    <p>カート<span class="cart_number">0</span></p>
+                  </a>
 
-          <div class="ecv-header">
-            <div class="ec-pageHeader">
-              <h1>新規会員登録</h1>
+                </li>
+                <li>
+                  <a href="https://misaki.furusato-direct.jp/mypage/login"><span class="fi ti-shift-right"></span>
+                    <p>ログイン</p>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="burger-menu">
+            <div class="inner">
+              <div class="burger-menu-btn">
+                <div class="btn-common"><a href="https://misaki.furusato-direct.jp/mypage/login">会員登録 / ログイン</a></div>
+                <div class="btn-common-n"><a href="https://misaki.furusato-direct.jp/mymenu">マイページ</a></div>
+              </div>
+              <ul class="navi-1st">
+                <li><a href="https://misaki.furusato-direct.jp/products/list?orderby=1">美咲町の返礼品</a></li>
+                <li><a href="/use">寄付の使い道</a></li>
+                <li><a href="/jigyousha">事業者の紹介</a></li>
+                <li><a href="https://misaki.furusato-direct.jp/news">お知らせ</a></li>
+              </ul>
+              <ul class="navi-2nd">
+                <li><a href="/help/agreement">ご利用規約</a></li>
+                <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+                <li><a href="/help/privacy">個人情報保護方針</a></li>
+                <li><a href="/help/about">よくある質問</a></li>
+                <li><a href="/help/contactmenu">お問い合わせ</a></li>
+              </ul>
             </div>
           </div>
+        </header>
+        <!-- ▲■ヘッダー -->
 
-          <div class="ecv-contentsWrap">
-
-            <div class="ec-cartTable">
-              <div class="ec-cartRole__progress">
-                <ul class="ec-progress-n">
-                  <li class="ec-progress__item">
-                    <div class="ec-progress__number">
-                      <span class="progress_circle"></span>
-                      <span class="ec-progress__label">会員情報入力</span>
-                    </div>
-                  </li>
-                  <li class="ec-progress__item is-active">
-                    <div class="ec-progress__number">
-                      <span class="progress_circle"></span>
-                      <span class="ec-progress__label">登録内容確認</span>
-                    </div>
-                  </li>
-                  <li class="ec-progress__item">
-                    <div class="ec-progress__number">
-                      <span class="progress_circle"></span>
-                      <span class="ec-progress__label">仮登録メール</span>
-                    </div>
-                  </li>
-                  <li class="ec-progress__item">
-                    <div class="ec-progress__number">
-                      <span class="progress_circle"></span>
-                      <span class="ec-progress__label">会員登録完了</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="ec-orderForm">
-
-              <form method="post" action="{{ url('entry') }}">
-
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>お名前</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <div class="{{ has_errors(form.name.name01, form.name.name02) ? ' error'}}">
-                      <ul>
-                        <li class="s-form-w50">
-                          <input class="" id="" type="text" value="MLJ" readonly="readonly">
-                        </li>
-                        <li class="s-form-w50">
-                          <input class="" id="" type="text" value="板東" readonly="readonly">
-                        </li>
-                      </ul>
-                    </div>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>お名前カナ</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <div class="{{ has_errors(form.name.name01, form.name.name02) ? ' error'}}">
-                      <ul>
-                        <li class="s-form-w50">
-                          <input class="" id="" type="text" value="エムエルジェイ" readonly="readonly">
-                        </li>
-                        <li class="s-form-w50">
-                          <input class="" id="" type="text" value="バンドウ" readonly="readonly">
-                        </li>
-                      </ul>
-                    </div>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl" style="display:none">
-                  <dt class="shopping-tbl-ttl">
-                    <label>会社名</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="s-form-w100">
-                        <input class="" id="" type="text" value="{{ form.company_name.vars.data }}" readonly="readonly">
-                      </li>
-                    </ul>
-                    {{ form_widget(form.company_name, { type : 'hidden' }) }}
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>郵便番号</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="s-form-w20">
-                        <input class="" id="" type="text" value="1060047" readonly="readonly">
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>都道府県</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="s-form-w20">
-                        <input class="" id="" type="text" value="東京都" readonly="readonly">
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>住所</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul class="s-form-add">
-                      <li class="s-form-w100">
-                        <input class="" id="" type="text" value="港区南麻布" readonly="readonly">
-                      </li>
-                      <li class="s-form-w100">
-                        <input class="" id="" type="text" value="1" readonly="readonly">
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>電話番号</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="s-form-w20">
-                        <input class="" id="" type="text" value="0357890445" readonly="readonly">
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>メールアドレス</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="s-form-w100">
-                        <input class="" id="" type="text" value="bando@mlj-inc.com" readonly="readonly">
-                        <p class="explain-s">※ログイン時のユーザーIDとなります</p>
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>パスワード</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="s-form-w70">
-                        <input class="" id="" type="text" value="********" readonly="readonly">
-                        <p class="explain-s">※セキュリティのため伏せ字にしております</p>
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>生年月日</label><span class="ec-required">必須</span>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="s-form-w20">
-                        <input class="" id="" type="text" value="1973/01/01" readonly="readonly">
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>性別</label>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="s-form-w20">
-                        <input class="" id="" type="text" value="男性" readonly="readonly">
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>職業</label>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="">
-                        <input class="" id="" type="text" value="会社員" readonly="readonly">
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
-                <dl class="shopping-tbl">
-                  <dt class="shopping-tbl-ttl">
-                    <label>美咲町からのメール配信</label>
-                  </dt>
-                  <dd class="shopping-formwrap">
-                    <ul>
-                      <li class="">
-                        <input class="" id="" type="text" value="希望しない" readonly="readonly">
-                      </li>
-                    </ul>
-                  </dd>
-                </dl>
+      </div>
 
 
-                <div class="ec-cartRole__actions">
-                  <div class="agreement-link">
-                    <button class="ec-blockBtn--action" type="submit" name="mode" value="complete">仮登録のメールを送信する</button>
-                  </div>
-                  <div class="agreement-link-back">
-                    <a class="ec-blockBtn--cancel" href="javascript:history.back()">戻る</a>
+      <div class="ec-layoutRole__contents">
+
+
+        <div class="ec-layoutRole__main">
+
+          <main id="about">
+            <div class="container">
+              <div class="ecv-Wrap">
+
+                <div class="ecv-header">
+                  <div class="ec-pageHeader">
+                    <h1>新規会員登録</h1>
                   </div>
                 </div>
 
-              </form>
+                <div class="ecv-contentsWrap">
 
+                  <div class="ec-cartTable">
+                    <div class="ec-cartRole__progress">
+                      <ul class="ec-progress-n">
+                        <li class="ec-progress__item">
+                          <div class="ec-progress__number">
+                            <span class="progress_circle"></span>
+                            <span class="ec-progress__label">会員情報入力</span>
+                          </div>
+                        </li>
+                        <li class="ec-progress__item is-active">
+                          <div class="ec-progress__number">
+                            <span class="progress_circle"></span>
+                            <span class="ec-progress__label">登録内容確認</span>
+                          </div>
+                        </li>
+                        <li class="ec-progress__item">
+                          <div class="ec-progress__number">
+                            <span class="progress_circle"></span>
+                            <span class="ec-progress__label">仮登録メール</span>
+                          </div>
+                        </li>
+                        <li class="ec-progress__item">
+                          <div class="ec-progress__number">
+                            <span class="progress_circle"></span>
+                            <span class="ec-progress__label">会員登録完了</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="ec-orderForm">
+
+                    <form method="post" action="https://misaki.furusato-direct.jp/entry">
+                      <input type="hidden" id="entry__token" name="entry[_token]" value="W0Xkz6QmFMYqIHxjXB7gqXac_8WPSWVi4GpjXeqapTM">
+
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>お名前</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <div class="">
+                            <ul>
+                              <li class="s-form-w50">
+                                <input class="" id="" type="text" value="MLJ" readonly="readonly">
+                              </li>
+                              <li class="s-form-w50">
+                                <input class="" id="" type="text" value="バンドウ" readonly="readonly">
+                              </li>
+                            </ul>
+                            <input type="hidden" id="entry_name_name01" name="entry[name][name01]" required="required" placeholder="姓" value="MLJ">
+                            <input type="hidden" id="entry_name_name02" name="entry[name][name02]" required="required" placeholder="名" value="バンドウ">
+                          </div>
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>お名前カナ</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <div class="">
+                            <ul>
+                              <li class="s-form-w50">
+                                <input class="" id="" type="text" value="エムエルジェイ" readonly="readonly">
+                              </li>
+                              <li class="s-form-w50">
+                                <input class="" id="" type="text" value="バンドウ" readonly="readonly">
+                              </li>
+                            </ul>
+                            <input type="hidden" id="entry_kana_kana01" name="entry[kana][kana01]" required="required" placeholder="セイ" value="エムエルジェイ">
+                            <input type="hidden" id="entry_kana_kana02" name="entry[kana][kana02]" required="required" placeholder="メイ" value="バンドウ">
+                          </div>
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl" style="display:none">
+                        <dt class="shopping-tbl-ttl">
+                          <label>会社名</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="s-form-w100">
+                              <input class="" id="" type="text" value="" readonly="readonly">
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_company_name" name="entry[company_name]">
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>郵便番号</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="s-form-w20">
+                              <input class="" id="" type="text" value="1060047" readonly="readonly">
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_postal_code" name="entry[postal_code]" required="required" class="p-postal-code" placeholder="例：5300001" value="1060047">
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>都道府県</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="s-form-w20">
+                              <input class="" id="" type="text" value="東京都" readonly="readonly">
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_address_pref" name="entry[address][pref]" required="required" class="p-region-id" value="13">
+
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>住所</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul class="s-form-add">
+                            <li class="s-form-w100">
+                              <input class="" id="" type="text" value="港区南麻布" readonly="readonly">
+                            </li>
+                            <li class="s-form-w100">
+                              <input class="" id="" type="text" value="1" readonly="readonly">
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_address_addr01" name="entry[address][addr01]" required="required" class="p-locality p-street-address" placeholder="市区町村名(例：大阪市北区)" value="港区南麻布">
+                          <input type="hidden" id="entry_address_addr02" name="entry[address][addr02]" required="required" class="p-extended-address" placeholder="番地・ビル名(例：西梅田1丁目6-8)" value="1">
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>電話番号</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="s-form-w20">
+                              <input class="" id="" type="text" value="0357890445" readonly="readonly">
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_phone_number" name="entry[phone_number]" required="required" placeholder="例：11122223333" value="0357890445">
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>メールアドレス</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="s-form-w100">
+                              <input class="" id="" type="text" value="bando@mlj-inc.com" readonly="readonly">
+                              <p class="explain-s">※ログイン時のユーザーIDとなります</p>
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_email_first" name="entry[email][first]" required="required" placeholder="例：ec-cube@example.com" value="bando@mlj-inc.com">
+                          <input type="hidden" id="entry_email_second" name="entry[email][second]" required="required" placeholder="確認のためもう一度入力してください" value="bando@mlj-inc.com">
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>パスワード</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="s-form-w70">
+                              <input class="" id="" type="text" value="********" readonly="readonly">
+                              <p class="explain-s">※セキュリティのため伏せ字にしております</p>
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_password_first" name="entry[password][first]" required="required" placeholder="半角英数記号8〜32文字" value="3batGEfa-k8">
+                          <input type="hidden" id="entry_password_second" name="entry[password][second]" required="required" placeholder="確認のためもう一度入力してください" value="3batGEfa-k8">
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>生年月日</label>
+                          <span class="ec-required">必須</span>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="s-form-w20">
+                              <input class="" id="" type="text" value="1973/01/01" readonly="readonly">
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_birth_year" name="entry[birth][year]" required="required" value="1973">
+
+                          <input type="hidden" id="entry_birth_month" name="entry[birth][month]" required="required" value="1">
+
+                          <input type="hidden" id="entry_birth_day" name="entry[birth][day]" required="required" value="1">
+
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>性別</label>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="s-form-w20">
+                              <input class="" id="" type="text" value="男性" readonly="readonly">
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_sex" name="entry[sex]" value="1">
+
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>職業</label>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="">
+                              <input class="" id="" type="text" value="会社員" readonly="readonly">
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_job" name="entry[job]" value="1">
+
+                        </dd>
+                      </dl>
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>美咲町からのメール配信</label>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <ul>
+                            <li class="">
+                              <input class="" id="" type="text" value="希望しない" readonly="readonly">
+                            </li>
+                          </ul>
+                          <input type="hidden" id="entry_mail_magazine" name="entry[mail_magazine]" required="required" value="0">
+
+                        </dd>
+                      </dl>
+                      <input type="hidden" id="entry_user_policy_check" name="entry[user_policy_check]" required="required" value="1">
+
+
+
+                      <div class="ec-cartRole__actions">
+                        <div class="agreement-link">
+                          <button class="ec-blockBtn--action" type="submit" name="mode" value="complete">仮登録のメールを送信する</button>
+                        </div>
+                        <div class="agreement-link-back">
+                          <a class="ec-blockBtn--cancel" href="javascript:history.back()">戻る</a>
+                        </div>
+                      </div>
+
+                    </form>
+
+                  </div>
+                </div>
+              </div>
             </div>
+          </main>
 
-          </div>
         </div>
+
       </div>
-    </main>
+
+
+      <div class="ec-layoutRole__footer">
+        <!-- ▼■フッター -->
+        <a class="totopfade" href="https://misaki.furusato-direct.jp/" style=""><img src="/html/template/default/assets/img/totop.png"></a>
+        <footer>
+          <div class="col-12 col-xl-6 mx-auto inner">
+            <ul class="subnav">
+              <li><a href="/help/agreement">ご利用規約</a></li>
+              <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+              <li><a href="/help/privacy">個人情報保護方針</a></li>
+              <li><a href="/help/about">よくある質問</a></li>
+              <li><a href="/contactmenu">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div class="copyright">
+            <a href="https://misaki.furusato-direct.jp/">
+              <img src="/html/user_data/assets/img/misaki.png">
+              <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+            </a>
+          </div>
+        </footer>
+        <!-- ▲■フッター -->
+
+      </div>
+    </div>
 
     <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
 

@@ -18,22 +18,6 @@ body {
 }
 
 main {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
-  min-height: 100vh;
-}
-
-@media screen and (max-width: 768px) {
-  main {
-    display: initial !important;
-    grid-template-rows: initial !important;
-    grid-template-columns: initial !important;
-    min-height: initial !important;
-  }
-}
-
-main {
   width: 100%;
   /*overflow:hidden;*/
   margin: auto;
@@ -110,6 +94,12 @@ i {
 
 .fi {
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .fi.ti-close {
+    font-size: 1rem;
+  }
 }
 
 button.favorite {
@@ -269,7 +259,8 @@ button.favorite.red i {
   font-size: calc(10px + 2 * ((100vw - 320px) / 670));
 }
 
-.title-header {
+.title-header,
+.title-header-s {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -277,11 +268,22 @@ button.favorite.red i {
   padding-bottom: 2rem;
 }
 
-.title-header .ttl {
+@media screen and (max-width: 768px) {
+  .title-header-s {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-bottom: 2rem;
+  }
+}
+
+.title-header .ttl,
+.title-header-s .ttl {
   margin-bottom: 0;
 }
 
-.title-header .btn-all {
+.title-header-s .btn-all {
   position: absolute;
   right: 0;
   z-index: 2;
@@ -295,7 +297,7 @@ button.favorite.red i {
   color: #fff;
 }
 
-.title-header .btn-all:hover {
+.title-header-s .btn-all:hover {
   background-color: rgb(0, 184, 76, .6);
   color: #333 !important;
 }
@@ -372,7 +374,7 @@ header .container {
 
 @media screen and (max-width: 768px) {
   header .logo {
-    padding-left: 4rem;
+    padding-left: 1rem;
   }
 }
 
@@ -1165,7 +1167,7 @@ header nav ul li a .cart_number {
 }
 
 #sec-simulator .bg-simulator-body {
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 0 0 12px 12px;
   display: flex;
   flex-flow: column;
@@ -1190,7 +1192,7 @@ header nav ul li a .cart_number {
   background: #FF004E;
   color: #fff;
   font-weight: bold;
-  font-size: calc(10px + 0 * ((100vw - 320px) / 670));
+  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
   line-height: 1;
   text-align: center;
   border-radius: 0.5rem;
@@ -1202,6 +1204,19 @@ header nav ul li a .cart_number {
   font-weight: bold;
   font-size: calc(12px + 2 * ((100vw - 320px) / 670));
   text-align: initial;
+}
+
+@media screen and (max-width: 768px) {
+  #sec-simulator .bg-simulator-req {
+    font-size: calc(10px + 0 * ((100vw - 320px) / 670));
+  }
+
+  #sec-simulator .bg-simulator-tq {
+    width: calc(145px + 2 * ((100vw - 320px) / 670));
+    font-weight: bold;
+    font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+    text-align: initial;
+  }
 }
 
 #sec-simulator .bg-simulator-ta {
@@ -1264,7 +1279,7 @@ textarea {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 1rem;
+  gap: .5rem;
 }
 
 #sec-simulator .bg-simulator-result {
@@ -2026,12 +2041,14 @@ end top
   border: #808080 1px solid;
   border-radius: 3rem;
   padding: .5rem 1rem;
+  display: flex;
 }
 
 .btn-fav.fav-on {
   border: #FF004E 1px solid;
   border-radius: 3rem;
   padding: .5rem 1rem;
+  display: flex;
 }
 
 .btn-fav.fa-sharp {
@@ -2154,6 +2171,48 @@ end top
   opacity: 0.6;
 }
 
+.arrow_box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .arrow_box {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    background: #FFFFFF;
+    border: 1px solid #c8c8c8;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    left: -.5rem;
+    bottom: -.2rem;
+  }
+}
+
+.fadeInLeft {
+  opacity: 0;
+  transform: translateX(-100px);
+  animation-name: fadeIn;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {}
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 /*.sticky-bt */
 
 #df_cart {
@@ -2207,10 +2266,27 @@ end top
 }
 
 @media screen and (max-width: 768px) {
+
+  #sec_bt_cart .default .go-cart,
   #sec_bt_cart .btns button.gocart {
     width: 50% !important;
-    padding: 1rem !important;
-    font-size: 1rem !important;
+    padding: .8rem !important;
+    font-size: .8rem !important;
+  }
+
+  #sec_bt_cart .default p.price {
+    font-size: .8rem;
+  }
+
+  #sec_bt_cart .default .price span {
+    font-size: 1rem;
+  }
+
+  .sec_bt_cart_under {
+    width: 47%;
+    left: 26%;
+    top: 0;
+    position: relative;
   }
 }
 
@@ -2238,7 +2314,7 @@ end top
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 1rem;
+  margin-top: .5rem;
 }
 
 #sec_bt_cart .btns button.gocart {
@@ -2248,31 +2324,12 @@ end top
   background: #F6F6F6;
   padding: 1rem;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #sec_bt_cart .btns button.gocart:hover {
   background: #fff;
   border-color: #c8c8c8;
-}
-
-@media screen and (min-width: 769px) {
-  #sec_bt_cart .default .go-cart {
-    min-width: 50%;
-    padding: 1rem;
-    font-size: 1.2rem;
-  }
-
-  #sec_bt_cart .default .price span {
-    font-size: 1.5rem;
-  }
-
-  .sec_bt_cart_under {
-    width: 47%;
-    left: 26%;
-    top: 0;
-    position: relative;
-  }
 }
 
 .addition {
@@ -2333,10 +2390,18 @@ end top
 
 .pro-list-header-read {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 @media screen and (max-width: 768px) {
+  .pro-list-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+  }
+
   .pro-list-header-read {
     display: flex;
     flex-direction: column;
@@ -2347,7 +2412,7 @@ end top
   }
 
   .pro-list-counttxt {
-    margin-left: 1rem !important;
+    margin-left: 0rem !important;
     padding-top: 1rem;
   }
 }
@@ -2410,7 +2475,7 @@ end top
 /*news*/
 
 .newsWrap {
-  margin: 8rem auto 0;
+  margin: 0 auto;
   max-width: calc(1130px + (1rem * 2));
   width: 100%;
 }
@@ -2455,10 +2520,13 @@ end top
   width: 100%;
 }
 
-.news-txt p {
+.news-txt {
   font-size: calc(14px + 2 * ((100vw - 320px) / 670));
 }
 
+.non-n {
+  text-align: center;
+}
 
 /*END news*/
 
