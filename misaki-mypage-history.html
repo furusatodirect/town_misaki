@@ -32,12 +32,20 @@
 <body>
 
   <style type="text/css">
-    .wrap {
+    main {
       display: grid;
       grid-template-rows: auto 1fr auto;
       grid-template-columns: 100%;
       min-height: 100vh;
-      font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      main {
+        display: initial !important;
+        grid-template-rows: initial !important;
+        grid-template-columns: initial !important;
+        min-height: initial !important;
+      }
     }
 
     button,
@@ -142,7 +150,7 @@
     .ec-cartRole__actions {
       display: flex;
       flex-direction: column;
-      row-gap: 1rem;
+      row-gap: .5rem;
     }
 
     .ec-blockBtn--action,
@@ -153,9 +161,9 @@
       position: relative;
       border-radius: 2.5rem;
       background: #0dab65;
-      width: 360px;
-      padding: 2rem;
-      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      width: 350px;
+      padding: 1.5rem;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 670));
       color: #fff;
       font-weight: bold;
       touch-action: manipulation;
@@ -200,9 +208,9 @@
       position: relative;
       border-radius: 2.5rem;
       background-color: #fff;
-      width: 360px;
-      padding: 2rem;
-      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      width: 350px;
+      padding: 1.5rem;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 670));
       color: #525263;
       font-weight: bold;
       touch-action: manipulation;
@@ -257,7 +265,7 @@
     }
 
     .ec-rectHeading {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .ec-rectHeading h2 {
@@ -336,9 +344,9 @@
       position: relative;
       border-radius: 2.5rem;
       background-color: #fff;
-      width: 360px;
-      padding: 2rem;
-      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      width: 350px;
+      padding: 1.5rem;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 670));
       color: #525263;
       font-weight: bold;
       touch-action: manipulation;
@@ -386,7 +394,7 @@
     }
 
     .ec-orderDelivery .ec-rectHeading {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .ec-orderDelivery .ec-rectHeading h2 {
@@ -411,6 +419,7 @@
       padding: 0;
       column-gap: 1rem;
       display: flex;
+      width: 100%;
     }
 
     .ec-orderDelivery__item .ec-cartRow__contentColumn {
@@ -518,7 +527,7 @@
     }
 
     .ec-orderDetail .ec-rectHeading {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .ec-orderDetail .ec-rectHeading h2 {
@@ -538,7 +547,7 @@
       display: flex;
       flex-flow: column;
       justify-content: space-between;
-      row-gap: .2rem;
+      row-gap: 1rem;
     }
 
     .ec-orderDetail .PT-txt {
@@ -777,9 +786,9 @@
       align-items: center;
       border-radius: 2.5rem;
       background-color: #fff;
-      width: 360px;
-      padding: 2rem;
-      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      width: 350px;
+      padding: 1.5rem;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 670));
       color: #e1e1e1;
       font-weight: bold;
       touch-action: manipulation;
@@ -799,9 +808,9 @@
       position: relative;
       border-radius: 2.5rem;
       background: #0dab65;
-      width: 360px;
-      padding: 2rem;
-      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      width: 350px;
+      padding: 1.5rem;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 670));
       color: #fff;
       font-weight: bold;
       touch-action: manipulation;
@@ -867,7 +876,7 @@
     }
 
     .ec-orderMailList .ec-rectHeading {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .ec-orderMailList .ec-rectHeading h2 {
@@ -919,7 +928,7 @@
     }
 
 
-    .ec-orderMailList .ec-orderMail__link,
+    .ec-orderMailList .fi.ti-email,
     .ec-orderMailList .ec-orderMail__close {
       font-weight: bold;
       text-decoration: underline;
@@ -934,6 +943,7 @@
       padding: 1.5rem;
       border: 1px solid #c4c4c4;
       border-radius: 1.5rem;
+      word-break:break-word;
     }
 
     p.ec-orderMail__close {
@@ -961,6 +971,9 @@
     }
 
     /*END .ec-orderMailList*/
+.ec-orderRole__summary,.ec-orderMail__body,.order_no .ec-rectHeading{
+    display: none;
+}    
   </style>
   <div class="wrap">
 
@@ -1091,7 +1104,7 @@
                   <dd class="shopping-formwrap">
                     <ul>
                       <li class="s-form-w50">
-                        <input class="" id="" type="text" value="{{ Order.name01 }}" readonly="readonly">
+                        {{ Order.name01 }}" readonly="readonly">
                       </li>
                       <li class="s-form-w50">
                         <input class="" id="" type="text" value="{{ Order.name02 }}" readonly="readonly">
