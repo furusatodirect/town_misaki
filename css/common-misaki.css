@@ -62,6 +62,8 @@ input {
   position: relative;
 }
 
+#newslink:before,
+#municipality_intro:before,
 #donation_use:before,
 #simulator_sec:before {
   content: '';
@@ -1740,6 +1742,11 @@ textarea {
 
 /*.misaki-news----------------*/
 
+.toplatestnews a p {
+  font-weight: bold;
+}
+
+
 .misaki-news {
   margin: 0;
   border: #c8c8c8 1px solid;
@@ -1760,7 +1767,8 @@ textarea {
   border-bottom: none;
 }
 
-.misaki-news li a {
+.misaki-news li a,
+.toplatestnews a p {
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1799,7 +1807,8 @@ textarea {
   font-size: calc(12px + 2 * ((100vw - 320px) / 670));
 }
 
-.misaki-news li a:hover .text {
+.misaki-news li a:hover .text,
+.toplatestnews a:hover {
   text-decoration: underline #0dab65;
 }
 
