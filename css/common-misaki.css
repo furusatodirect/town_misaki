@@ -6,6 +6,10 @@ html {
   font-size: 62.5%;
 }
 */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -525,6 +529,26 @@ header nav ul li a .cart_number {
   display: none;
 }
 
+header nav ul li .searchform {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul li .search-name {
+  position: relative;
+  height: 38px;
+  width: 200px;
+}
+
+header nav ul li.d-none.d-md-block.headersearch {
+  position: absolute;
+  margin-left: -13rem;
+}
+
+button.ec-headerSearch__keywordBtn {
+  position: absolute;
+  left: 170px;
+}
 
 /*************************************************************/
 
@@ -1567,6 +1591,21 @@ textarea {
   width: 40%;
 }
 
+#sec-howto-app .sec-howto-bnr {
+  margin: .5rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+}
+
+#sec-howto-app .sec-howto-bnr p {
+  word-break: break-all
+}
+
+#sec-howto-app .sec-howto-bnr img {
+  width: 300px;
+}
 
 /*************************************************************/
 
@@ -1741,6 +1780,17 @@ textarea {
 
 
 /*.misaki-news----------------*/
+.toplatestnews {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .toplatestnews {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
 
 .toplatestnews a p {
   font-weight: bold;
@@ -2392,20 +2442,6 @@ end top
   column-gap: 0.5rem;
 }
 
-#share-list {
-  background: #fff;
-  border: 1px solid #c8c8c8;
-  padding: .2rem;
-  border-radius: 1rem;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
-  margin: 0 0 0 -.5rem;
-}
-
-#share-list a {
-  display: block;
-  padding: .2rem;
-}
-
 .balloon i,
 .balloon button {
   font-size: 2rem;
@@ -2421,6 +2457,9 @@ end top
   position: relative;
   display: flex;
   align-items: center;
+  padding: .5rem;
+  bottom: -.2rem;
+  column-gap: .5rem
 }
 
 @media screen and (max-width: 768px) {
@@ -2431,9 +2470,9 @@ end top
     background: #FFFFFF;
     border: 1px solid #c8c8c8;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
     display: flex;
     align-items: center;
     padding: .5rem;
@@ -3193,7 +3232,7 @@ end top
 }
 
 #faq .toggle:checked+.title+.content {
-  max-height: 500px;
+  max-height: 1000px;
   transition: all 1.5s;
 }
 
